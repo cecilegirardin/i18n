@@ -137,6 +137,7 @@ en-GB:
         used: "Code already used."
         no_match: "Doesn't apply to the selected tickets."
         overlap: "Can't be used in conjunction with the other discounts."
+        rule_fail: "The discount rule does not apply."
     row:
       attendee_counts: "(%{counts} people)"
     show_button:
@@ -307,6 +308,14 @@ en-GB:
       payment_help: |
         **Pay by card** using the button below.
       pay_by_card_button: "Pay by card"
+      secure: "Secure payments by Stripe"
+    worldpay_payment:
+      payment_help: |
+        Payments securely processed by Worldpay.
+      pay_by_card_button: "Pay by card"
+      validation_failed: "Please check the card details and try again."
+      form_error: "There was a problem submitting your details to Worldpay. Please try again later."
+      secure: "Secure payments by Worldpay"
     paypal_payment:
       payment_help: |
         You do not need a PayPal account to make a payment:
@@ -314,6 +323,10 @@ en-GB:
         **Pay by card** by clicking the PayPal button then '**Pay with a debit or credit card**'.
       button_alt: "Pay with PayPal"
     process_stripe_token:
+      payment_error_flash: "Payment failed!"
+      system_error_flash: "Payment error!"
+      system_error_message: "There was a problem processing your payment! Please contact support@bookwhen.com for assistance. Sorry for the trouble."
+    process_worldpay_token:
       payment_error_flash: "Payment failed!"
       system_error_flash: "Payment error!"
       system_error_message: "There was a problem processing your payment! Please contact support@bookwhen.com for assistance. Sorry for the trouble."
@@ -355,18 +368,18 @@ en-GB:
       delete_logo: "Delete"
       delete_logo_confirm: "Are you sure you want to remove the logo?"
       upload_logo_label: "Upload logo image:"
-      upload_logo_help: "The logo is displayed in the top left of your page."
-      set_header_photo: "Set banner image"
+      upload_logo_help: "The logo will be left aligned with a maximum size of 1000px by 250px."
+      set_header_photo: "Set header background"
       delete_header_photo: "Delete"
       delete_header_photo_confirm: "Are you sure you want to remove the header photo?"
-      upload_banner_label: "Upload banner image:"
-      upload_banner_help: "The image is stretched to fit the width of the page with the height depending on your logo height."
+      upload_banner_label: "Upload banner photo:"
+      upload_banner_help: "The image will be stretched to fill the top portion of the page."
       save_options: "Save settings"
       cancel_button: "Close"
       html_links_leading_help: |
-        This public bookwhen page is where you should direct people to make a booking. Use the options below to link to your page.
+        This public page is where to direct people to make a booking. Use the links below.
       update_url_info: |
-        **Please note**: Updating the URL will stop any existing links to your public page from working.
+        **Please note**: Updating the URL will break any existing links to your public page.
     update_url:
       url_updated: "Page URL updated"
       url_not_allowed: "is already in use or not allowed."
