@@ -34,8 +34,8 @@ de-DE:
       description_label: "Allgemeine Informationen"
 
   general:
-    api_error: "Ein Fehler ist aufgetreten! Wir wurden darüber informiert und werden uns darum kümmern. Bitte versuchen Sie es später nocheinmal."
-    null_session: "Cookies müssen aktiviert sein um eine Buchung durchzuführen. Bitte versuchen Sie die Seite neu zu laden."
+    api_error: "Ein Fehler ist aufgetreten! Wir wurden darüber informiert und werden uns darum kümmern. Bitte versuchen Sie es später noch einmal."
+    null_session: "Cookies müssen aktiviert sein, um eine Buchung durchzuführen. Bitte versuchen Sie, die Seite neu zu laden."
     show_more_text: "[Weiterlesen]"
 
   money:
@@ -105,18 +105,18 @@ de-DE:
   baskets:
     show:
       basket_error: "Es gab ein Problem mit dem Zugiff auf die ausgewählten Tickets. Bitte versuchen Sie es später erneut oder kontaktieren Sie support@bookwhen.com"
-      basket_empty: "Der Waarenkorb ist leer. Zurück zum [Terminplan](%{home_path})."
+      basket_empty: "Der Warenkorb ist leer. Zurück zum [Terminplan](%{home_path})."
       start_checkout: "Jetzt buchen"
       start_checkout_wait: "Bitte warten..."
       start_booking_info: |
-        - Das Ticket wird für Sie reserviert sobald Sie es in den Waarenkorb legen.
-        - Teilnehmerinformationen und Zahlungsdaten (falls vom Veranstalter gefordert) sind notwendig um die Buchung abzuschließen.
-      not_found: "Es wurden Tickets aus dem Waarenkorb entfernt da diese nicht länger verfügbar sind. Bitte gehen Sie zurück zum Terminplan und versuchen Sie es erneut. Vielen Dank."
-      no_items: "Die Tickets in ihrem Waarenkorb sind nicht länger verfügbar. Bitte gehen Sie zurück zum Terminplan und versuchen Sie es erneut. Vielen Dank."
+        - Das Ticket wird für Sie reserviert, sobald Sie es in den Waarenkorb legen.
+        - Teilnehmerinformationen und Zahlungsdaten (falls vom Veranstalter gefordert) sind notwendig, um die Buchung abzuschließen.
+      not_found: "Es wurden Tickets aus dem Warenkorb entfernt, da diese nicht länger verfügbar sind. Bitte gehen Sie zurück zum Terminplan und versuchen Sie es erneut. Vielen Dank."
+      no_items: "Die Tickets in ihrem Warenkorb sind nicht länger verfügbar. Bitte gehen Sie zurück zum Terminplan und versuchen Sie es erneut. Vielen Dank."
     table:
       title: "Ausgewählte Tickets"
-      total_tax: "Added tax"
-      total_cost: "Total cost of tickets"
+      total_tax: "Steuern"
+      total_cost: "Summe aller ausgewählten Tickets"
       booking_fee_online: "An additional fee of **%{fee}** will be added to the total to cover the online payment charges."
       booking_fee_offline: "An additional fee of **%{fee}** will be added to the total cost if you choose to pay at a later date."
       booking_fee_both: |
@@ -124,7 +124,7 @@ de-DE:
         Online payment: **%{online_fee}**
         Alternative payment method: **%{offline_fee}**
       delete_item: "Ticket entfernen"
-      confirm_delete: "Wollen Sie dieses Ticket wirklich entfernen?"
+      confirm_delete: "Möchten Sie dieses Ticket wirklich entfernen?"
       discount: "Discount"
       discounts: "Discounts"
       delete_code: "Delete code"
@@ -175,14 +175,14 @@ de-DE:
       view: "Details anzeigen"
       tickets_list: "Tickets / Buchungsarten"
       spaces_available: "%{spaces} Plätze verfügbar"
-      only_spaces_available: "Nur mehr %{spaces} Plätze verfügbar"
-      last_space_available: "Nur mehr 1 Platz verfügbar"
+      only_spaces_available: "Nur noch %{spaces} Plätze verfügbar"
+      last_space_available: "Nur noch 1 Platz verfügbar"
       no_spaces_available: "Ausgebucht"
-      reserved_for_waiting_list: "Reserved for waiting list"
+      reserved_for_waiting_list: "Reserviert für Warteliste"
       one_slot_open: "Einzelplatz verfügbar"
       one_slot_closed: "Platz bereits belegt"
-      one_slot_reserved: "Place reserved for waiting list"
-      join_waiting_list: "Join waiting list"
+      one_slot_reserved: "Platz reserviert für Warteliste"
+      join_waiting_list: "Für die Warteliste anmelden"
     show:
       not_found: "Die Veranstaltung wurde nicht gefunden"
       details: "Details"
@@ -198,25 +198,25 @@ de-DE:
 
   waiters:
     create:
-      success_message: "You're the %{position_ordinal} person on the list. We've sent you an email with some more details. Thank you."
-      added_flash: "You're now on the list"
+      success_message: "Sie sind die %{position_ordinal} Person auf der Warteliste. Eine Email mit weiteren Details wurde an Sie verschickt. Vielen Dank."
+      added_flash: "Sie sind jetzt auf der Warteliste"
     form:
-      title: "Waiting list"
+      title: "Warteliste"
       waiting_list_help: |
-        This event is fully booked, but you can add yourself to the waiting list.
+        Dieses Event ist ausgebucht, aber Sie können sich für die Warteliste anmelden.
         
-        Enter your details below to be informed by email when a place becomes available. You must respond promptly to the email to secure a place if one becomes available.
-      email_label: "Email address"
-      email_help: "You will be notified by email if a space becomes available."
-      name_label: "Your name"
+        Füllen Sie die Angaben aus, um benachrichtigt zu werden, wenn ein Platz frei wird. Wenn Sie eine Benachrichtigung erhalten, müssen Sie schnellstmöglich auf diese reagieren.
+      email_label: "Email Adresse"
+      email_help: "Sie werden benachrichtigt, wenn ein Platz frei wird."
+      name_label: "Ihr Name"
       name_help: ""
-      phone_label: "Contact number"
-      phone_help: "This is optional but may be useful for the event organiser."
-      submit: "Submit details"
+      phone_label: "Telefonnummer"
+      phone_help: "Diese Information ist optional, aber hilfreich für den Veranstalter."
+      submit: "Absenden"
 
   bookings:
     create:
-      basket_empty_error: "Der Waarenkorb scheint leer zu sein. Bitte versuchen Sie die Seite neu zu laden."
+      basket_empty_error: "Der Warenkorb scheint leer zu sein. Bitte versuchen Sie, die Seite neu zu laden."
       validation_error: "Buchung kann nicht gestartet werden"
     complete_banner:
       title: "Buchung durchgeführt"
@@ -245,7 +245,7 @@ de-DE:
       password_label: "Veranstaltungspasswort"
       password_help: "Bitte geben Sie das Passwort für diese Veranstaltung ein."
       submit_password: "Weiter"
-      submit_password_wait: "Please wait..."
+      submit_password_wait: "Bitte warten..."
     update:
       passwords_ok: "Passwort verifiziert"
 
@@ -257,7 +257,7 @@ de-DE:
       booker_help: "Bitte ankreuzen, wenn Sie für sich selbst buchen."
       no_attendee_fields: "Keine Teilnehmerdaten erforderlich."
       submit_details: "Weiter"
-      submit_details_wait: "Please wait..."
+      submit_details_wait: "Bitte warten..."
     person_booking:
       booked_by: "Gebucht von"
       logout: "Abmelden"
@@ -413,7 +413,7 @@ de-DE:
       carrierwave_processing_error: "Fehler bei der Verarbeitung"
       carrierwave_integrity_error: "ist kein erlaubter Dateityp"
       carrierwave_download_error: "konnte nicht heruntergeladen werden"
-      extension_white_list_error: "Datein des Typs '%{extension}' sind nicht erlaubt. Bitte versuchen Sie stattdessen %{allowed_types}."
+      extension_white_list_error: "Dateien des Typs '%{extension}' sind nicht erlaubt. Bitte versuchen Sie stattdessen %{allowed_types}."
       mime_types_processing_error: "Fehler bei der Verarbeitung der Datei mit MIME::Types, eventuell ungültiger Inhalt? Originaler Fehler: %{e}"
       mini_magick_processing_error: "Fehler bei der Verarbeitung mit MiniMagick, eventuell kein Bild? Originaler Fehler: %{e}"
 
