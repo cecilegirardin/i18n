@@ -428,6 +428,10 @@ en-GB:
       page_options_form:
         schedule_row_count: "Row count"
         exit_url: "URL"
+        
+  datepicker:
+    previous_month: "Previous Month"
+    next_month: "Next Month"
 
   time:
     formats:
