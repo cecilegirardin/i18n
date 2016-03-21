@@ -428,3 +428,16 @@ de:
       page_options_form:
         schedule_row_count: "Row count"
         exit_url: "URL"
+
+  time:
+    formats:
+      agenda_year_month: "%B, %Y"
+      agenda_month: "%B"
+      agenda_day_of_month: "%e"
+      agenda_day_of_week: "%a"
+      full_date: "%A, %e %B, %Y"
+      compact_full_date: "%a, %e %b %Y"
+      date_with_year: "%a %e %b %Y"
+      date_without_year: "%a %e %b"
+      time_with_minutes: "%H:%M"
+      time_without_minutes: "%H:%M"
