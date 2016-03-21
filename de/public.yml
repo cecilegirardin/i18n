@@ -39,7 +39,7 @@ de:
     show_more_text: "[Weiterlesen]"
 
   money:
-    plus_tax: "%{amount} + tax"
+    plus_tax: "%{amount} + Steuern"
 
   duration:
     days:
@@ -60,8 +60,8 @@ de:
       login: "Anmelden"
       logout: "Abmelden"
       edit_page: "Seite bearbeiten"
-      admin_site: "Admin site"
-      view_bookings: "View bookings"
+      admin_site: "Admin Bereich"
+      view_bookings: "Buchungen anzeigen"
     breadcrumbs:
       schedule: "Terminplan"
       event: "Veranstaltung"
@@ -71,7 +71,7 @@ de:
       payment: "Zahlung"
       done: "Erledigt"
       complete: "Durchgeführt"
-      exit: "Exit booking system"
+      exit: "Buchungssystem verlassen"
     footer:
       copyright: "Copyright &copy; %{year} %{org_link}"
       about: "Über Bookwhen"
@@ -109,7 +109,7 @@ de:
       start_checkout: "Jetzt buchen"
       start_checkout_wait: "Bitte warten..."
       start_booking_info: |
-        - Das Ticket wird für Sie reserviert, sobald Sie es in den Waarenkorb legen.
+        - Das Ticket wird für Sie reserviert, sobald Sie es in den Warenkorb legen.
         - Teilnehmerinformationen und Zahlungsdaten (falls vom Veranstalter gefordert) sind notwendig, um die Buchung abzuschließen.
       not_found: "Es wurden Tickets aus dem Warenkorb entfernt, da diese nicht länger verfügbar sind. Bitte gehen Sie zurück zum Terminplan und versuchen Sie es erneut. Vielen Dank."
       no_items: "Die Tickets in ihrem Warenkorb sind nicht länger verfügbar. Bitte gehen Sie zurück zum Terminplan und versuchen Sie es erneut. Vielen Dank."
@@ -125,19 +125,19 @@ de:
         Alternative payment method: **%{offline_fee}**
       delete_item: "Ticket entfernen"
       confirm_delete: "Möchten Sie dieses Ticket wirklich entfernen?"
-      discount: "Discount"
-      discounts: "Discounts"
-      delete_code: "Delete code"
+      discount: "Rabatt"
+      discounts: "Rabatte"
+      delete_code: "Code löschen"
       valid_rule: "Discount rule '%{code}' automatically applied for %{value} off."
       valid_code: "Code '%{code}' used for %{value} off."
       invalid_code: "Code '%{code}' invalid: %{reason}"
       invalid_reason:
-        not_found: "Not found."
-        expired: "Code expired."
-        used: "Code already used."
-        no_match: "Doesn't apply to the selected tickets."
-        overlap: "Can't be used in conjunction with the other discounts."
-        rule_fail: "The discount rule does not apply."
+        not_found: "Nicht gefunden."
+        expired: "Code abgelaufen."
+        used: "Code wurde bereits genutzt."
+        no_match: "Gilt nicht für die ausgewählten Tickets."
+        overlap: "Kann nicht in Verbindung mit anderen Rabattcodes verwendet werden."
+        rule_fail: "Dieser Rabattcode gilt hier nicht."
     row:
       attendee_counts: "(%{counts} Personen)"
     show_button:
@@ -145,16 +145,16 @@ de:
 
   discount_codes:
     form:
-      show_link: "Add a discount code"
-      code_label: "Discount code"
-      submit: "Submit code"
+      show_link: "Rabattcode hinzufügen"
+      code_label: "Rabattcode"
+      submit: "Code absenden"
     create:
-      code_added: "Code submitted"
+      code_added: "Code abgesendet"
     destroy:
-      code_removed: "Code removed"
+      code_removed: "Code entfernt"
 
   select_button:
-    new_booking: "Select"
+    new_booking: "Auswählen"
     unavailable: "Nicht verfügbar"
     number_added: "%{count}"
     increment: "+"
@@ -263,7 +263,7 @@ de:
       logout: "Abmelden"
       admin_booker: "**Für Administratoren sind alle Felder optional.**"
     booker_form:
-      booker_email_label: "Ihre email Adresse"
+      booker_email_label: "Ihre Email Adresse"
       user_options_html: "You can %{login_link} if you have a password, or %{set_password_link} if you'll be booking again."
       set_password_option: "Passwort festlegen"
       login_option: "anmelden"
@@ -282,28 +282,28 @@ de:
       no_payment_required: "Keine Zahlung erforderlich."
     summary_table:
       title: "Zahlung"
-      total_cost_no_fees: "Total cost of booking"
-      total_cost_excluding_fees: "Cost of tickets"
-      stripe_fee_title: "Online payment total"
-      stripe_fee_desc: "This includes an additional online processing fee of %{amount}"
-      paypal_fee_title: "Online payment total"
-      paypal_fee_desc: "This includes an additional PayPal processing fee of %{amount}"
-      offline_fee_title: "Offline payment total"
-      offline_fee_desc: "This includes an additional charge of %{amount}"
+      total_cost_no_fees: "Gesamtkosten Ihrer Buchung"
+      total_cost_excluding_fees: "Kosten aller Tickets"
+      stripe_fee_title: "Summe Onlinezahlungen"
+      stripe_fee_desc: "Enthält Gebühren für Onlinezahlungen in Höhe von %{amount}"
+      paypal_fee_title: "Summe Paypal Zahlungen"
+      paypal_fee_desc: "Enthält Gebühren für PayPal Zahlungen in Höhe von %{amount}"
+      offline_fee_title: "Summe Offlinezahlungen"
+      offline_fee_desc: "Enthält Gebühren für Offlinezahlungen in Höhe von %{amount}"
     form:
       payment_complete: "Zahlung durchgeführt. Vielen Dank!"
     offline_payment:
       title: "Offline Zahlung"
       admin_booker: "**You're making this booking as the administrator** which allows you to bypass the online payment. Please accept the offline payment agreement on behalf of your customer to continue."
-      agree_text: "I agree to pay %{amount}"
+      agree_text: "Ich stimme zu, einen Betrag von %{amount} zu bezahlen"
       agree_button: "Später bezahlen"
       agree_button_wait: "Später bezahlen"
       agreed: "Sie sind einverstanden, später zu bezahlen. Vielen Dank!"
     online_payment:
-      title: "Online payment"
-      total: "Total to be paid: %{amount}"
+      title: "Online Zahlung"
+      total: "Zu zahlende Summe: %{amount}"
       verifying_payment: "Zahlung wird verifiziert. Bitte warten..."
-      booking_expired: "Your booking reservation has expired and the place is no longer available!"
+      booking_expired: "Die Reservierung für Ihre Buchung ist abgelaufen und der Platz nicht länger verfügbar!"
     stripe_payment:
       payment_help: |
         **Pay by card** using the button below.
@@ -321,27 +321,27 @@ de:
         **Zahlen Sie mit Kredit- oder Bankomatkarte** indem Sie auf die Schalftläche klicken, danach auf '**Als Gast bezahlen**'.
         
         
-      button_alt: "Pay with PayPal"
+      button_alt: "Mit PayPal bezahlen"
     process_stripe_token:
-      payment_error_flash: "Payment failed!"
-      system_error_flash: "Payment error!"
-      system_error_message: "There was a problem processing your payment! Please contact support@bookwhen.com for assistance. Sorry for the trouble."
+      payment_error_flash: "Zahlung fehlgeschlagen!"
+      system_error_flash: "Fehler bei der Zahlung!"
+      system_error_message: "Es gab ein Problem mit Ihrer Zahlung! Bitte wenden Sie sich an support@bookwhen.com. Wir entschuldigen uns für die Unannehmlichkeiten."
     process_worldpay_token:
-      payment_error_flash: "Payment failed!"
-      system_error_flash: "Payment error!"
-      system_error_message: "There was a problem processing your payment! Please contact support@bookwhen.com for assistance. Sorry for the trouble."
+      payment_error_flash: "Zahlung fehlgeschlagen!"
+      system_error_flash: "Fehler bei der Zahlung!"
+      system_error_message: "Es gab ein Problem mit Ihrer Zahlung! Bitte wenden Sie sich an support@bookwhen.com. Wir entschuldigen uns für die Unannehmlichkeiten."
     check_payment:
       payment_successful: "Zahlung erhalten. Vielen Dank!"
     check_expired:
-      booking_expired: "Booking expired"
+      booking_expired: "Buchung abgelaufen"
     update:
       agreement_accepted: "Vielen Dank!"
 
   themes:
     button:
-      link_text: "Book online"
-      title: "Book online"
-      alt: "Book online"
+      link_text: "Online buchen"
+      title: "Online buche"
+      alt: "Online buche"
     edit:
       title: "Public page settings"
       theme_help: "Manage the way your public page looks and works."
