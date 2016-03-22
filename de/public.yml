@@ -264,7 +264,7 @@ de:
       admin_booker: "**Für Administratoren sind alle Felder optional.**"
     booker_form:
       booker_email_label: "Ihre Email Adresse"
-      user_options_html: "You can %{login_link} if you have a password, or %{set_password_link} if you'll be booking again."
+      user_options_html: "Sie können sich %{login_link}, wenn Sie bereits ein Passwort haben, oder ein %{set_password_link} für zukünftige Buchungen."
       set_password_option: "Passwort festlegen"
       login_option: "anmelden"
       set_password_label: "Passwort festlegen"
