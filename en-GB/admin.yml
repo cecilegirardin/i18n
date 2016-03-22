@@ -1,3 +1,10 @@
+# Translation information:
+# 
+# There's still no option to set the locale on the admin side of the system,
+# so please contacting us at support@bookwhen.com if you're keen...
+# 
+# Thank you!
+
 en-GB:
 
   org:
@@ -20,7 +27,7 @@ en-GB:
         wrong_account: "You don't have access to that account."
 
   pundit:
-    default: "You can't perform this action"
+    default: "Action not authorised"
     account_policy:
       access?: "You don't have access to that account"
       administer?: "Only account owners can do that"
@@ -36,26 +43,30 @@ en-GB:
       refund?: "You don't have access to refund this booking"
       administer?: "Action not allowed. Please ask the account owner"
 
-  unit:
-    minutes: "minutes"
-
   layouts:
     topbar:
-      dashboard: "Dashboard"
+      dashboard: "Overview"
       schedule: "Schedule"
       schedules: "Schedules"
       bookings: "Bookings"
       public_pages: "Public Pages"
       public_page: "Public Page"
-      setup: "Settings"
+      setup: "Setup"
       account: "Account"
-      payment_gateways: "Payment options"
+      profile: "Your profile"
+      account_details: "Account details"
+      superuser: "Superuser"
+      calendars: "Schedule pages"
+      booking_options: "Booking options"
+      payment_gateways: "Payment settings"
+      discounts: "Discounts"
       locations: "Locations"
       attachments: "Attachments"
       form_field_types: "Booking fields"
-      calendars: "Schedules"
+      imports: "V1 Account import"
       login: "Login"
       logout: "Logout"
+      help: "Help"
     footer:
       copyright: "Copyright &copy; %{year} %{org_link}"
       about: "About"
@@ -64,17 +75,20 @@ en-GB:
     noscript:
       main_banner_message: "Javascript must be enabled for bookwhen to function properly."
       base_error: "Please enable javascript."
-      
+
   link_titles:
     show_attendances: "Attendances for this event"
     show_entry: "Attendance for this entry"
 
   seed:
     payments:
-      offline_instructions: "Please make your payment in cash on arrival. Thank you."
-        
+      offline_instructions: "Please make your payment in cash on arrival.\n\nThank you."
+
+  money:
+    plus_tax: "%{amount} + tax"
+
   # Processes
-  
+
   booking_process:
     passwords_processor:
       wrong_password: "The password is wrong."
@@ -99,20 +113,16 @@ en-GB:
       no_refundable_payments: "This booking doesn't have any payments that can be refunded."
     booking_ticket_builder:
       bad_event_ticket: "Ticket '%{ticket}' has multiple dates but is not a course ticket."
-      ticket_removed: "Cannot change the date or time of a ticket if the ticket has been deleted. Please cancel and rebook instead."
 
   booking_ticket_process:
-    booking_ticket_date_changer:
+    booking_ticket_changer:
       no_user: "A user must be specified to amend a ticket."
       failed_policy: "The specified user does not have permission to amend this ticket."
       user_amend_not_allowed: "Please contact the administrator to amend this booking."
       past_amend_cutoff: "Changes are no longer allowed. Please contact the administrator."
-      bad_datetime: "Could not determine date and time from: %{datetime_param}"
-      wrong_datetime: "%{datetime} was not one of the other date and time options."
       selected_date_full: "The selected date doesn't have space for the attendee(s)."
       ticket_outside_date_range: "The ticket is unavailable for the selected date due to being outside the available date range."
       ticket_sold_out: "There aren't enough tickets of this type left on the selected date."
-      ticket_removed: "Cannot change the date or time of a ticket if the ticket has been deleted. Please cancel and rebook instead."
       full_postfix: " - no space"
     booking_ticket_canceller:
       no_user: "A user must be specified to cancel a ticket."
@@ -123,13 +133,23 @@ en-GB:
       no_user: "A user must be specified to refund a ticket."
       user_refund_not_allowed: "Please contact the administrator to request a refund for this booking."
       past_refund_cutoff: "Refunds are no longer allowed. Please contact to administrator."
-      
+
   booking_spaces_checker:
     attendee: "attendee"
     multiple_spaces: "only %{n_spaces} spaces are available!"
     one_space: "only one space is available!"
     no_spaces: "the event is fully booked."
     overbooking: "Would cause overbooking of '%{title}' -- Adding %{n_attendees} but %{spaces_remaining}"
+
+  waiting_list:
+    event_not_found: "Event '%{id}' could not be found."
+    name_required: "A name is required for the waiting list."
+    email_invalid: "The email address appears to be invalid."
+    email_already_used: "This email is already on the list! You'll be notified if a space becomes available. Thanks."
+
+  applied_discount:
+    code_note: "Code '%{code}' used for %{value} off."
+    rule_note: "%{value} off for '%{rule}' discount rule."
 
   # Lookups
 
@@ -142,6 +162,7 @@ en-GB:
     btn_saving: "Saving..."
     please_wait: "Please wait..."
     show_more_text: "[Show more]"
+    cancel_btn: "Cancel"
 
   lookups:
     booking:
@@ -165,6 +186,8 @@ en-GB:
         booking_cancelled: "Booking cancelled (Attendee)"
         booking_cancelled_admin: "Booking cancelled (Admin)"
         booking_reminder: "Booking reminder"
+        waiting_list_added: "Waiting list - added"
+        waiting_list_place_available: "Waiting list - place available"
     recurrence_form:
       recurrence_type:
         minutely: "Repeat in minutes"
@@ -184,6 +207,13 @@ en-GB:
         days: "days"
         weeks: "weeks"
         months: "months"
+    time_period:
+      unit:
+        minute: "minute"
+        hour: "hour"
+        day: "day"
+        week: "week"
+        month: "month"
     form_field_type:
       data_type:
         user_email: "Attendee email"
@@ -206,6 +236,24 @@ en-GB:
         paypal: "PayPal"
         stripe: "Stripe"
         worldpay: "Worldpay"
+    offline_payment_detail:
+      payment_method:
+        cash: "Cash"
+        cheque: "Cheque"
+        transfer: "Transfer"
+        other: "Other"
+        import: "Import"
+    v1_import_request:
+      import_status:
+        pending: "Pending"
+        queued: "Waiting in process queue"
+        runway: "Pre-process checks"
+        processing: "Processing"
+        success: "Import complete"
+        failed: "Import failed! Please contact support@bookwhen.com"
+    discount_rule:
+      rule_type:
+        bulk_discount: "Bulk purchase discount"
 
   duration:
     days:
@@ -214,12 +262,25 @@ en-GB:
     weeks:
       one: "1 week"
       other: "%{count} weeks"
+    start_and_end: "%{start_date_time} - %{end_time}"
+    start_and_duration: "%{start_date} (%{duration})"
+
+  summary_text:
+    course: "%{event_count} events starting %{start_datetime} - %{title}"
+    event: "%{start_datetime} - %{title}"
 
   # Helpers
 
   helpers:
     schedules:
       non_terminating_count: "&infin;"
+
+    time_period:
+      anytime: "unrestricted"
+      period: "%{period} before event"
+      period_at_time: "%{period} before event at %{time}"
+      until_period: "until %{period} before event"
+      until_period_at_time: "until %{period} before event at %{time}"
 
     # Kaminari
     page_entries_info:
@@ -287,7 +348,7 @@ en-GB:
   login:
     fail_auth: "Your password wasn't recognised. Please try again or use the forgotten password link."
     fail_not_found: "Email or username wasn't found."
-    
+
   booking_logins:
     invalid_token: |
       ## Login token not valid
@@ -297,6 +358,13 @@ en-GB:
       ## Login token no longer valid
       
       The page you made the booking through has been removed. To access your booking you will have to log into our booking portal: https://bookings.bookwhen.com/login
+      
+  person_logins:
+    invalid_token: |
+      ## Login token not valid
+      
+      The link is not valid. It may have expired. Please contact the organiser for help. Thank you.
+
   signups:
     new:
       signup_box_title: "Signup"
@@ -321,6 +389,7 @@ en-GB:
         There was a problem creating your account.
         
         Please contact support: support@bookwhen.com
+        
   activate_accounts:
     edit:
       activate_account_title: "Set Password"
@@ -333,7 +402,7 @@ en-GB:
       password: "Enter a password"
       password_confirmation: "Type the password again"
       invalid_token: "The activation token is invalid. Please contact support for help: support@bookwhen.com"
-      
+
   process_admin_invites:
     edit:
       title: "Join account"
@@ -346,9 +415,9 @@ en-GB:
       password_confirmation: "Type the password again"
     update:
       welcome_new_admin: "Welcome to bookwhen"
-  
+
   # Admin
-  
+
   booking:
     words:
       person: "person"
@@ -362,14 +431,13 @@ en-GB:
       missing: "This field is required."
       format: "This seems to be in the wrong format."
       unique_attendee: "Another attendee has already booked using this email address."
-      booker_email_clash: "Please select the 'Is this you?' checkbox if this attendee is you."
       no_items: "No items have been selected for the booking."
       ticket_title_blank: "Ticket"
       sold_out: "%{title} - sold out."
       too_many: "%{title} - %{remaining} available, but %{count} selected."
       hit_limit: "%{title} - there are no spaces left."
       over_limit: "%{title} - %{remaining} places remaining in total, but %{count} selected."
-      outside_range: "%{title} - outside available date range."
+      outside_range: "%{title} - a selected ticket has now expired. Please clear it from your basket and try again."
     ticket_set:
       ticket_ord_info: "%{ord} ticket"
       with_name:
@@ -393,19 +461,29 @@ en-GB:
       not_found: "The booking couldn't be found"
     booking_options:
       options_title: "Options"
-      cancel: "*Cancel* the booking"
+      complete: "*Complete* this booking"
+      complete_tip: "Bookings in a status of 'checkout' have probably been abandoned by the customer. You can force the booking into a status of complete using this option. The completion email will be sent, and the payment (if any) will be marked as 'pay later'."
+      complete_confirm: "This will force the booking through to a complete status. If payments are required then they will be marked as 'pay later'. Do you wish to proceed?"
+      cancel: "*Cancel* this booking"
+      cancel_tip: "Complete bookings can be cancelled. The booker and attendees will be notified of the cancellation. A cancellation cannot be undone."
       cancel_confirm: "Are you sure you want to cancel this booking? It cannot be undone."
-      delete: "Delete this booking!"
+      delete: "*Delete* this booking!"
+      delete_tip: "Cancelled bookings can be deleted if there aren't live online payments associated with the booking. The data for the booking will be permanently removed and cannot be undone."
       delete_confirm: "Are you sure you want to delete the booking? This cannot be undone!"
+    complete:
+      completed: "Booking %{ref} now complete"
     cancel:
       cancelled: "Booking %{ref} has been cancelled"
     destroy:
       deleted: "Booking %{ref} has been deleted"
     booking_status:
-      booking: "Booking:"
+      booking: "Ref:"
       status: "Status:"
       booker: "Booked by:"
       time_ago: "%{timespan} ago"
+      owed_amount: "%{amount} to pay"
+      paid_amount: "%{amount} paid"
+      credit_amount: "%{amount} overpaid"
       reserved_text: |
         This booking has reserved places whilst it's in checkout.
         The reservation ends in **%{timespan}**.
@@ -414,10 +492,15 @@ en-GB:
         The places are no longer reserved.
       booker_not_set: "Booker not entered"
       admin: "(Admin user)"
-      unverified: "(Unverified email)"
+    email_status:
+      unconfirmed: "(Unverified email)"
+      inactive: "(Invalid email)"
+    payments:
+      record_payment: "Record payment"
     booking_fields:
       title: "Booking fields"
     booking_details:
+      edit: "Edit"
       group_ticket: "Group ticket"
     attendees_list:
       unnamed: "Name not given"
@@ -425,29 +508,79 @@ en-GB:
       completed_time_ago: "- %{timespan} ago"
       booking_ref: "Ref:"
       status: "Status:"
-      
+
+  invoices:
+    presenter:
+      value_label:
+        cost: "Tickets cost"
+        discounts: "Discounts"
+        fees: "Additional fees"
+        tax: "Added tax"
+        cost_total: "Total cost"
+      fee:
+        bookwhen: "%{amount} to bookwhen"
+        gateway: "%{amount} gateway fee"
+        offline: "%{amount} offline payment charge"
+    summary_table:
+      costs_title: "Costs"
+      payments_title: "Payments"
+      total_title: "Total"
+    helper:
+      paypal_payment_label: "PayPal payment"
+      stripe_payment_label: "Stripe payment"
+      worldpay_payment_label: "Worldpay payment"
+      offline_cash_payment_label: "Cash payment"
+      offline_cheque_payment_label: "Cheque payment"
+      offline_transfer_payment_label: "Paid by transfer"
+      offline_other_payment_label: "Offline payment (other)"
+      offline_import_payment_label: "Imported payment"
+      paid_on: "Paid %{datetime}"
+      paid_on_and_by: "%{datetime} by %{email}"
+      view_payment: "View payment"
+      remove_payment: "Remove payment"
+      remove_payment_title: "Remove this manaually entered payment."
+      remove_payment_confirm: "Please confirm that you would like to remove this manually entered payment."
+      offline_details: "Paid %{datetime}"
+      total_outstanding: "Total outstanding"
+      total_overpaid: "Total overpaid"
+      total_paid: "Total outstanding"
+    pre_invoice_summary:
+      costs_title: "Costs"
+      total_booking_cost: "Total booking cost"
+
+  payments:
+    new:
+      amount_label: "Paid amount"
+      received_date_label: "Received on"
+      payment_method_label: "Method"
+      notes_label: "Notes"
+    destroy:
+      payment_removed: "Payment removed"
+
   ticket_sets:
     edit:
       cancel_ticket: "Cancel ticket"
       cancel_ticket_confirm: "The ticket will be cancelled and the booker and attendee will be notified of the change to the booking. Ticket cancellations cannot be undone. Are you sure you want to cancel this ticket?"
       change_date: "Change date"
       close: "Close edit"
-      change_ticket: "Switch ticket"
+      change_ticket: "Change ticket"
       save_change_ticket: "Save"
       save_change_ticket_confirm: "The ticket will be cancelled and a new one created with the new date, and the booker and attendee will be notified of the change. Would you like to make the change?"
-      cancel: "Cancel"
-      
+      cancel_change_ticket: "Close"
+
   tickets:
     cancel:
       cancelled: "Ticket cancelled"
     update:
-      date_changed: "Date changed"
+      ticket_changed: "Ticket changed"
     status:
       one_of_one_cancelled: "Cancelled"
       both_cancelled: "Both cancelled"
       all_cancelled: "All cancelled"
       n_cancelled: "%{count} cancelled"
-      
+    people:
+      n_people: "%{count} people"
+
   attendees:
     status:
       one:
@@ -464,31 +597,26 @@ en-GB:
       title: "Overview"
       welcome_title: "Welcome to bookwhen"
       welcome_text: |
-        Start by adding an entry on the [Schedule](/schedules) page. Then go to your Public Page using the button at the top. Bookings are shown on the [Bookings](/bookings) page. This Dashboard page shows an overview of upcoming events and latest bookings.
-        
-        _This site is currently in **beta**. The original site is [available here](https://v1.bookwhen.com/overview)._
-
+        Start by adding an entry on the [Schedule](/schedules) page. Then go to your Public Page using the button at the top. Bookings are shown on the [Bookings](/attendances) page. This page shows an overview of upcoming events and latest bookings.
       upcoming_events: "Upcoming events"
       latest_bookings: "Latest bookings"
       blank_bookings: |
         You've not taken any bookings yet.
-      beta_status: "Updates"
-      beta_details: |
-        _April 16, 2015_
+      update_date: "March 21, 2016"
+      update_info: |
+        #### Recent updates
         
-        Your feedback helps prioritise updates and new features so please send comments to: support@bookwhen.com
-        
-        #### Recent changes
-        
-        - Option to change the date of a ticket on a booking.
-        - Booking links now only grant access to view a booking, so attendees must now login to make changes.
-        - Event reminder emails sent a day before the event. Additional settings will be added later.
-        - Admin bookings can be put through via the public pages with all fields and payments optional.
-        - [Multiple schedules](/settings/schedules) per account with assigned admin users.
-        - Invite additional admin users on the [Settings > Account](/settings/account) page.
-        
+        - [Organisation name](/account/details) used for the email _from_ name.
+        - Worldpay can be used to [take payments](/settings/payment_options).
+        - Set entry locations on the [locations setup](/settings/locations) page.
+        - Option to copy emails on the [bookings](/attendances) page.
+        - Automated block booking [discount rules](/settings/discounts).
+        - Public and private [calendar feeds](/account/schedules).
+
+
+        For help on how to use the system please have a look at our [help guides](http://support.bookwhen.com), or click the question mark in the top bar. Alternatively, feel free to contact us at [support@bookwhen.com](mailto:support@bookwhen.com) or use the help popup icon in the bottom right.
   # User
-  
+
   user:
     overview:
       show:
@@ -503,62 +631,119 @@ en-GB:
           Thank you.
     bookings:
       show:
-        title: "Booking %{ref}"
-        booking_options_title: "Booking options"
-        token_access_message: |
-          You are viewing this booking via the link in the confirmation email.
-          
-          To make changes to your booking, please [log in](%{login_path}) using your email and password. Use the [forgot password](%{forgot_password_path}) page if you have not set a password.
+        title: "Booking: %{ref}"
+        open_schedule: "Open schedule"
+      options:
+        options_title: "Options"
+        cancel: "Cancel the booking"
+        cancel_confirm: "Are you sure you want to cancel this booking? It cannot be undone."
       booking_status:
-        booking: "Booking:"
+        booking: "Ref:"
         status: "Status:"
         booker: "Booked by:"
       booking_fields:
         title: "Booking fields"
       booking_details:
         group_ticket: "Group ticket"
-  
+      other_bookings:
+        other_bookings: "Other bookings"
+        token_access_message: |
+          **You're accessing this page via the link in the booking confirmation email.**
+          
+          If you have **other bookings**, you can view them by [logging in](%{login_path}) using your email and password.
+          
+          Use the [forgot password](%{forgot_password_path}) page if you have not setup a password yet.
+      cancel:
+        cancelled: "Booking %{ref} has been cancelled"
+
+    tickets:
+      update:
+        ticket_changed: "Ticket changed"
+      cancel:
+        cancelled: "Ticket cancelled"
+
+    waiting_list_places:
+      show:
+        title: "Waiting list"
+        message: |
+          You're %{position_ordinal} on the list for:
+          
+          %{event_details}
+        remove_button: "Leave list"
+        remove_button_confirm: "Please confirm you want to remove yourself from the waiting list."
+        waiting_list_token_not_valid: "The token is invalid or has been removed"
+      destroy:
+        removed_flash: "Place removed"
+        removed_message: "You've been removed from the list."
+
+    payments:
+      return_failed: "A problem occurred processing your payment. Please contact support@bookwhen.com"
+
   # Settings
 
   settings:
     heading:
       title: "Settings and options"
-    accounts:
-      show:
-        title: "Account"
-    administrators:
-      index:
-        title: "Administrators"
-      list:
-        you: "YOU"
-        invited: "INVITED"
-        revoke: "Cancel invitation"
-        revoke_confirm: "Are you sure you want to cancel this invitation?"
-      invite:
-        email_label: "Invite another administrator"
-        email_ph: "admin@example.com"
-        email_help: "An email will be sent to the new user with a link to set a password and log in."
-        invite: "Send invite"
-        invite_help: "An email will be sent to the invitee with a link inviting them to join the account and set a password."
-        must_be_account_owner: |
-          #### Adding administrators
-          
-          Additional admin users can be added to the account, but only by an **account owner** user.
-    admin_invites:
-      form:
-        not_authorised: "You are not authorised to send invitations for this account."
-        account_not_activated: "You must activate your account before sending invites. You should have received an email when you signed up."
-      create:
-        invite_sent: "The invitation has been sent"
-      destroy:
-        invite_removed: "Invite removed"
-      accepter:
-        not_found: "The invite code is not valid. Perhaps it was cut and pasted incorrectly? Contact the account owner if you need a new invite."
-        invite_revoked: "The invite has been revoked. Contact the account owner for further details."
-        invite_processed: "You have already accepted this invite. Log in to access the account. If you've lost your password then use the 'forgotten password' page. Thanks."
     payment_options:
       show:
-        title: "Account payment settings"
+        title: "Payment setup"
+    options:
+      show:
+        title: "Booking options"
+      update:
+        saved: "Settings updated"
+      list:
+        edit_btn: "Edit"
+      edit:
+        save_btn: "Save"
+        cancel_btn: "Cancel"
+    waiting_lists:
+      show:
+        title: "Waiting list"
+        waiting_list_enabled: "Waiting list enabled?"
+        waiting_list_delay: "Time between emails:"
+        help: |
+          When an event is fully booked, people can join the waiting list by entering their name, email, and phone number.
+          
+          If a place becomes available, the people on the list will be emailed in order, with a delay between each, until the place is filled.
+      edit:
+        waiting_list_enabled_yn_label: "Enable waiting list?"
+        waiting_list_gap_minutes_label: "Time between emails"
+    checkouts:
+      show:
+        title: "Booking"
+        checkout_period: "Checkout reservation period:"
+        help: |
+          The duration places will be reserved by the booking whilst in checkout. If the booking is abandoned then the place will be left reserved until the period has expired.
+      edit:
+        minutes_to_complete_booking_label: "Reserved for"
+    cancellations:
+      show:
+        title: "Cancellation"
+        cancellation_enabled: "Allow people to **cancel** their own bookings?"
+        refund_enabled: "Are **refunds** allowed on cancellation?"
+        help: |
+          Can a booking be cancelled by the attendee? If not then they will have to contact an administrator to request the cancellation.
+          
+          Can the payment for a booking be refunded at the time of cancellation? (Assuming cancellations are allowed, and in-app refunds have been authorised for your payment gateway.)
+      edit:
+        allow_customer_cancellation_yn_label: "Allow booking cancellation?"
+        allow_customer_cancellation_help: "Note: Admin users can always cancel and refund bookings. These settings refer to the attendee."
+        cancellations_until_duration_value_label: "Cancellation allowed until"
+        cancellations_until_help: "Until what point before the event should user cancellations be allowed? A time of day can be set if the duration is a day or more. Leave the period blank for unrestricted cancellations."
+        allow_payment_refund_yn_label: "Allow refunds on cancellation?"
+        refunds_until_duration_value_label: "Refunds allowed until"
+        refunds_until_help: "**Note: Refunds are not currently enabled in the system.** As for cancellations, but when to allow people to get a full refund of any amount paid for the booking. If refunds are not allowed then the booker will be left with credit on their account that can be used against future bookings."
+    reminders:
+      show:
+        title: "Reminders"
+        reminders_enabled: "Send reminder emails?"
+        help: |
+          An email will be sent to the attendees at the set time before the event to remind them about their booking.
+      edit:
+        reminder_email_yn_label: "Send reminder emails?"
+        reminder_days_before_label: "When to send the reminders"
+        reminders_until_help: "How long before the event would you like the reminder emails to be sent?"
     account_payment_settings:
       show:
         currency_code: "Currency:"
@@ -576,9 +761,14 @@ en-GB:
         cancel: "Cancel"
       update:
         settings_updated: "Settings updated"
+
     payment_gateways:
       index:
-        gateway_list_title: "Methods of payment"
+        gateway_list_title: "Payment options"
+      payment_gateways:
+        set_enabled:
+          payment_gateway_enabled: "Gateway enabled"
+          payment_gateway_disabled: "Gateway disabled"
       offline_gateway_details:
         show:
           edit: "Edit"
@@ -589,20 +779,30 @@ en-GB:
           cancel: "Cancel"
           payment_instructions_label: "Instructions for offline payments"
           payment_instructions_help: "Information about how your customer can pay you.\n\nThis could include bank details for online transfers, how to pay by cheque, cash payment information, etc."
+          offline_info: |
+            The option to **Pay later** will be given on the booking payment form if the **Online payment required** setting is set to **No** on the entry settings.
+            
+            If an online payment option (Stripe or Paypal) has also been setup, then both online and offline payment options will be shown on the payment form.
+            
+            Bookings with offline (pay later) payments will be marked as complete but will show as having money owed until the payment has been recorded.
         update:
           payment_gateway_updated: "Payment option updated"
       paypal_gateway_details:
         show:
           edit: "Edit"
+          open: "Open PayPal"
           setup: "Setup"
           selected_gateway: "Gateway status:"
           paypal_account_status: "PayPal account:"
           refunds_authorised: "Refunds authorised:"
+          pass_on_fees: "Add fees to booking:"
         edit:
+          enabled: "Enabled:"
+          enabled_help: "Turn this gateway on or off."
           verify_account: "Save your PayPal settings"
           verifying: "Checking..."
           grant_permissions: "Authorise payment refunds"
-          close: "Close"
+          close: "Done"
           delete: "Remove PayPal option"
           confirm_delete: "Are you sure you want to remove the connection to your PayPal account?"
           paypal_account_email_label: "Your PayPal email address"
@@ -619,22 +819,161 @@ en-GB:
           refunds_allowed: "YES - refunds enabled"
           refunds_not_allowed: "NO - refunds not allowed"
           refunds_not_allowed_help: "**Click the 'Authorise payment refunds' button** to allow bookwhen to process refunds.\n\nYou will be redirected to PayPal where you can grant the permission for bookwhen to _'Issue a refund for a specific transaction'_."
+          paypal_info: |
+            Please note: Your PayPal account must be **fully verified** before it can be connected.
+            
+            To be able to take direct card payments, your PayPal account must be a **Business** rather than a **Personal** account type. It's easy to change a Personal account to a Business account and will cost nothing extra.
         destroy:
           payment_option_removed: "Payment option removed"
         verify_account:
-          email_not_valid: "PayPal did not recognise your details. Please check that you've used the correct email and entered the first and last names exactly as they appear in your account. Thank you."
           account_verified: "PayPal account verified"
         permissions_callback:
           permission_granted: "Refunds now enabled"
           permission_not_granted: "Permission not granted"
-      worldpay_gateway_details:
+      paypal_account:
+        email_not_valid: "PayPal did not recognise your details. Please check that you've used the correct email and entered the first and last names exactly as they appear in your account. Thank you."
+        account_not_verified: "Your PayPal account must be fully 'Verified' before payments can be taken. Please log in to you PayPal account to complete the verification process, then come back here to try again. Thank you."
+        all_values_required: "The email address and first and last names must all be entered."
+      paypal_gateway_detail_fees:
         show:
-          setup: "Setup"
-          coming: "Coming soon..."
+          edit: "Edit"
+          include_fees: "Include online payment fee?"
+          fees_information: "Any fees will be calculated from the total booking cost and will be added to the amount paid when paying online."
+        edit:
+          include_fees_label: "Add an online payment fee to bookings?"
+          include_fees_help: "If you'd like to recoup the cost of the payment gateway fees, then you can add an additional fee onto the total booking cost when your customers pay online."
+          base_cost_label: "Base fee cost"
+          base_cost_help: "The fixed amount added to all online payments."
+          fee_pcnt_label: "Percentage fee"
+          fee_pcnt_help: "A percentage of the total cost of the booking to be added on top of the base fee."
+          save: "Save"
+          cancel: "Cancel"
+        update:
+          fees_updated: "Fee settings updated"
       stripe_gateway_details:
         show:
+          edit: "Edit"
+          open: "Open Stripe"
           setup: "Setup"
-          coming: "Coming soon..."
+          selected_gateway: "Gateway status:"
+          stripe_authorised_status: "Authorised:"
+          pass_on_fees: "Add fees to booking:"
+          stripe_test_mode: "Test mode:"
+        edit:
+          enabled: "Enabled:"
+          enabled_help: "Turn this gateway on or off."
+          connected_title: "Stripe connection authorised."
+          connected_date: "_Connected:_ %{date}."
+          connected_test: "You're connected in test mode."
+          connect_title: "Take payments with Stripe"
+          connect_info: |
+            Take payments online using the <a href="https://stripe.com/gallery" target="_blank">Stripe payment gateway</a>. If you don't have an account with Stripe already then you will be asked a few simple questions so they can get you setup.
+          stripe_info: |
+            Your customers will **not** need to create a Stripe account to make a payment. The payment form simply asks for credit card details and nothing else. An option is given to remember their details so they won't have to enter them again on subsequent visits.
+            
+            _Note: Stripe will take a small fee plus a percentage of the payments you're taking._
+            
+            View the <a href="https://stripe.com/pricing" target="_blank">Stripe pricing details</a> on the Stripe website.
+          connect_with_stripe: "Connect with Stripe"
+          reauthenticate_stripe: "Reauthenticate Stripe"
+          close: "Done"
+          delete: "Remove Stripe option"
+          confirm_delete: "Are you sure you want to remove the connection to your Stripe account?"
+        destroy:
+          payment_option_removed: "Payment option removed"
+        callback:
+          connected: "You're now connected to Stripe"
+          connection_failed: "Connection failed"
+      stripe_gateway_detail_fees:
+        show:
+          edit: "Edit"
+          include_fees: "Include online payment fee?"
+          fees_information: "Any fees will be calculated from the total booking cost and will be added to the amount paid when paying online."
+        edit:
+          include_fees_label: "Add an online payment fee to bookings?"
+          include_fees_help: "If you'd like to recoup the cost of the payment gateway fees, then you can add an additional fee onto the total booking cost when your customers pay online."
+          base_cost_label: "Base fee cost"
+          base_cost_help: "The fixed amount added to all online payments."
+          fee_pcnt_label: "Percentage fee"
+          fee_pcnt_help: "A percentage of the total cost of the booking to be added on top of the base fee."
+          save: "Save"
+          cancel: "Cancel"
+        update:
+          fees_updated: "Fee settings updated"
+      worldpay:
+        details:
+          show:
+            edit: "Edit"
+            open: "Open Worldpay"
+            setup: "Setup"
+            selected_gateway: "Gateway status:"
+            pass_on_fees: "Add fees to booking:"
+            worldpay_test_mode: "Test mode:"
+          edit:
+            enabled: "Enabled:"
+            enabled_help: "Turn this gateway on or off."
+            worldpay_info: |
+              #### Setup a Worldpay account:
+              
+              1. **<a href="https://online.worldpay.com/signup/6e6b9266-4394-47e2-b305-19e5a2c4addd" target="_blank">Sign up to Worldpay</a>**
+              2. Copy the <a href="https://online.worldpay.com/settings/keys" target="_blank">TEST API keys</a> to this page.
+              3. Make a **test booking** using a dummy Visa card: `4444 3333 2222 1111` _(with any other details)_
+              4. Worldpay will contact you (normally within 30 minutes) to ask a few questions and start the **account activation** process.
+              5. Once the account is activated (normally within 24 hours) you can then enter your <a href="https://online.worldpay.com/settings/keys" target="_blank">LIVE API keys</a> and start taking live payments.
+            close: "Done"
+            delete: "Remove Worldpay option"
+            confirm_delete: "Are you sure you want to remove the connection to your Worldpay account?"
+          destroy:
+            payment_option_removed: "Payment option removed"
+        keys:
+          show:
+            title: "Worldpay API keys"
+            test_keys_title: "**TEST** keys:"
+            test_service_key: "Service:"
+            test_client_key: "Client:"
+            live_keys_title: "**LIVE** keys:"
+            live_service_key: "Service:"
+            live_client_key: "Client:"
+            not_set: "- keys not set -"
+            edit: "Edit"
+            set_keys: "Set keys"
+            pre_live_help: "**Note:** All payments will be in _TEST MODE_ until your LIVE Keys have been entered."
+            live_help: "Payments are now in **LIVE MODE**."
+          edit:
+            title: "Worldpay API keys"
+            test_service_key_label: "TEST Service Key"
+            test_service_key_ph: "T_S_1234abcd-1234-abcd-ab12-1234abcd1234"
+            test_client_key_label: "TEST Client Key"
+            test_client_key_ph: "T_C_1234abcd-1234-abcd-ab12-1234abcd1234"
+            live_service_key_label: "LIVE Service Key"
+            live_service_key_ph: "S_1234abcd-1234-abcd-ab12-1234abcd1234"
+            live_client_key_label: "LIVE Client Key"
+            live_client_key_ph: "C_1234abcd-1234-abcd-ab12-1234abcd1234"
+            worldpay_keys_help: |
+              Copy and paste the **API Keys** from the <a href="https://online.worldpay.com/settings/keys" target="_blank">API settings page</a> of your Worldpay account.
+            worldpay_live_keys_help: |
+              The **LIVE keys** will be provided once your Worldpay account is **fully activated**.
+            save: "Save API keys"
+            cancel: "Cancel"
+          update:
+            gateway_detail_updated: "Keys updated"
+        fees:
+          show:
+            edit: "Edit"
+            include_fees: "Include online payment fee?"
+            fees_information: "Any fees will be calculated from the total booking cost and will be added to the amount paid when paying online."
+          edit:
+            include_fees_label: "Add an online payment fee to bookings?"
+            include_fees_help: "If you'd like to recoup the cost of the payment gateway fees, then you can add an additional fee onto the total booking cost when your customers pay online."
+            base_cost_label: "Base fee cost"
+            base_cost_help: "The fixed amount added to all online payments."
+            fee_pcnt_label: "Percentage fee"
+            fee_pcnt_help: "A percentage of the total cost of the booking to be added on top of the base fee."
+            save: "Save"
+            cancel: "Cancel"
+          update:
+            fees_updated: "Fee settings updated"
+
     locations:
       index:
         title: "Locations"
@@ -645,16 +984,18 @@ en-GB:
         address_text: "Address"
         additional_info: "More information"
         entry_word: "entry"
-        used_on: "Used on %{n_entries}"
+        used_on: "Used on"
       edit:
         title: "Editing location"
       new:
         title: "Adding location"
       form:
         address_text_label: "Address"
-        address_text_help: ""
-        additional_info_label: "Additional info"
-        additional_info_help: ""
+        address_text_help: "The address text will be used to search for the location on the map. The map can then be altered and zoomed to pin-point the location."
+        additional_info_label: "Additional information"
+        additional_info_help: "This text will be shown beneath the address."
+        location_entries_label: "Entries for location"
+        location_entries_help: "Selected entries will be updated to use this location."
         map_help: "Marker position and zoom level will be saved."
         save: "Save changes"
         cancel: "Cancel"
@@ -689,7 +1030,7 @@ en-GB:
         attachment_deleted: "Attachment removed"
     form_field_types:
       index:
-        title: "Booking form fields"
+        title: "Booking fields"
         add_form_field_type: "Add new field type"
       list:
         attendee_fields: "Attendee details"
@@ -697,9 +1038,15 @@ en-GB:
         help_panel_text: |
           #### Booking fields
           
-          Attendee fields are used to collect information specific to a person and will be asked for each person on a booking.
+          There are two types of booking field:
           
-          Booking fields will only be requested once per booking so shouldn't be specific to an individual person.
+          - **Attendee** fields: are used to collect information _specific to a person_ and will be asked for _each attendee_ on a booking.
+          - **Booking** fields: will only be requested _once per booking_ so shouldn't be specific to an individual person.
+          
+          The fields with type **Attendee email** and **Full name** fields are special _attendee only_ fields and will be used to identify the attendee.
+          
+          Fields are setup here for the whole account and are not ordered. The fields are then selected and ordered on each specific entry.
+          
       show:
         edit: "Edit"
         data_type: "Type:"
@@ -721,21 +1068,257 @@ en-GB:
         field_updated: "Field updated"
       destroy:
         field_deleted: "Field removed"
+    discount_sets:
+      index:
+        title: "Discounts"
+        add_discount_set: "Add a new discount set"
+      list:
+        discount_sets: "Discount sets"
+        no_records: "No discounts have been setup"
+        help_panel_text: |
+          #### Setting up discounts
+          
+          Discounts are applied to the total cost of a booking calculated on the tickets or booking types selected.
+          
+          To setup a discount, create a new **Discount set** and then assign which tickets it applies to and what discounts apply.
+          
+          **Discount codes** and **Discount rules** can be assigned to the set and given a fixed amount or a percentage off.
+          
+          Sets and codes _can be deleted_ without affecting bookings. The bookings will still show what code or rule was used.
+      show:
+        edit: "Edit"
+        scope: "Applied to:"
+        codes: "Codes:"
+        rules: "Rules:"
+        account_wide: "Unrestricted discount set"
+        no_codes_or_rules: "No codes or rules assigned to this set!"
+        has_more: "..."
+      edit:
+        title: "Discount set"
+        save: "Save changes"
+        cancel: "Cancel"
+        delete: "Delete this discount set"
+        confirm_delete: "WARNING! This set of discount codes will be permanently removed! Are you sure you want to do this?"
+      create:
+        set_created: "Set added"
+      update:
+        set_updated: "Set updated"
+      destroy:
+        set_deleted: "Set removed"
+      form:
+        set_name_label: "Name the set"
+        set_name_help: "This is for your reference to identify the set."
+        add_restriction: "Add usage restriction"
+        add_codes: "Add discount codes"
+        add_rules: "Add discount rule"
+    discount_set_connections:
+      index:
+        apply_to_label: "Discount applies to:"
+        apply_to_all: "Unrestricted usage"
+        apply_to_help: "Restrict what entries, tickets or tags these codes can be applied to. The discount will be applied to the total cost of all included tickets."
+        delete_link_title: "Delete item"
+        confirm_delete: "Are you sure you want to remove this item?"
+      new:
+        save: "Add"
+        cancel: "Cancel"
+        connection_type_label: "Adding usage restriction:"
+        connection_type_options: 
+          entry: "Entry"
+          ticket_type: "Ticket"
+          tag: "Tag"
+        entry_item_label: "Select entry"
+        ticket_type_item_label: "Select ticket"
+        tag_item_label: "Select tag"
+        no_items_to_select: |
+          No entries are available for selection. Entries must be added before any discounts can be applied.
+      create:
+        created: "Added"
+      destroy:
+        destroyed: "Item removed"
+    discount_codes:
+      index:
+        codes_list: "Codes"
+        no_codes: "No codes have been added to this set"
+        delete_link_title: "Delete code"
+        confirm_delete: "Are you sure you want to remove this code?"
+        percent_off: "%{pcnt} off"
+        amount_off: "%{amount} off"
+        expires: "until %{date}"
+        usage_tip: "Number of times used over the usage limit."
+      new:
+        save: "Add codes"
+        cancel: "Cancel"
+        codes_list_label: "Add one or multiple codes"
+        codes_list_help: "Enter codes separated by commas or spaces. Codes can contain letters, numbers and dashes. Codes are case-insensitive."
+        codes_list_ph: "Space or comma separated discount codes..."
+        discount_type_label: "Type of discount:"
+        discount_type_options:
+          amount: "Fixed amount"
+          percent: "Percentage off"
+        discount_percent_label: "Discount percent"
+        discount_percent_help: "The discount will be applied to the total cost of all tickets that this set applies to."
+        discount_amount_label: "Discount amount"
+        discount_amount_help: "The discount amount will be taken off the total booking cost."
+        expires_at_label: "When are the codes valid until?"
+        expires_at_help: "Leave this blank if the codes never expire."
+        usage_limit_label: "How many times can the code be used?"
+        usage_limit_help: "Set this to 1 if it's a single use discount voucher code or leave blank for no limit."
+      create:
+        created: "Codes added"
+      destroy:
+        destroyed: "Code removed"
+      validation:
+        expires_at_format: "format is wrong"
+        list_format: "must be only letters, numbers, dashes, spaces, or commas."
+        codes_list_batch_size: "exceeds maximum batch size of %{size}."
+        single_code_format: "format: A single code cannot start or end with a dash."
+    discount_rules:
+      model:
+        summary:
+          bulk_discount: "Bulk %{n}+"
+      index:
+        rules_list: "Rules"
+        no_rules: "No rules have been added to this set"
+        delete_link_title: "Delete rule"
+        confirm_delete: "Are you sure you want to remove this rule?"
+        percent_off: "%{pcnt} off"
+        amount_off: "%{amount} off"
+        expires: "until %{date}"
+        bulk_discount: "Bulk buy: **%{n}+**"
+      new:
+        save: "Add rule"
+        cancel: "Cancel"
+        rule_type_label: "Rule type"
+        rule_boundry_label: "Minimum tickets"
+        rule_boundry_help: "How many tickets need to be booked at the same time to receive the automated discount?"
+        discount_type_label: "Type of discount:"
+        discount_type_options:
+          amount: "Fixed amount"
+          percent: "Percentage off"
+        discount_percent_label: "Discount percent"
+        discount_percent_help: "The discount will be applied to the total cost of all tickets that this set applies to."
+        discount_amount_label: "Discount amount"
+        discount_amount_help: "The discount amount will be taken off the total booking cost."
+        expires_at_label: "When is this rule valid until?"
+        expires_at_help: "Leave this blank if the rule will never expire."
+      create:
+        created: "Rules added"
+      destroy:
+        destroyed: "Rule removed"
+      validation:
+        expires_at_format: "format is wrong"
+        rules_list_batch_size: "exceeds maximum batch size of %{size}."
+        single_rule_format: "format: A single rule cannot start or end with a dash."
+
+  # Account
+
+  account:
+    heading:
+      title: "Manage account"
+
+    accounts:
+      show:
+        title: "Account"
+        details_title: "Details"
+        delete: "Delete your account..."
+        confirm_delete: "Proceed to the account removal page?"
+
+    business_details:
+      show:
+        edit: "Edit"
+        business_name: "Business/organisation name:"
+        business_website: "Website:"
+        business_telephone: "Contact number:"
+        business_address: "Address:"
+        help: |
+          The business or organisation name will be used as the 'from name' on emails sent from the system, and for the business name if you're taking payments.
+      edit:
+        title: "Account details"
+        business_name_label: "Business or organisation name"
+        business_name_help: ""
+        business_website_label: "Website address"
+        business_website_help: "Please enter the full URL including the http:// part."
+        business_telephone_label: "Contact telephone number"
+        business_telephone_help: ""
+        business_address_label: "Business or organisation address"
+        business_address_help: ""
+        save: "Save changes"
+        cancel: "Cancel"
+      update:
+        settings_updated: "Details updated"
+
+    administrators:
+      index:
+        title: "Administrators"
+      list:
+        you: "You"
+        invited: "Invited"
+        revoke_invite: "Cancel invitation"
+        revoke_invite_confirm: "Are you sure you want to cancel this invitation?"
+        remove_admin: "Remove from this account"
+        remove_admin_confirm: "You are about to remove this admin user from the account. They will NOT be sent any notification of their removal. They CAN be re-invited again at any time. Would you like to proceed?"
+        promote_admin: "Promote to account owner"
+        promote_admin_confirm: "You are about to give this admin user the rights to modify account settings. They will NOT be notified of this change. Would you like to proceed?"
+        account_owner: "Account owner"
+      invite:
+        email_label: "Invite another administrator"
+        email_ph: "admin@example.com"
+        email_help: "An email will be sent to the new user with a link to set a password and log in."
+        invite: "Send invite"
+        invite_help: "An email will be sent to the invitee with a link inviting them to join the account and set a password."
+        must_be_account_owner: |
+          #### Adding administrators
+          
+          Additional admin users can be added to the account, but only by an **account owner** user.
+
+    admin_users:
+      destroy:
+        admin_user_removed: "Admin removed"
+        last_admin_user: "Cannot remove last owner. Please promote another admin user first."
+      promote:
+        admin_user_promoted: "Admin user promoted"
+
+    admin_invites:
+      form:
+        not_authorised: "You are not authorised to send invitations for this account."
+        user_not_validated: "You must have set a password before you can invite other people. Use the 'forgot password' form on the login page. Thank you."
+      create:
+        invite_sent: "The invitation has been sent"
+      destroy:
+        invite_removed: "Invite removed"
+      accepter:
+        not_found: "The invite code is not valid. Perhaps it was cut and pasted incorrectly? Contact the account owner if you need a new invite."
+        invite_revoked: "The invite has been revoked. Contact the account owner for further details."
+        invite_processed: "You have already accepted this invite. Log in to access the account. If you've lost your password then use the 'forgotten password' page. Thanks."
+
     calendars:
       index:
         title: "Schedule pages"
         add_calendar: "Add new schedule page"
+        import_from_v1: "Import data from a Bookwhen v1 account..."
         none_in_list: |
           You don't have access to any schedules on this account.
           
           Please contact the account owner.
       show:
+        feeds_title: "Calendar feeds"
+        feeds_intro: |
+          View events in your own calendar (Google, Outlook etc) using the URLs below. View more details on [how to connect](http://support.bookwhen.com/article/27-connecting-to-calendar-feeds).
+        public_feed_title: "Public feed"
+        public_feed_link: "Open link"
+        private_feed_title: "Private feed"
+        private_feed_link: "Open link"
+        delete: "Delete schedule"
+        pre_delete_confirm: "You are about to be taken to the schedule deletion confirmation page to make sure you really mean to delete this schedule. Would you like to proceed?"
+      summary:
+        edit_title: "Edit title"
         public_page: "View public page"
         entry_count: "Total entries:"
         upcoming_event_count: "Upcoming events:"
         booking_count: "Bookings:"
-        delete: "Delete"
-        pre_delete_confirm: "You are about to be taken to the schedule deletion confirmation page to make sure you really mean to delete this schedule. Would you like to proceed?"
+      edit:
+        title_label: "Schedule title"
+        title_help: "This title is not shown on the public page. Its purpose is to simply distinguish this schedule from others."
       new:
         title: "Create a new schedule page"
         new_calendar_help: |
@@ -752,6 +1335,8 @@ en-GB:
         cancel: "Cancel"
       create:
         calendar_created: "New schedule added"
+      update:
+        calendar_updated: "Schedule updated"
       destroy:
         calendar_deleted: "Schedule removed!"
       confirm_delete:
@@ -771,10 +1356,54 @@ en-GB:
         cancel: "Cancel"
         word_validation: "You must type the word '%{word}' in capital letters to continue."
         confirmation_word: "DELETE"
+
+    calendars_import:
+      new:
+        title: "Import v1 account data"
+        import_instructions: |
+          You can import data from an original (v1) bookwhen account into this account. All data past and future will be imported.
+          
+          More details are available on the [support pages](http://support.bookwhen.com/article/8-importing-a-v1-account-into-the-new-bookwhen).
+      index:
+        title: "Import status"
+        refresh_note: |
+          _Please note:_ This page will automatically refresh when the status changes and you will be emailed once the process is complete. It can take over an hour to import thousands of bookings.
+          
+          Once complete, you can set your old public page to redirect to the new one using the 'Redirect to a bookwhen v2 page' setting at the bottom of the page here: https://v1.bookwhen.com/settings?on=theme
+          
+          Contact support@bookwhen.com if you need help. Thanks.
+      table:
+        v1_account_ref: "Import '%{ref}'"
+        v1_account_no_found: "V1 Account removed"
+        queued_at: "Joined queue %{time}"
+        started_at: "Started processing %{time}"
+        completed_at: "Completed %{time} (Took %{taken})"
+        account_title: "V1 Account"
+        status_title: "Status"
+        time_title: "Time"
+        messages_title: "Messages"
+      connect_form:
+        form_title: "Import a v1 account:"
+        connect_btn: "Start import"
+        email_label: "Email address for v1 account"
+        password_label: "V1 account password"
+        credentials_failed: "Couldn't connect to your v1 account using that email and password. Please check and try again."
+        duplicate_import: "This v1 account has already been imported or is in the import queue."
+        side_help: |
+          To start the import, enter the email and password used to log into your original bookwhen account and click _Start import_.
+          
+          Once connected you will be shown the import list with the status of the import.
+          
+          The process shouldn't take more than half an hour unless you have a lot of bookings (more than a few thousand).
+          
+          You will be notified by email when the import is complete.
+      create:
+        import_added_to_queue: Import added to queue
+
     calendar_users:
       list:
         people: "Admin users"
-        set_users: "Setup users"
+        set_users: "Set user roles"
         no_users: "No users assigned"
       form:
         save: "Save"
@@ -809,9 +1438,15 @@ en-GB:
       filter_results: "Search"
       options: "Options"
       reset: "Reset search criteria"
-      export_to_csv: "Export to CSV file"
+      reset_tip: "Set all search options back to blank, defaulting to complete bookings on current events only."
+      copy_emails: "View email list"
+      copy_emails_tip: "Open a popup window with a list of all emails in the currently selected bookings."
+      export_attendances: "Export attendances (CSV)"
+      export_attendances_tip: "Export a list of all attendance records for the given search filter."
+      export_bookings: "Export bookings (CSV)"
+      export_bookings_tip: "Export a list of all booking records for the given search filter."
     list:
-      ref: "Ref."
+      ref: "Booking"
       who: "Attendee"
       ticket: "Ticket"
       no_records: "No results"
@@ -819,6 +1454,25 @@ en-GB:
       na: "N/A"
       only_event: "Show attendances on this event only"
       only_entry: "Filter on this type of entry"
+    costs:
+      cost_amount_html: "Cost <span>%{amount}</span>"
+      owed_amount_html: "Owes <span>%{amount}</span>"
+      paid_online_amount_html: "Paid <span>%{amount}</span>"
+      paid_offline_amount_html: "Paid offline <span>%{amount}</span>"
+      credit_amount_html: "<span>%{amount}</span> refund"
+
+  attendance_emails:
+    index:
+      title: "Email list"
+      intro: "Listing booker and attendee email addresses for the current selection criteria."
+      no_emails: "No emails found"
+      close: "Close"
+      help_text: |
+        **Important:** When contacting your attendees, please use the <a href="https://en.wikipedia.org/wiki/Blind_carbon_copy" target="_blank">BCC</a> (Blind Carbon Copy) field to keep email addresses confidential.
+      copy_emails: "Copy emails"
+      copy_message: "Emails copied to paste buffer"
+      copy_message_fail: "Emails selected. Use Ctrl-C to copy."
+      close_button: "Close"
 
   # Entries
 
@@ -837,6 +1491,7 @@ en-GB:
   agenda_list:
     show:
       timezone_info: "Times shown in timezone: %{zone}"
+      calendar_feeds: "View calendar feeds"
     head:
       from_label: "From:"
       filter: ""
@@ -852,25 +1507,44 @@ en-GB:
     foot:
       show_more: "Show more..."
 
-  event_course_preview:
-    preview:
-      edit: "Edit"
+  event_preview:
+    show:
+      edit: "Edit entry"
       status: "Status:"
       offline: "Offline"
+      floating: "Not in schedule"
       tickets: "Tickets / Booking types"
-    course_dates:
+      view_attendances: "View bookings on this event"
+      view_attendances_tip: "Open the bookings list page filtered on the date/time and title of this event."
+      remove_event: "Remove this single event"
+      remove_event_tip: "Remove this single event from the schedule."
+      remove_event_confirm: "You are about to remove this single event from the schedule. The other events on the same entry will be left as they are. Would you like to continue?"
+      duplicate_entry: "Duplicate this entry"
+      duplicate_entry_tip: "Create a new copy of this entry."
+      duplicate_entry_confirm: "This will create a copy of the entry including all dates.\n\nIf you're wanting to simply add another date, then it's better to edit the entry and then add the new date on the 'Dates & Times' tab.\n\nWould you like to go ahead with the entry duplication?"
+      event_not_found: "Event not found"
+    connected_events:
+      title: "Course dates"
       course_summary_info: "**Course entry** with **%{total}** dates:"
-      infinite_course: "**WARNING!** This is a **course** but has infinite dates! Please set an end to the recurrence. In the meantime, only the first %{max_dates} dates will be presented for course booking on the public pages."
     details_summary:
       details: "Details"
       attachments: "Attachments"
       post_booking_details: "Post-booking details"
 
-  floating_dates:
-    preview:
-      edit: "Edit"
-      status: "Status:"
-      offline: "Not in schedule"
+  events:
+    remove:
+      event_removed: "Event removed"
+
+  waiting_list_places:
+    index:
+      name: "Name"
+      email: "Email"
+      number: "Number"
+      waiting_people: "Waiting list"
+      confirm_remove: "Are you sure you want to remove '%{name}' from the waiting list? They will NOT be notified of the removal."
+      export_list: "Export list to CSV"
+    destroy:
+      removed_flash: "Place removed"
 
   entries:
     controller:
@@ -893,31 +1567,32 @@ en-GB:
     destroy:
       entry_deleted: "Entry removed"
       delete_failed: "Deletion failed. Please contact support@bookwhen.com"
+    duplicate:
+      entry_duplicated: "Entry duplicated"
     details:
       published: "Published?"
       published_help: "Show this entry on the public pages?"
       title_label: "Title"
-      title_ph: "A short title for this entry"
+      title_ph: "Enter a short title for this entry"
       title_help: "The name of this entry, shown on the schedule list and as the page title."
-      tags_label: "Labels"
+      tags_label: "Tags"
       tags_ph: ""
-      tags_help: "Add labels (tags) to categorise entries for searching. These labels can be seen by your attendees."
+      tags_help: "Add tags to group your entries. These can be used to filter your schedule list, and discounts can be applied to particular tags."
       main_details_label: "Entry details"
       main_details_ph: ""
       main_details_help: |
         This is the main description for the entry. You can format the text using <a href="http://help.bookwhen.com/kb/setting-up-events/formatting-event-text" target="_blank">Markdown</a> or HTML.
       attachments_label: "Attachments"
       attachments_ph: ""
-      attachments_help: "Select previously uploaded documents by clicking in the field, or %{upload_link}. All documents can be viewed on your Settings > Attachments page."
+      attachments_help: |
+        Select previously uploaded documents by clicking in the field, or %{upload_link}. All documents can be viewed on your <a href="%{attachments_path}" target="_blank">attachments</a> page.
       upload_link_text: "upload a new document"
       post_booking_info_title: "Post-booking information"
       post_booking_details_label: "Additional details"
       post_booking_details_ph: ""
-      post_booking_details_help: "This will only be shown once the booking has been fully completed."
+      post_booking_details_help: "This will only be shown once the booking has been fully completed, and will be included in the confirmation email."
     schedules:
       add_another_schedule: "Add another date/time"
-      course_schedule_yn_label: "Is this a course?"
-      course_schedule_yn_help: "All dates will be booked as one item, and tickets relate to the course as a whole."
     ticket_types:
       add_another_ticket_type: "Add another booking/ticket type"
     admin:
@@ -937,7 +1612,7 @@ en-GB:
 
   entry_locations:
     edit:
-      location_label: "Location/Address"
+      location_label: "Location / Address"
       location_ph: ""
       location_help: 'Additional information about the location can be added on the <a href="%{locations_admin_path}" target="_blank">locations admin page</a>.'
       blank_location: ""
@@ -946,46 +1621,20 @@ en-GB:
 
   entry_settings:
     form:
-      course_entry_options_title: "Course entry options"
       spaces_options_title: "Attendee restrictions"
       show_and_book_options_title: "When to take bookings"
       completion_options_title: "When is a booking considered complete?"
-      cancellation_options_title: "Booking cancellation options"
       private_booking_options_title: "Restrict bookings"
-      allow_course_booking_after_started_ynd_label: "Allow course booking during course period?"
-      allow_course_booking_after_started_ynd_help: "Should people be able to book themselves onto the course even after the first date has passed?"
       maximum_spaces_label: "Maximum attendees:"
       maximum_spaces_help: "Set a limit to the total number of people who can book onto an event of this type. This works in conjunction with the specified number of tickets available."
-      minimum_spaces_label: "Minimum attendees:"
-      minimum_spaces_help: "This will trigger an automated cancellation of the event if the minimum number of people haven't registered."
-      auto_cancel_before_label: "When to trigger auto cancellation?"
-      auto_cancel_before_help: "How long before the event should the event be cancelled if the minimum attendees haven't been filled?"
-      waiting_list_enabled_ynd_label: "Enable the waiting list?"
-      waiting_list_enabled_ynd_help: "**This feature not yet enabled:** The waiting list collects would-be attendees' emails and informs them if a place becomes available."
-      waiting_list_gap_minutes_label: "Time to secure place:"
-      waiting_list_gap_minutes_help: "How long should someone be given to respond to the notification of a place becoming available before the next person on the waiting list is notified?"
       single_person_booking_ynd_label: "Enforce unique attendees?"
       single_person_booking_ynd_help: "The attendee email address will be used to enforce only one registration per attendee per event. The email field on the booking form must also be selected and set to mandatory."
       maximum_tickets_per_booking_label: "Maximum tickets per booking:"
       maximum_tickets_per_booking_help: "How many tickets can someone add to a booking for an event of this type?"
       event_shown_before_label: "When to show the event"
       event_shown_before_help: "How long before the event should it become visible on the public schedule?"
-      bookings_open_before_label: "When to start taking bookings"
-      bookings_open_before_help: "How long before the event will bookings open? This overrides specific ticket settings."
-      bookings_close_before_label: "When all bookings close"
-      bookings_close_before_help: "Set when bookings will no longer be able to be taken. This overrides specific ticket settings."
       online_payment_required_ynd_label: "Online payment required?"
       online_payment_required_ynd_help: "Set this option to _No_ if you would like to give the option to pay later. In that case, the _Settings > Payment Options > Offline payments_ method of payment text will be shown during checkout with a mandatory 'I agree to pay later' checkbox."
-      minutes_to_complete_booking_label: "Time to complete booking:"
-      minutes_to_complete_booking_help: "For how long should the place(s) be reserved whilst the booking is in progress?"
-      allow_customer_cancellation_ynd_label: "Allow attendee cancellations?"
-      allow_customer_cancellation_ynd_help: "Can attendees cancel their own bookings (prior to the cut-off point)? If not then they will have to contact the administrator to cancel the booking."
-      cancellations_until_before_label: "Cancellation cut-off point"
-      cancellations_until_before_help: "Up until what point before the event can attendees cancel their booking? Leave blank for any time before the event."
-      allow_payment_refund_ynd_label: "Allow payment refunds?"
-      allow_payment_refund_ynd_help: "Should attendees have the option of getting a refund for the booking? If not then they will receive credit that can be used for subsequent payments."
-      refunds_until_before_label: "Refund cut-off point"
-      refunds_until_before_help: "Up until what point before the event can attendees receive a refund their booking? Leave blank for any time."
       private_booking_password_label: "Private booking password"
       private_booking_password_help: "Require a password to be entered during the booking of this entry type."
 
@@ -1090,16 +1739,18 @@ en-GB:
         options_required: "At least one option is required for this field data type."
 
   tickets_helper:
-    no_title: "Untitled ticket"
+    tax_postfix: "+ %{pcnt} tax"
+    no_title: "Standard ticket"
     day: "day"
     cost: "Cost:"
     offline: "Offline"
     status: "Status: %{status}"
+    course_ticket: "This is a **course ticket** covering all %{event_count} events for this entry."
     available_num: "Number available:"
     available_from: "Available from:"
-    available_from_text: "**%{days}** before at **%{time}**"
     available_to: "Available until:"
-    available_to_text: "**%{days}** before at **%{time}**"
+    available_from_to_text: "**%{days}** before at **%{time}**"
+    available_from_to_text_no_time: "**%{days}** before"
     group_ticket: "Group ticket:"
     group_ticket_text_range: "**Yes** - between **%{min}** and **%{max}** people"
     group_ticket_text_fixed: "**Yes** - exactly **%{number}** people"
@@ -1118,6 +1769,7 @@ en-GB:
       show:
         status: "Status:"
         offline: "Offline"
+        edit: "Edit"
       new:
         save: "Add ticket"
         cancel: "Cancel"
@@ -1139,24 +1791,30 @@ en-GB:
         published_yn_help: "It will be hidden if this is not selected."
         ticket_name_label: "Booking/ticket type title"
         ticket_name_help: ""
+        ticket_name_ph: ""
         ticket_desc_label: "Additional information"
         ticket_desc_help: ""
         number_issued_label: "Number available"
-        number_issued_help: "Set a limit on how many of this booking/ticket type can be taken. To set a limit on the event size as a whole, use the main 'maximum attendees' setting on the entry settings tab."
+        number_issued_help: "Set a limit on how many of this booking/ticket type can be taken. To set a limit on the event size as a whole, use the main _maximum attendees_ setting on the entry settings tab."
         ticket_cost_label: "Cost of booking"
         ticket_cost_help: "Set a cost for this booking/ticket type. Leave blank if no payment required."
-        group_ticket_yn_label: "Group/family ticket?"
-        group_ticket_yn_help: "Can multiple people be added on this one booking/ticket type? Use this for giving discounts to people booking as a group."
+        course_ticket_yn_label: "Course ticket?"
+        course_ticket_yn_help: "A _course ticket_ enables people to book all dates in this entry using this single ticket. The entry must have multiple dates/times and cannot continue forever."
+        group_ticket_yn_label: "Group or family ticket?"
+        group_ticket_yn_help: "Can multiple people be booked on a single ticket? This allows you to set a fixed cost for a group."
         attendances_label: "How many people does this ticket cover?"
         group_min_help: "Minimum"
         group_max_help: "Maximum"
-        available_from_label: "When will this ticket be available from?"
-        available_from_days_before_help: "Days before the event. Blank if available from now."
+        available_from_label: "From when will this ticket be available?"
+        available_from_days_before_help: "Set if the ticket will _open_ at a particular point before an event."
         available_from_time_of_day_help: "When in the day?"
         available_to_label: "When will bookings of this type close?"
-        available_to_days_before_help: "Blank if available up to the start of the event."
+        available_to_days_before_help: "Restrict bookings too close to an event, or use this for _early bird_ type tickets."
         available_to_time_of_day_help: "When in the day?"
-        days_unit: "days"
+      validation:
+        course_min_event_check: "A course must have more than one event."
+        course_max_event_check: "A course cannot have more than %{max_events} events."
+        course_terminating_check: "The course schedule cannot be ongoing."
 
   # Schedule setup
 
@@ -1216,6 +1874,7 @@ en-GB:
         nth_weekday: "Same weekday"
       errors:
         at_least_one: "Please ensure that you have at least one date/time in this recurrence. Perhaps check the 'repeat until' date."
+        at_least_one_date_required: "At least one date must be entered in the dates and times section. If you want to remove this entry altogether, please use the delete entry option."
 
     exception_times:
       index:
@@ -1225,7 +1884,7 @@ en-GB:
       exception_time:
         confirm_remove: "This exception will be removed, and the date/time will appear back in the schedule. Is this what you want?"
 
-    occurrences:
+    events:
       recurrence_options:
         one_of_many_occurrence_options_title: 'This date/time is part of a **recurring schedule**.'
         edit_schedule: "_Edit_ the recurring schedule as a whole."
@@ -1252,9 +1911,8 @@ en-GB:
         occurrence_removed: "Date/time removed"
       split:
         occurrence_split: "Date/time separated"
-      attach_floating:
+      reattach:
         floating_attached: "Date/time re-added"
-
 
   views:
 
@@ -1269,6 +1927,8 @@ en-GB:
   # Active record
 
   activemodel:
+    validations:
+      not_valid_amount: "is not a valid amount."
     attributes:
       login_form:
         email_or_username: "Your email or username"
@@ -1304,6 +1964,7 @@ en-GB:
         ticket_cost: "Cost"
         currency_code: "Currency"
         number_issued: "Number available"
+        course_ticket_yn: ""
         group_min: ""
         group_max: ""
         available_from_days_before: ""
@@ -1312,6 +1973,23 @@ en-GB:
         available_to_time_of_day: ""
       delete_calendar_form:
         confirm: ""
+      discount_codes_form:
+        codes_list: "Codes"
+        discount_percent: "Percent"
+        formatted_discount_amount: "Amount"
+        expires_at: "Date"
+        usage_limit: "Usage limit"
+      gateway_fees_form:
+        base_cost: "Base cost"
+        fee_pcnt: "Fee percent"
+      discount_rules_form:
+        rule_boundry: "Ticket count"
+        discount_percent: "Percent"
+        formatted_discount_amount: "Amount"
+        expires_at: "Date"
+      gateway_fees_form:
+        base_cost: "Fee value"
+        fee_pcnt: "Percentage"
 
   activerecord:
     models:
@@ -1325,6 +2003,14 @@ en-GB:
       form_field_type:
         field_label: "Label"
         form_field_options: ""
+      default_entry_setting:
+        waiting_list_gap_minutes: "Minutes delay"
+        minutes_to_complete_booking: "Minutes to complete"
+        cancellations_until_duration_value: "Duration value"
+        refunds_until_duration_value: "Duration value"
+        cancellations_until_mins_into_day: "Time value"
+        refunds_until_mins_into_day: "Time value"
+        reminder_days_before: "Days"
     errors:
       messages:
         carrierwave_processing_error: 'Cannot resize image.'
@@ -1347,6 +2033,8 @@ en-GB:
       subject: "Bookwhen password reset"
     admin_invite:
       subject: "Bookwhen admin invite"
+    import_complete:
+      subject: "Bookwhen v1 account import complete"
 
   template_mailer:
     template_email:
@@ -1373,7 +2061,7 @@ en-GB:
         [ADDITIONAL_INFORMATION]
         
     booking_complete_admin:
-      subject_line: "[Bookwhen] New booking. Ref: [BOOKING_REF]"
+      subject_line: "[Bookwhen] New booking. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
       body_text: |
         New booking: [BOOKING_REF]
         
@@ -1389,7 +2077,7 @@ en-GB:
         [BOOKING_LOGIN_LINK]
         
     booking_cancelled_admin:
-      subject_line: "[Bookwhen] Booking cancelled. Ref: [BOOKING_REF]"
+      subject_line: "[Bookwhen] Booking cancelled. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
       body_text: |
         Booking [BOOKING_REF] has been cancelled.
         
@@ -1402,4 +2090,39 @@ en-GB:
         
         [EVENT_LIST]
         
-        Thank you!
+        
+        Thank you.
+        
+    waiting_list_added:
+      subject_line: "You're now on the waiting list"
+      body_text: |
+        You've been added to the waiting list for:
+        
+        [EVENT_DETAILS]
+        
+        You're [POSITION_ORDINAL] on the list. You will be notified by email if a place becomes available and will have [DELAY_PERIOD] to make a booking before the next person is notified.
+        
+        You can remove yourself from the list by following this link:
+        
+        [REMOVAL_LINK]
+        
+        Thank you and good luck!
+        
+    waiting_list_place_available:
+      subject_line: "A place has become available!"
+      body_text: |
+        A place has become available for:
+        
+        [EVENT_DETAILS]
+        
+        Follow this link to make a booking:
+        
+        [PUBLIC_LOGIN_LINK]
+        
+        The next person on the list will be contacted in [DELAY_PERIOD] so please book now to secure your place.
+        
+        
+        You can remove yourself from the list by following this link:
+        
+        [REMOVAL_LINK]
+        
