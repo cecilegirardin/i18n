@@ -1,0 +1,94 @@
+# Leave words in [BRACKETS] untranslated. Thank you.
+
+de:
+  
+  template_mailer:
+    template_email:
+      footer: "Bookings by https://bookwhen.com"
+    snippet:
+      additional_information: "Additional information:"
+
+  email_templates:
+    booking_complete:
+      subject_line: "Booking confirmation. Ref: [BOOKING_REF]"
+      body_text: |
+        Thank you for your booking.
+        
+        Your booking reference is: [BOOKING_REF]
+        
+        You can view your booking details using the link below:
+        
+        [BOOKING_LOGIN_LINK]
+        
+        Booking details:
+        
+        [BOOKING_DETAILS]
+        
+        [ADDITIONAL_INFORMATION]
+        
+    booking_complete_admin:
+      subject_line: "[Bookwhen] New booking. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      body_text: |
+        New booking: [BOOKING_REF]
+        
+        [BOOKING_DETAILS]
+        
+    booking_cancelled:
+      subject_line: "Booking cancelled. Ref: [BOOKING_REF]"
+      body_text: |
+        Booking [BOOKING_REF] has been cancelled.
+        
+        You can view the booking details using the link below:
+        
+        [BOOKING_LOGIN_LINK]
+        
+    booking_cancelled_admin:
+      subject_line: "[Bookwhen] Booking cancelled. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      body_text: |
+        Booking [BOOKING_REF] has been cancelled.
+        
+        [BOOKING_DETAILS]
+        
+    booking_reminder:
+      subject_line: "Upcoming event reminder"
+      body_text: |
+        Please don't forget about your upcoming booking(s):
+        
+        [EVENT_LIST]
+        
+        
+        Thank you.
+        
+    waiting_list_added:
+      subject_line: "You're now on the waiting list"
+      body_text: |
+        You've been added to the waiting list for:
+        
+        [EVENT_DETAILS]
+        
+        You're [POSITION_ORDINAL] on the list. You will be notified by email if a place becomes available and will have [DELAY_PERIOD] to make a booking before the next person is notified.
+        
+        You can remove yourself from the list by following this link:
+        
+        [REMOVAL_LINK]
+        
+        Thank you and good luck!
+        
+    waiting_list_place_available:
+      subject_line: "A place has become available!"
+      body_text: |
+        A place has become available for:
+        
+        [EVENT_DETAILS]
+        
+        Follow this link to make a booking:
+        
+        [PUBLIC_LOGIN_LINK]
+        
+        The next person on the list will be contacted in [DELAY_PERIOD] so please book now to secure your place.
+        
+        
+        You can remove yourself from the list by following this link:
+        
+        [REMOVAL_LINK]
+        
