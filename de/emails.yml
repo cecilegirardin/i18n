@@ -6,89 +6,89 @@ de:
     template_email:
       footer: "Bookings by https://bookwhen.com"
     snippet:
-      additional_information: "Additional information:"
+      additional_information: "Zusätzliche Informationen:"
 
   email_templates:
     booking_complete:
-      subject_line: "Booking confirmation. Ref: [BOOKING_REF]"
+      subject_line: "Buchungsbestätigung. Ref: [BOOKING_REF]"
       body_text: |
-        Thank you for your booking.
+        Vielen Dank für Ihre Buchung.
         
-        Your booking reference is: [BOOKING_REF]
+        Ihre Buchungsreferenz lautet: [BOOKING_REF]
         
-        You can view your booking details using the link below:
+        Sie können unter folgendem Link die Details der Buchung einsehen:
         
         [BOOKING_LOGIN_LINK]
         
-        Booking details:
+        Buchungsdetails:
         
         [BOOKING_DETAILS]
         
         [ADDITIONAL_INFORMATION]
         
     booking_complete_admin:
-      subject_line: "[Bookwhen] New booking. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      subject_line: "[Bookwhen] Neue Buchung. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
       body_text: |
-        New booking: [BOOKING_REF]
+        Neue Buchung: [BOOKING_REF]
         
         [BOOKING_DETAILS]
         
     booking_cancelled:
-      subject_line: "Booking cancelled. Ref: [BOOKING_REF]"
+      subject_line: "Buchung storniert. Ref: [BOOKING_REF]"
       body_text: |
-        Booking [BOOKING_REF] has been cancelled.
+        Ihre Buchung [BOOKING_REF] wurde storniert.
         
-        You can view the booking details using the link below:
+        Sie können unter folgendem Link die Details der Buchung einsehen:
         
         [BOOKING_LOGIN_LINK]
         
     booking_cancelled_admin:
-      subject_line: "[Bookwhen] Booking cancelled. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      subject_line: "[Bookwhen] Buchung storniert. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
       body_text: |
-        Booking [BOOKING_REF] has been cancelled.
+        Ihre Buchung [BOOKING_REF] wurde storniert.
         
         [BOOKING_DETAILS]
         
     booking_reminder:
-      subject_line: "Upcoming event reminder"
+      subject_line: "Erinnerung für anstehende Events"
       body_text: |
-        Please don't forget about your upcoming booking(s):
+        Bitte vergessen Sie nicht, dass Sie für folgende Events angemeldet sind:
         
         [EVENT_LIST]
         
         
-        Thank you.
+        Vielen Dank.
         
     waiting_list_added:
-      subject_line: "You're now on the waiting list"
+      subject_line: "Sie sind auf der Warteliste"
       body_text: |
-        You've been added to the waiting list for:
+        Sie wurden für die Warteliste für folgendes Event angemeldet:
         
         [EVENT_DETAILS]
         
-        You're [POSITION_ORDINAL] on the list. You will be notified by email if a place becomes available and will have [DELAY_PERIOD] to make a booking before the next person is notified.
+        Sie befinden sich an Position [POSITION_ORDINAL] auf der Liste. Sie werden per Email benachrichtigt, sobald ein Platz frei wird. Danach haben Sie [DELAY_PERIOD] Zeit, um eine Buchung vorzunehmen, ansonsten wird eine weitere Person auf der Warteliste benachrichtigt.
         
-        You can remove yourself from the list by following this link:
+        Sie können sich von der Warteliste abmelden unter folgendem Link:
         
         [REMOVAL_LINK]
         
-        Thank you and good luck!
+        Vielen Dank und viel Glück!
         
     waiting_list_place_available:
-      subject_line: "A place has become available!"
+      subject_line: "Ein Platz ist freigeworden!"
       body_text: |
-        A place has become available for:
+        Es ist ein Platz für das folgende Event freigeworden:
         
         [EVENT_DETAILS]
         
-        Follow this link to make a booking:
+        Bitte folgen Sie diesem Link, um eine Buchung vorzunehmen:
         
         [PUBLIC_LOGIN_LINK]
         
-        The next person on the list will be contacted in [DELAY_PERIOD] so please book now to secure your place.
+        Bitte buchen Sie schnellstmöglich, ansonsten wird in [DELAY_PERIOD] eine weitere Person auf der Warteliste informiert.
         
         
-        You can remove yourself from the list by following this link:
+        Sie können sich von der Warteliste abmelden unter folgendem Link:
         
         [REMOVAL_LINK]
         
