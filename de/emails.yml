@@ -31,6 +31,8 @@ de:
       body_text: |
         Neue Buchung: [BOOKING_REF]
         
+        [BOOKING_PAGE_LINK]
+        
         [BOOKING_DETAILS]
         
     booking_cancelled:
@@ -46,6 +48,8 @@ de:
       subject_line: "[Bookwhen] Buchung storniert. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
       body_text: |
         Ihre Buchung [BOOKING_REF] wurde storniert.
+        
+        [BOOKING_PAGE_LINK]
         
         [BOOKING_DETAILS]
         
