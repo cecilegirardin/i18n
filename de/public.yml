@@ -13,10 +13,6 @@
 
 de:
 
-  org:
-    name: "Bookwhen Ltd"
-    link: "http://bookwhen.com"
-
   controllers:
     concerns:
       site_concern:
@@ -73,7 +69,13 @@ de:
       complete: "Durchgeführt"
       exit: "Buchungssystem verlassen"
     footer:
-      copyright: "Copyright &copy; %{year} %{org_link}"
+      contact_title: "Kontakt"
+      follow_title: "Folgen"
+      payments_title: "Zahlungen"
+      cards_accepted: "Karten akzeptiert:"
+      view_refund_policy: "Sehen Sie unsere [rückerstattungspolitik](%{link})."
+      company_no: "Unternehmen:"
+      copyright: "Booking by %{org_link} &copy; %{year}"
       about: "Über Bookwhen"
       privacy: "Datenschutz"
       terms: "Nutzungsbedingungen"
@@ -89,6 +91,14 @@ de:
     destroy:
       session_destroyed: "Abgemeldet"
 
+  pages:
+    breadcrumb:
+      refund_policy: "Rückgaberecht"
+    show:
+      page_not_valid: "Seite nicht gefunden"
+    refund_policy:
+      refund_policy_title: "Rückgaberecht"
+
   agenda_list:
     show:
       from_date: "Ab %{date}"
@@ -99,6 +109,8 @@ de:
     row:
       fully_booked: "Ausgebucht"
       user_booked: "Sie haben diese Veranstaltung bereits gebucht"
+      course_duration_text: "Kurs: %{n_dates}"
+      dates_word_singular: "Tag"
     foot:
       show_more: "Mehr anzeigen..."
 
@@ -169,6 +181,9 @@ de:
     person:
       one: "1 Person"
       other: "%{count} Personen"
+    flash:
+      item_added: "Auswahl hinzugefügt"
+      item_removed: "Auswahl entfernt"
 
   events:
     preview:
@@ -194,7 +209,7 @@ de:
       details: "Details"
       attachments: "Dokumente"
     connected_events:
-      title: "Course dates"
+      title: "Kursdaten"
 
   waiters:
     create:
@@ -309,6 +324,7 @@ de:
         **Pay by card** using the button below.
       pay_by_card_button: "Pay by card"
       secure: "Secure payments by Stripe"
+      stripe_facebook_notice: "**Please note**: There is an issue affecting some payments via Facebook. If you see a **blank page** after clicking 'Pay by card', please browse back to this page, then **open the page in your usual browser** using the 3 dots option in the corner of the screen. Sorry for the inconvenience."
     worldpay_payment:
       payment_help: |
         Payments securely processed by Worldpay.
@@ -348,7 +364,7 @@ de:
       edit_url: "Change your page URL..."
       save_url_change: "Update URL"
       cancel_edit_url: "Cancel"
-      page_url_postfix_label: "Page URL"
+      page_url_postfix_label: "Public page URL"
       page_url_postfix_help: ""
       public_page_label: "Your **Public page URL** is:"
       html_links_label: "HTML code for your page:"
@@ -362,8 +378,8 @@ de:
       schedule_row_count_help: "How many rows would you like to show in the schedule list by default?"
       exit_url_label: "Exit URL"
       exit_url_help: "Enter a valid URL to show an 'Exit booking system' button on your page."
-      bg_colour_hex_label: "Background colour"
-      bg_colour_hex_help: "Use the colour picker to select a suitable background colour."
+      bg_colour_hex_label: "Header background colour:"
+      bg_colour_hex_help: "Note: This is only used if you have a logo and haven't set a background image."
       set_logo: "Set logo"
       delete_logo: "Delete"
       delete_logo_confirm: "Are you sure you want to remove the logo?"
