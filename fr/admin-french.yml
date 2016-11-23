@@ -1,0 +1,2519 @@
+en-GB:
+
+  org:
+    name: "Bookwhen Ltd"
+    address: |
+      Belsyre Court
+      57 Woodstock Road
+      Oxford, OX2 6HJ
+      Royaume Uni
+    email: "support@bookwhen.com"
+    phone: "+44 (0)1865 922 123"
+    vat_no: "GB186639851"
+    link: "https://bookwhen.com"
+
+  app:
+    name: "bookwhen"
+
+  controllers:
+    concerns:
+      subdomain_concern:
+        subdomain_not_valid: "Le compte '%{subdomain}' n'a pas été trouvé"
+      account_concern:
+        account_not_found: "Compte non trouvé"
+      session_concern:
+        person_not_found: "Vous devez être connecté(e) pour accéder à cette page"
+      authorisation_concern:
+        requires_user: "Vous devez être connecté(e) pour accéder à votre compte."
+        wrong_account: "Vous n'avez pas le droit d'accès à ce compte."
+
+  pundit:
+    default: "Cette action n'est pas autorisée"
+    account_policy:
+      access?: "Vous n'avez pas le droit d'accès à ce compte."
+      administer?: "Seuls les titullaires du compte peuvent compléter cette action"
+    calendar_policy:
+      access?: "Vous n'avez pas le droit d'accès à cet emploi du temps"
+      administer?: "Vous n'avez pas le droit d'accès pour mettre en place cet emploi du temps."
+      delete?: "Vous n'avez pas le doit d'accès pour supprimer cet emploi du temps!"
+    entry_policy:
+      administer?: "Vous n'avez pas le droit d'accès pour mettre en place cet emploi du temps."
+    booking_policy:
+      show?: "Utilisez le lien de la réservation ou connectez vous sur bookwhen.com pour voire la réservation."
+      cancel?: "Vous n'avez pas le doit d'accès pour supprimer cette réservation"
+      refund?: "Vous n'avez pas le doit d'accès pour rembourser cette réservation"
+      administer?: "Cette action n'est pas autorisée. Veuillez contacter le titulaire du compte."
+
+  layouts:
+    topbar:
+      dashboard: "Aperçu"
+      schedule: "Emploi du temps"
+      schedules: "Emplois du temps"
+      bookings: "réservations"
+      public_pages: "Pages Publiques"
+      public_page: "Page Publique"
+      setup: "Paramètres"
+      account: "Compte"
+      profile: "Votre profil"
+      account_details: "Paramètres du compte"
+      superuser: "super-utilisateur"
+      calendars: "Emploi du temps"
+      plan: "Type d'abonnement"
+      booking_options: "Options de réservation"
+      payment_gateways: "Paramètres du système paiements"
+      discounts: "Rabais"
+      locations: "Localisation"
+      attachments: "Pièces jointes"
+      form_field_types: "Les champs de la réservation"
+      imports: "L'importation du compte v1"
+      login: "Connexion"
+      logout: "Déconnexion"
+      help: "Aide"
+    footer:
+      copyright: "Droits d'auteur &copy; %{year} %{org_link}"
+      about: "A propos"
+      privacy: "Politique de confidentialité"
+      terms: "Conditions de service"
+    noscript:
+      main_banner_message: "Javascript doit être activé pour le bon fonctionnement de bookwhen."
+      base_error: "Veuillez activer javascript."
+
+  link_titles:
+    show_attendances: "Participation à cet événement"
+    show_entry: "Nombre de participants pour cette entrée"
+
+  seed:
+    payments:
+      offline_instructions: "Veuillez payer en espèces à l'arrivée.\n\nMerci."
+
+  money:
+    plus_vat: '%{amount} <span class="tax">+ VAT</span>'
+    plus_gst: '%{amount} <span class="tax">+ GST</span>'
+    plus_tax: '%{amount} <span class="tax">+ tax</span>'
+
+  # Processes
+
+  booking_process:
+    passwords_processor:
+      wrong_password: "Mauvais mot de passe."
+    booking_completer:
+      from_status_not_valid: "Le statut doit être Caisse."
+      password_not_entered: "Le mot de passe de cette réservation n'a pas été completée."
+      booking_form_not_complete: "Le formulaire de réservation n'a pas été complété."
+      person_booking_not_set: "La personne ayant effectué cette réservation n'est pas enregistrée."
+      payment_conditions_not_met: "Les conditions de paiement de la réservation n'ont pas été atteintes."
+    booking_canceller:
+      no_user: "Un utilisateur doit être spécifié pour annuller une réservation."
+      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuller cette réservation."
+      bad_status: "Le statut de la réservation doit être complet pour qu'elle puisse être annullée."
+    booking_deleter:
+      no_user: "Un utilisateur doit être spécifié pour annuller une réservation."
+      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuller cette réservation."
+      bad_status: "Veuillez annuller la réservation avant de la supprimer."
+      has_payment: "Vous ne pouvez supprimer les réservations qui été payées en linge."
+    booking_refunder:
+      no_user: "Un utilisateur doit être spécifié pour rembourser une réservation."
+      failed_policy: "L'utilisateur spécifié n'a pas la permission de rembourser cette réservation."
+      no_refundable_payments: "Cette réservation n'a pas de paiements remboursables."
+    booking_ticket_builder:
+      bad_event_ticket: "Le billet '%{ticket}' a des dates multiples, mais n'est pas pour un cours."
+
+  booking_ticket_process:
+    booking_ticket_changer:
+      no_user: "Un utilisateur doit être spécifié pour modifier un billet."
+      failed_policy: "Les modifications ne sont pas permises pour ce billet. Veuillez contacter l'organisateur de l'événemment."
+      same_ticket_not_allowed: "La date sélectionnée est la même que le billet actuel."
+      selected_date_full: "La date sélectionnée n'a pas de places disponibles pour le(s) participant(s)."
+      ticket_outside_date_range: "Le billet n'est pas disponible pour la date sélectionnée car elle est en dehors des dates proposées."
+      ticket_sold_out: "Il ne reste plus assez de billets de ce type sur les dates sélectionnées."
+      full_postfix: " - plus d'espace"
+    booking_ticket_canceller:
+      no_user: "Un utilisateur doit être spécifié pour annuller un billet."
+      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuller ce billet"
+      user_cancellation_not_allowed: "Veuillez contacter l'organisateur de l'événemment pour annuller cette réservation."
+      past_cancellation_cutoff: "Les annulations ne sont plus permises. Veuillez contacter l'organisateur de l'événemment."
+    booking_ticket_refunder:
+      no_user: "Un utilisateur doit être spécifié pour rembourser un billet."
+      user_refund_not_allowed: "Veuillez contacter l'organisateur de l'événemment pour une demmande de remboursement pour cette réservation."
+      past_refund_cutoff: "Les annulations ne sont plus permises. Veuillez contacter l'organisateur de l'événemment."
+
+  booking_spaces_checker:
+    attendee: "Participants"
+    multiple_spaces: "Seulement %{n_spaces} places sont disponibles!"
+    one_space: "Une seule place disponible!"
+    no_spaces: "Cet évennement est au complet."
+    overbooking: "Ceci engendrerait une surréservation de '%{title}' -- ajouter %{n_attendees} mais %{spaces_remaining}" 
+
+  waiting_list:
+    event_not_found: "L'événemment '%{id}' n'est pas trouvé."
+    name_required: "Un nom est requis pour la liste d'attente."
+    email_invalid: "L'addresse email n'est pas valide."
+    email_already_used: "Cet email est déjà sur la liste d'attente. Vous serez informé(e) dès qu'une place se libère. Merci."
+
+  applied_discount:
+    code_note: "Code '%{code}' utilisé pour un rabais de %{value}."
+    rule_note: "%{value} de rabais pour la '%{rule}' règle de rabais."
+
+  # Lookups
+
+  general:
+    is_yes: "Oui"
+    is_no: "Non"
+    is_na: "n/a"
+    is_default: "Défaut: %{setting}"
+    active: "Actif"
+    disabled: "Désactivé"
+    btn_saving: "Sauvegarde..."
+    please_wait: "Veuillez patienter..."
+    show_more_text: "[Voir plus]"
+    cancel_btn: "Annuller"
+    unnamed_person: "Le nom n'a pas été donné."
+
+  lookups:
+    booking:
+      status:
+        basket: "Panier"
+        checkout: "Caisse"
+        complete: "Opération complétée"
+        cancelled: "Annulé"
+    attendance:
+      status:
+        basket: "Panier"
+        checkout: "Caisse"
+        pending: "En attente"
+        complete: "Opération complétée"
+        cancelled: "Annulé"
+    sent_email:
+      template_type:
+        booking_complete: "Réservation complétée (Participant)"
+        booking_complete_admin: "Réservation complétée (Admin)"
+        booking_cancelled: "Réservation annullée (Participant)"
+        booking_cancelled_admin: "Réservation annullée (Admin)"
+        ticket_cancelled: "Billet annullé (Participant)"
+        ticket_cancelled_admin: "Billet annullé (Admin)"
+        ticket_changed: "Billet modifié (Participant)"
+        ticket_changed_admin: "Billet modifié (Admin)"
+        booking_reminder: "Rappel de la réservation"
+        waiting_list_added: "Liste d'attente - ajoutée"
+        waiting_list_place_available: "Liste d'attente - place disponible"
+    recurrence_form:
+      recurrence_type:
+        minutely: "Répétez cette action au bout de quelques minutes"
+        hourly: "Répétez cette action au bout de quelques heures"
+        daily: "Répétez cette action tous les jours"
+        weekly: "Répétez cette action toutes les semaines"
+        monthly: "Répétez cette action tous les mois"
+        yearly: "Répétez cette action tous les ans"
+      repeat_until_type:
+        forever: "Indéfiniment"
+        to_date: "Jusqu'à une date fixée"
+        occurrence_count: "Pour un nombre d'événemments"
+    entry_settings_form:
+      time_period_type:
+        minutes: "minutes"
+        hours: "heures"
+        days: "jours"
+        weeks: "semaines"
+        months: "mois"
+    time_period:
+      unit:
+        minute: "minutes"
+        hour: "heures"
+        day: "jours"
+        week: "semaine"
+        month: "mois"
+    form_field_type:
+      data_type:
+        user_email: "Email du participant"
+        full_name: "Nom complet"
+        phone_number: "Numéro de telephone"
+        address: "Adresse"
+        textbox: "Texte clair- une seule ligne"
+        textarea: "Texte clair - plusieurs lignes"
+        checkbox: "Cochez la case - Oui/Non"
+        date_select: "Sélection de la date"
+        dropdown: "Liste déroulante"
+        radio_options: "Choix multiples - sélectionnez une seule réponse"
+        check_boxes: "Choix multiples - sélectionner dans la liste ci-dessous"
+        email_address: "Adresse email"
+        url: "Adresse Web (URL)"
+    payment_gateway:
+      type:
+        offline: "Paiements hors ligne"
+        paypal: "PayPal"
+        stripe: "Stripe"
+        worldpay: "Worldpay"
+    offline_payment_detail:
+      payment_method:
+        cash: "Espèces"
+        cheque: "Chèque"
+        transfer: "Transfert"
+        other: "Autre"
+        import: "Importer"
+    v1_import_request:
+      import_status:
+        pending: "En attente"
+        queued: "En attente dans la file de traitement"
+        runway: "Vérifications de pré-traitement"
+        processing: "Traitement en cours"
+        success: "L'importation terminée"
+        failed: "L'importation a échoué! Veuillez contacter support@bookwhen.com"
+    discount_rule:
+      rule_type:
+        bulk_discount: "Rabais d'achat en bloc"
+    social_feed:
+      type:
+        facebook: "Facebook"
+        twitter: "Twitter"
+        instagram: "Instagram"
+        googleplus: "Google+"
+        youtube: "YouTube"
+    subscription_plan:
+      code:
+        free: "Gratuit"
+        lite: "Léger"
+        standard: "Standard"
+        plus: "Plus"
+        gold: "Super"
+        v1_basic: "Basic (v1 plan initial)"
+        v1_pro: "Pro (v1 plan initial)"
+        v1_unlimited: "Unlimited (v1 plan initial)"
+    subscription_plan_cost:
+      interval:
+        month: "Mensuel"
+        year: "Annuel"
+
+  duration:
+    days:
+      one: "1 jour"
+      other: "%{count} jours"
+    weeks:
+      one: "1 semaine"
+      other: "%{count} semaines"
+    start_and_end: "%{start_date_time} - %{end_time}"
+    start_and_duration: "%{start_date} (%{duration})"
+
+  summary_text:
+    course: "%{event_count} événements commençant %{start_datetime} - %{title}"
+    event: "%{start_datetime} - %{title}"
+
+  # Helpers
+
+  helpers:
+    schedules:
+      non_terminating_count: "&infin;"
+
+    time_period:
+      anytime: "Illimité"
+      period: "%{period} avant l'événement"
+      period_at_time: "%{period} avant l'événement à %{time}"
+      until_period: "Jusqu'à %{period} avant l'événement"
+      until_period_at_time: "Jusqu'à %{period} avant l'événement à %{time}"
+
+    # Kaminari
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "&nbsp;"
+          one: "&nbsp;"
+          other: "Affichage de <b>all %{count}</b> resultats"
+      more_pages:
+        display_entries: "Montrer les registres <b>%{first}</b> to <b>%{last}</b> of <b>%{total}</b>"
+
+  currencies:
+    aud: "Dollar Australien"
+    cad: "Dollar Canadien"
+    czk: "Couronne Tchèque"
+    dkk: "Couronne Danoise"
+    eur: "Euro"
+    hkd: "Dollar de Hong Kong"
+    huf: "Forint Hongrois"
+    jpy: "Yen Japonais"
+    nok: "Couronne Norvégienne"
+    nzd: "Dollar Néo Zélandais"
+    pln: "Zloty Polonais"
+    gbp: "Livre Sterling"
+    sgd: "Dollar de Singapour"
+    sek: "Couronne Suédoise"
+    chf: "Francs Suisses"
+    usd: "Dollar Américain"
+    zar: "Rand Sud Africain"
+    thb: "Baht Thaïlandais"
+    vnd: "Dong Vietnamien"
+    brl: "Real Brésilien"
+    ars: "Peso Argentin"
+    clp: "Peso Chilien"
+    inr: "Roupie Indienne"
+    ngn: "Naira Nigérian"
+    aed: "Dirhams EAU"
+    kwd: "Dinar Koweïtien"
+    sar: "Riyal Saoudien"
+
+
+  # Authentication and signup
+
+  sessions:
+    new:
+      login_box_title: "Connexion"
+      no_account: "Vous n'avez pas de compte? Inscrivez-vous maintenant!"
+      signup_link: "Créez un nouveau compte"
+    form:
+      ph_email_or_username: "email@example.com"
+      ph_password: ""
+      forgotten_password: "Mot de passe oublié?"
+      remember: "Restez connecté sur cet ordinateur?"
+      login_button: "Connexion"
+    create:
+      welcome_back: "Bon retours"
+    destroy:
+      logged_out: "Vous êtes connecté(e)"
+
+  oauth:
+    sessions:
+      new:
+        login_box_title: "Connexion"
+      form:
+        ph_email_or_username: "email@example.com"
+        ph_password: ""
+        forgotten_password: "Oublié votre mot de passe?"
+        remember: "Restez connecté sur cet ordinateur?"
+        login_button: "Connexion"
+
+  passwords:
+    new:
+      forgot_password_title: "Retrouvez votre mot de passe"
+      back_to_login: "Retourner à"
+      login_link: "Page de connexion"
+    edit:
+      reset_password_title: "Définition d'un nouveau mot de passe"
+    create:
+      reset_code_sent: "Un code de réinitialisation du mot de passe vous a été envoyé"
+    update:
+      password_set: "Votre nouveau mot de passe a été défini"
+    request_form:
+      ph_email_or_username: "email@example.com"
+      send_button: "Envoyez le code de réinitialisation"
+      fail_not_found: "Email ou nom d'utilisateur non trouvé. Veuillez contacter support@bookwhen.com"
+    reset_form:
+      ph_password: ""
+      remember: "Restez connecté sur cet ordinateur?"
+      save_button: "Sauvegardez le mot de passe & la connection"
+      password: "Définition d'un nouveau mot de passe"
+      password_confirmation: "Retaper le mot de passe"
+      invalid_token: "Le jeton de réinitialisation n'est pas valide. Essayez d'en demander un nouveau, sinon contacter support@bookwhen.com"
+
+  login:
+    fail_auth: "Votre mot de passe n'est pas reconnu. Veuillez réessayer ou utiliser le lien mot de passe oublié."
+    fail_not_found: "Email ou nom d'utilisateur non trouvé."
+
+  booking_logins:
+    invalid_token: |
+      ## Login token not valid
+      
+      Le lien de réservation n'est pas valide. Veuillez contacter l'organisateur avec la référence de votre réservation. Merci.
+    calendar_deleted: |
+      ## Login token no longer valid
+      
+      La page que vous avez utilisé pour faire votre réservation a été retirée. Vous devez vous connecter à votre portail web de réservation pour accéder à votre réservation: https://bookings.bookwhen.com/login
+      
+  person_logins:
+    invalid_token: |
+      ## Login token not valid
+      
+      Ce lien n'est pas valide. Il peut avoir expiré. Veuillez contacter l'organisateur. Merci.
+
+  signups:
+    new:
+      signup_box_title: "Inscrivez-vous"
+      have_account: "Vous avez déjà un compte?"
+      login_link: "Connexion"
+    form:
+      email_label: "Votre adresse email"
+      subdom_code_label: "Choisissez un nom de compte"
+      subdom_code_ph: ""
+      timezone_name_label: "Selectionnez votre fuseau horaire local"
+      signup_button: "Créez un compte"
+      signup_button_wait: "Création du compte..."
+      email_ph: "nom@example.com"
+      terms_of_service: "Acceptez les Conditions de Service"
+    show:
+      title: "Activation requise"
+      message: |
+        Un email a été envoyé à **%{email_address}**.
+        
+        Veuillez suivre le lien dans le email pour définir un mot de passe et accéder à votre compte.
+      not_found: |
+        Il y a eu un problème lors de la création de votre compte.
+        
+        Veuillez contacter l'équipe de support: support@bookwhen.com
+        
+  activate_accounts:
+    edit:
+      activate_account_title: "Définir un mot de passe"
+    update:
+      activated: "Votre nouveau mot de passe a été défini."
+    activate_account_form:
+      ph_password: ""
+      remember: "Restez connecté sur cet ordinateur?"
+      save_button: "Activer votre compte."
+      password: "Entrez un mot de passe"
+      password_confirmation: "Retaper le mot de passe"
+      invalid_token: "Le jeton d'activation n'est pas valide. Veuillez contacter l'équipe de support: support@bookwhen.com"
+
+  process_admin_invites:
+    edit:
+      title: "Se joindre à un compte"
+      join_account_message: "Vous avez été unvité(e) par **%{username}** a joindre le compte **%{subdom}** en tant qu'administrateur."
+      error_message: "Il y a un problème avec l'invitation:"
+    form:
+      ph_password: ""
+      accept_button: "Acceptez l'invitation"
+      password: "Définir un mot de passe"
+      password_confirmation: "Veuillez retapez le mot de passe"
+    update:
+      welcome_new_admin: "Bienvenu(e) à bookwhen"
+
+  # Admin
+
+  booking:
+    words:
+      person: "personne"
+    user_manager:
+      email_required: "Une adresse email est requise pour faire une réservation."
+      email_format: "Veuillez entrer une adresse email valide."
+      person_exists: "Un mot de passe a déjà été défini. Essayez de vous identifier."
+      password_too_short: "Le mot de passe est trop court."
+      bad_url: "URL '%{url}' n'est pas valide."
+    validation:
+      missing: "Ce champ est obligatoire."
+      format: "Ce format n'est pas correct."
+      unique_attendee: "Un(e) autre participant(e) a déjà réservé avec cette adresse email."
+      no_items: "Aucun article n'a été selectionné pour cette réservation."
+      ticket_title_blank: "Billet"
+      sold_out: "%{title} - épuisé."
+      too_many: "%{title} - %{remaining} disponibles, mais %{count} sélectionnées."
+      hit_limit: "%{title} - il ne reste plus de places disponibles."
+      over_limit: "%{title} - %{remaining} places disponibles, mais %{count} sélectionnées."
+      outside_range: "%{title} - le billet sélectionné a expiré. Veuillez le retirer de votre panier et réessayer."
+    ticket_set:
+      ticket_ord_info: "%{ord} billet"
+      with_name:
+        with_cost:
+          one: "%{name} @ %{price}"
+          multiple: "%{count} &times; %{name} @ %{price}"
+        no_cost:
+          one: "%{name}"
+          multiple: "%{count} &times; %{name}"
+      no_name:
+        with_cost:
+          one: "%{n_people} @ %{price}"
+          multiple: "%{n_people} @ %{price}"
+        no_cost:
+          one: "Réservation simple"
+          multiple: "%{count} billets"
+
+  bookings:
+    show:
+      title: "Réservation"
+      not_found: "La réservation n'a pas été trouvée"
+    booking_options:
+      options_title: "Options"
+      complete: "*Compléter* cette réservation"
+      complete_tip: "Les réservations en statut de processus de paiement ont surement étés abandonnées par le client. Vous pouvez forcer la réservation au statut 'complétée' en utilisant cete option. Le email de confirmation sera envoyé et le paiement (si il est requis) sera sauvegardé sous 'payer plus tard'."
+      complete_confirm: "Ceci forcera la réservation au statut 'complétée'. Si un paiement est requis, il sera sauvegardé sous 'payer plus tard'. Désirez vous continuer?"
+      cancel: "*Annuler* cette réservation"
+      cancel_tip: "La totalitée de la réservation peut être annulée. La personne ayant éfectué la réservation et les participants seront informés de l'annulation. Une annulation est irréversible."
+      cancel_confirm: "Êtes-vous sûr de vouloir annuller cette réservation? Cette action est irréversible!"
+      delete: "*Supprimer* cette réservation!"
+      delete_tip: "Les réservations annulées peuvent être supprimées si il n'y a pas de paiements en ligne en temps réel associés avec la réservation. Les données de la réservation seront définitivement supprimées. Cette action est irréversible!"
+      delete_confirm: "Êtes-vous sûr de vouloir annuller cette réservation? Cette action est irréversible!"
+    complete:
+      completed: "La réservation %{ref} est efectuée"
+    cancel:
+      cancelled: "La réservation %{ref} a été annullée"
+    destroy:
+      deleted: "La réservation %{ref} a été supprimée"
+    booking_status:
+      booking: "Ref:"
+      status: "Statut:"
+      booker: "Réservé par:"
+      time_ago: "Il y a %{timespan}"
+      owed_amount: "%{amount} a payer"
+      paid_amount: "%{amount} payé"
+      credit_amount: "%{amount} payé en trop"
+      reserved_text: |
+        Cette réservation sera maintenue pendant toute la procédure de paiement.
+        Cette réservation se termine en **%{timespan}**. 
+      not_reserved_text: |
+        Le délais de la procédure de paiement est écoulé.
+        Ces places ne sont plus réservées.
+      booker_not_set: "La personne effectuant la réservation n'a pas été enregistrée"
+      admin: "(Utilisateur Admin)"
+    email_status:
+      unconfirmed: "(Email non vérifié)"
+      inactive: "(Email incorrect)"
+    payments:
+      record_payment: "Sauvegarder les paiements" 
+    booking_fields:
+      title: "Champs de données de la réservation" 
+    booking_details:
+      edit: "Modifier"
+      group_ticket: "Billet de groupe"
+    dashboard_summary:
+      completed_time_ago: "il y a - %{timespan}"
+      booking_ref: "Ref:"
+      status: "Statut:"
+
+  invoices:
+    presenter:
+      value_label:
+        cost: "Cout des billets"
+        discounts: "Rabais"
+        fees: "Frais supplémentaires"
+        tax: "Taxe ajoutée"
+        cost_total: "Coût total"
+      fee:
+        bookwhen: "%{amount} à Bookwhen"
+        gateway: "%{amount} frais du portail de paiement"
+        offline: "%{amount} frais de paiement hors ligne"
+    summary_table:
+      costs_title: "Coûts"
+      payments_title: "Paiements"
+      total_title: "Total"
+    helper:
+      paypal_payment_label: "Paiements PayPal"
+      stripe_payment_label: "Paiements Stripe"
+      worldpay_payment_label: "Paiements Worldpay"
+      offline_cash_payment_label: "Paiements en espèces"
+      offline_cheque_payment_label: "Paiements par chèque"
+      offline_transfer_payment_label: "Payé par transfert"
+      offline_other_payment_label: "Paiement hors ligne (autre)"
+      offline_import_payment_label: "Importer le paiement"
+      paid_on: "Payé %{datetime}"
+      paid_on_and_by: "%{datetime} par %{email}"
+      view_payment: "Voir le paiement"
+      remove_payment: "Supprimer le paiement"
+      remove_payment_title: "Retirer ce paiement saisi manuellement."
+      remove_payment_confirm: "Veuillez confirmer que vous voulez retirer ce paiement saisi manuellement."
+      offline_details: "Payé %{datetime}"
+      total_outstanding: "Total des contributions arriérées"
+      total_overpaid: "Montant total surpayé"
+      total_paid: "Total des contributions arriérées"
+    pre_invoice_summary:
+      costs_title: "Coûts"
+      total_booking_cost: "Total des frais de réservation"
+
+  payments:
+    new:
+      amount_label: "Montant payé"
+      received_date_label: "Reçu le"
+      payment_method_label: "Méthode"
+      notes_label: "Notes"
+    destroy:
+      payment_removed: "Paiement supprimé"
+
+  ticket_sets:
+    edit:
+      cancel_ticket: "Annuller le billet"
+      cancel_ticket_confirm: "Le billet sera supprimé. La personne qui a fait la réservation et le participant seront tous deux informés du changement de la réservation. L'annulation du billet est irréversible.  Etes-vous sûr de vouloir continuer?"
+      cancel_past_cutoff: "Les annulations ne sont plus autorisées pour ce billet."
+      cancel_not_allowed: "Les annulations ne sont pas autorisées."
+      transfer_past_cutoff: "Les transferts ne sont plus autorisées pour ce billet."
+      change_date: "Changer la date"
+      close: "Fermer l'éditeur"
+      change_ticket: "Changer le billet"
+      ticket_type_label: "Sélectionnez l'événement et le type de billet"
+      ticket_date_label: "Sélectionnez la nouvelle date/l'horaire du billet"
+      save_change_ticket: "Sauvegarder"
+      save_change_ticket_confirm: "Ce billet sera annullé et un nouveau billet sera créé pour la nouvelle séléction. Les personnes concernées seront informés par email. Voudriez-vous continuer?"
+      cancel_change_ticket: "Fermer"
+      change_ticket_help: "Pour changer le billet / type d'événement, sélectionnez le billet / type d'événement dans le premier menu déroulant, puis sélectionnez la date dans le second menu déroulant."
+
+  tickets:
+    cancel:
+      cancelled: "Billet annullé"
+    update:
+      ticket_changed: "Billet changé"
+    status:
+      one_of_one_cancelled: "Annullé"
+      one_of_one_transferred: "Transféré"
+      both_cancelled: "Tous deux annullés"
+      both_transferred: "Tous deux transférés"
+      all_cancelled: "Tous annullés"
+      all_transferred: "Tous transférés"
+      n_cancelled: "%{count} annullés"
+      n_transferred: "%{count} transférés"
+      transfer: "Transférer"
+    people:
+      n_people: "%{count} personnes"
+    presenter:
+      deleted: "-- billet supprimé --"
+
+  dashboard:
+    show:
+      title: "Aperçu"
+      welcome_title: "Bienvenu à bookwhen"
+      welcome_text: |
+        Veuillez commencer par remplir la page de [l'emploi du temps](/schedules). Puis, cliquez sur le boutton ci-dessus pour accéder à votre Page Publique. Les réservations sont listées sur la page de [Réservations](/attendances). Vous y trouverez un aperçu des événements à venir et des réservations les plus récentes. 
+      upcoming_events: "Evénements prochains"
+      latest_bookings: "Reservations récentes"
+      blank_bookings: |
+        Vous n'avez pris aucunes réservations à ce jour.
+      update_date: "17 Juin 2016"
+      update_info: |
+        #### Les nouveautées 
+        
+        - Le nom du participant est dorénavant séparé en plusieures parties sur la fiche de réservation.
+        - [L'option annulation](/réglages/options) comprends dorénavant les transferts.
+        - Worldpay peut être utilisé pour [encaisser les payements](/réglages/options_payements).
+        - Réservations en bloc automatisé [règles de rabais](/réglages/rabais).
+        - Les [flux de données du calendrier](/compte/emploi du temps) sont disponibles en privé et publique.
+        
+        
+        <span class="footnote">Consultez la rubrique [aide](http://support.bookwhen.com) pour comprendre comment marche bookwhen, ou cliquez le point d'interrogation dans la barre supérieure. Vous pouvez aussi nous contacter à [support@bookwhen.com](mailto:support@bookwhen.com) ou utilisez l'icône popup aide, en bas à droite.</span>
+    trial_info:
+      helper:
+        ends_in_days: "IL vous reste **%{days} jours** sur votre periode d'essai."
+        ends_tomorrow: "Votre periode d'essai se terminera **demain à %{time}**!"
+        ends_today: "**Votre periode d'essai se terminera demain à %{time}**!" 
+        upgrade_discount: "Vous pouvez mettre à jour votre plan [voire les plans](%{link}) et vous receverez un **rabais de %{discount}** pour les inscriptions rapides si vous vous inscrivez aujourd'hui."
+        upgrade_no_discount_polite: "Voire [les plans](%{link}) pour les options et plus d'information."
+        upgrade_no_discount_cta: "**[Sélectionnez votre plan ici](%{link})**"
+        free_plan_info: "Suite à votre periode d'essai votre compte reveniendra à la version **plan gratuit**. Sur le plan gratuit, vous ne pourrez plus _prendre de paiements en ligne_ et certainnes _fonctions seront limitées_."
+
+  # User
+
+  user:
+    overview:
+      show:
+        title: ""
+        no_bookings: |
+          ## Aucune réservation n'a été trouvée
+          
+          Nous ne pouvons pas trouver de réservations associées à votre adresse email.
+          
+          Si vous essayez d'accéder à une de vos réservations, veuillez contacter support@bookwhen.com avec le numéro de référence de votre réservation.
+          
+          Merci.
+    bookings:
+      show:
+        title: "Réservation: %{ref}"
+        open_schedule: "Ouvrire l'emploi du temps'"
+      options:
+        options_title: "Options"
+        cancel: "Annuler une réservation"
+        cancel_confirm: "Êtes-vous sûr de vouloir annuller cette réservation? Cette action est irréversible!"
+      booking_status:
+        booking: "Ref:"
+        status: "Statut:"
+        booker: "Réservé par:"
+      booking_fields:
+        title: "Champs de données de la réservation?"
+      booking_details:
+        group_ticket: "Billet en groupe"
+      other_bookings:
+        other_bookings: "Autres réservations"
+        token_access_message: |
+          **Vous pouvez accéder à cette page par le lien qui vous a été envoyé dans le email de confirmation de la réservation.**
+          
+          Si vous avez **d'autre réservations**, vous pouvez les voire en vous [identifiant](%{login_path}) avec vore email et mot de passe.
+          
+          Utilisez la page [mot de passe oublié](%{forgot_password_path}) si vous n'avez pas encore sauvegardé un mot de passe.
+      cancel:
+        cancelled: "La réservation %{ref} a été annulée"
+
+    tickets:
+      update:
+        ticket_changed: "Billet changé"
+      cancel:
+        cancelled: "Billet annulé"
+
+    waiting_list_places:
+      show:
+        title: "Liste d'attente"
+        message: |
+          Vous êtes sur la position numéro %{position_ordinal} sur la liste pour:
+          
+          %{event_details}
+        remove_button: "Quitter la liste"
+        remove_button_confirm: "Veuillez confirmer que vous vouliez vous retirer de la liste d'attente."
+        waiting_list_token_not_valid: "Ce jeton n'est pas valide ou a été retiré."
+      destroy:
+        removed_flash: "Position retirée"
+        removed_message: "Vous avez été retiré de la liste."
+
+    payments:
+      return_failed: "Un problème technique s'est produit, et votre transaction n'a pas pu être effectuée. Veuillez contacter support@bookwhen.com"
+
+  # Settings
+
+  settings:
+    heading:
+      title: "Paramètres et options"
+    payment_options:
+      show:
+        title: "Paramètres de paiements"
+        payments_disabled: "**Note:** Les paiements sont désactivés sur le [plan gratuit](voire: /compte/plan)."
+    options:
+      show:
+        title: "Réglages des réservations"
+      update:
+        saved: "Réglages actualisés"
+      list:
+        edit_btn: "Modifier"
+      edit:
+        save_btn: "Sauvegarder"
+        cancel_btn: "Annuller"
+    waiting_lists:
+      show:
+        title: "Liste d'attente"
+        waiting_list_enabled: "Liste d'attente activée?"
+        waiting_list_delay: "Temps écoulé entre chaque email:"
+        help: |
+          Quand un événement est au complet, invitez les gens à ajouter leur nom à la liste d'attente en inscrivant leur nom, email, et numéro de téléphone.
+          
+          Si une place se libère, un email sera envoyé aux personnes sur la liste en ordre d'apparition, avec un délais déterminé entre chaque email jusqu'à ce que la place soit prise.
+      edit:
+        waiting_list_enabled_yn_label: "Liste d'attente activée?"
+        waiting_list_gap_minutes_label: "Temps écoulé entre chaque email"
+    checkouts:
+      show:
+        title: "Réservation"
+        checkout_period: "Réservation pendant le processus de paiement:" 
+        help: |
+          Ceci est le temps de réservation des places pendant que la réservation est en cours de paiement. Si la réservation est abandonnée, la place sera réservée jusqu'à l'expiration de ce délai.
+      edit:
+        minutes_to_complete_booking_label: "Réservé pour"
+    cancellations:
+      show:
+        title: "Annulation"
+        cancellation_enabled: "Permettre aux participants d'**annuller** leurs réservations?"
+        transfer_enabled: "Permettre les **transferts de billets**?"
+        ticket_event_transfer_enabled_text: "Permettre le transfert des évenements et des types de tickets."
+        help: |
+          Déterminer quand vos participants peuvent annuller leur réservation. Les administrateurs peuvent annuller à tous momments.
+          
+          Les transferts permettent de modifier la date ou le type d'événement du billet. Si le billet est payant, les transferts sont resteints aux billets de la même valeur ou d'une valeur moindre.
+      edit:
+        allow_customer_cancellation_yn_label: "Permettre l'annulation de la réservation / du billet?"
+        allow_customer_cancellation_help: "Notez: Les paramètres du processus d'annulation font référence aux participants. Les utilisateurs ayant un statut Admin peuvent toujours annuller les réservations ou transférer les billets."
+        cancellations_until_duration_value_label: "Annulations permises jusqu'à"
+        cancellations_until_help: "Combien de temps avant l'événement voudriez vous arrêter l'option 'annuller la réservation'? Vous pouvez fixer un horaire précis si la periode est au-delà de 24 h."
+        allow_ticket_date_transfer_yn_label: "Permettre le transfert de la date du billet?"
+        allow_ticket_date_transfer_help: "Voudriez-vous que vos participants puissent changer la date/heure de leurs billets?"
+        allow_ticket_event_transfer_yn_label: "Permettre le transfert a un autre évennement ou type de billet?"
+        allow_ticket_event_transfer_help_html: "Voudriez-vous permettre à vos participants de changer d'événement ou de type de billet? Les transferts de billets ne sont permis que pour des billets de la même valeur ou d'une valeur moindre. Aucune information complémentaire ne sera demmandée lors d'un transfert."
+        transfers_until_duration_value_label: "Transfers permis jusqu'à"
+        transfers_until_help: "Combien de temps avant l'événement voudriez vous arrêter l'option 'transfert de billets'?"
+        allow_payment_refund_yn_label: "Permettre le remboursement des annulations?"
+        refunds_disabled_help: "Le remboursement des paiements en ligne automatisé n'est acctuellement pas disponible sur Bookwhen. Nous y travaillons."
+        refunds_until_duration_value_label: "Remboursements permis jusqu'à"
+        refunds_until_help: "When to allow people to get a full refund of any amount paid for the booking. If refunds are not allowed then the booker will be left with credit on their account that can be used against future bookings."
+    reminders:
+      show:
+        title: "Rappels"
+        reminders_enabled: "Envoyer un email de rappel?"
+        help: |
+          Un email de rappel sera envoyé à vos participants avant l'événement, à un délai prédéterminé. 
+      edit:
+        reminder_email_yn_label: "Souhaitez-vous envoyer un email de rappel?"
+        reminder_days_before_label: "Quand souhaitez-vous envoyer un email de rappel?"
+        reminders_until_help: "Combien de temps avant l'événement souhaitez-vous envoyer l'email de rappel?"
+    account_payment_settings:
+      show:
+        currency_code: "Devise:"
+        selected_currency: "%{iso_code} - %{name}"
+        formatting_example: "Un exemple du format d'affichage: %{value}" 
+        sales_tax: "La taxe est inclue dans les coûts (VAT, GST, Sales Tax):"
+        sales_tax_help: "Cette actualisation n'affectera pas les réservations en cours."
+        refund_policy: "Politique de remboursement:"
+        no_policy: "Politique non énoncée." 
+        edit: "Modifier"
+      edit:
+        currency_code_label: "Devise"
+        currency_select_item: "%{iso_code} (%{example})"
+        currency_code_help: "Vous devez choisir une devise compatible avec votre passerelle de paiement."
+        tax_percentage_label: "Pourcentage de taxe"
+        tax_percentage_help: ""
+        refund_policy_label: "Politique de remboursement"
+        refund_policy_help: "Votre politique de remboursement sera affichée au pied de la page publique. Elle est requise par certainnes passerelles de paiements."
+        save: "Sauvegarder les changements"
+        cancel: "Annuler"
+      update:
+        settings_updated: "Paramètres actualisés"
+
+    payment_gateways:
+      index:
+        gateway_list_title: "Options de paiements"
+      payment_gateways:
+        set_enabled:
+          payment_gateway_enabled: "Passerelle de paiement activée"
+          payment_gateway_disabled: "Passerelle de paiement désactivée"
+      offline_gateway_details:
+        show:
+          edit: "Modifier"
+          setup: "Paramètres"
+        edit:
+          offline_payments: "Paiements hors ligne"
+          save: "Sauvegarder les détails de paiements"
+          cancel: "Annuller"
+          payment_instructions_label: "Instructions pour paiements hors ligne"
+          payment_instructions_help: "Information: comment votre client peut-il vous payer?\n\nCeci peut inclure les détails banquaires pour transferts en ligne, comment payer par chèque, informations sur les paiements en espèces, etc."
+          offline_info: |
+            L'option **Payer plus tard** sera proposée sur le formulaire de réservation si le parametre **Paiement en ligne requis**  est réglé sur **Non** sur le menu réglages.
+            
+            Si une option de paiement en ligne (Stripe ou Paypal) a aussi été configurée, les paiement hors et en ligne seront tous deux proposés sur le formulaire de paiement.
+            
+            Les réservations avec paiement hors ligne (a payer plus tard) seront sauvegardées comme 'effectués', mais avec somme due jusqu'à ce que vous enregistrez le paiement.
+        update:
+          payment_gateway_updated: "Option de paiement actualisée"
+      paypal_gateway_details:
+        show:
+          edit: "Modifier"
+          open: "Ouvrir PayPal"
+          setup: "Paramètres"
+          selected_gateway: "Statut de la passerelle de paiement:"
+          paypal_account_status: "Compte PayPal:"
+          refunds_authorised: "Remboursements autorisés:"
+          pass_on_fees: "Ajouter les frais à la réservation:"
+        edit:
+          enabled: "Option activée:"
+          enabled_help: "Activer ou désactiver la passerelle de paiement."
+          verify_account: "Sauvegarder vos paramètres de Paypal"
+          verifying: "Vérification..."
+          grant_permissions: "Autoriser les remboursements"
+          close: "Fini"
+          delete: "Retirer l'option PayPal"
+          confirm_delete: "Êtes-vous sûr de vouloir retirer les connexions à votre compte PayPal?"
+          paypal_account_email_label: "Votre adresse email PayPal"
+          paypal_account_email_help: "Entrer le email que vous utilisez pour vous connecter à PayPal."
+          paypal_account_email_verified: "Pour changer votre compte, supprimez le email actuel en utilisant le lien 'option retirez PayPal' ci-dessous, puis ajoutez le nouvel email."
+          paypal_account_name_label: "Votre nom d'utilisateur PayPal complet"
+          paypal_account_name_help: "Entrer le prénom et mon de famille exactement comme ils apparaissent dans votre compte PayPal. Ceci est requis par PayPal pour trouver votre compte."
+          first_name_ph: "Prénom"
+          last_name_ph: "Nom de famille"
+          business_name: "Nom de l'entreprise:"
+          account_type: "Type de compte:"
+          country_code: "Code pays:"
+          permissions_granted: "Autoriser les remboursements?"
+          refunds_allowed: "OUI - remboursements activés"
+          refunds_not_allowed: "NON - remboursements non permis"
+          refunds_not_allowed_help: "**Cliquez le boutton 'Autoriser les remboursements'** pour permettre a bookwhen de traiter les remboursements.\n\nVous serez redirigé sur PayPal où vous pouvez accorder la permission à bookwhen pour _'rembourser une opération spécifique'_."
+          paypal_info: |
+            Veuillez noter: Votre compte PayPal doit être **entièrement vérifié** avant qu'il puisse être connecté.
+            
+            Pour pouvoir prendre des paiement en ligne par carte, votre compte PayPal doit être du type **Business** plutôt que **Personnel**. Il est facile de changer d'un compte Personnel à un compte Business, sans frais supplémentaires.
+        destroy:
+          payment_option_removed: "L'option paiement a été retirée"
+        verify_account:
+          account_verified: "Compte PayPal vérifié"
+        permissions_callback:
+          permission_granted: "Remboursements désormais autorisés"
+          permission_not_granted: "Permission non accordée"
+      paypal_account:
+        email_not_valid: "PayPal n'a pas reconnu vos données. Veuillez vérifier que vous ayez utilisé le bon email et inscrit vos prénom et nom de famille exactement comme ils sont enregistrés dans votre compte. Merci."
+        account_not_verified: "Votre compte PayPal doit être entièrement vérifié pour pouvoir prendre des paiement en ligne. Veuillez vous connecter à votre compte PayPal pour completer le processus de vérification, puis revenez ici pour réessayer. Merci."
+        all_values_required: "L'addresse email, le prénom et le nom de famille doivent tous être entrés."
+      paypal_gateway_detail_fees:
+        show:
+          edit: "Modifier"
+          include_fees: "Inclure un frais de paiement en ligne?"
+          fees_information: "Pour les payements en ligne, ce frais sera calculé à partir du coût de réservation total et sera ajouté au montant total."
+        edit:
+          include_fees_label: "Ajouter un frais de paiement en ligne pour les réservations?"
+          include_fees_help: "Si vous souhaitez récupérer les frais de la passerelle de paiement, vous pouvez ajouter un frais supplémentaire de paiement en ligne."
+          base_cost_label: "Coût du tarif de base"
+          base_cost_help: "Un montant fixe ajoutée à tous paiements en ligne."
+          fee_pcnt_label: "Frais en pourcentage"
+          fee_pcnt_help: "Un pourcentage to coût total de la réservation sera ajouté sur le tarif de base."
+          save: "Save"
+          cancel: "Annuller"
+        update:
+          fees_updated: "Paramètres des frais mises à jour."
+      stripe_gateway_details:
+        show:
+          edit: "Modifier"
+          open: "Ouvrir Stripe"
+          setup: "Paramètres"
+          selected_gateway: "Statut de la passerelle de paiement:"
+          stripe_authorised_status: "Autorisé:"
+          pass_on_fees: "Ajouter des frais à la réservation:"
+          stripe_test_mode: "Mode d'essai:"
+        edit:
+          enabled: "Actif:"
+          enabled_help: "marche/arrêt de la passerelle de paiement."
+          connected_title: "Connection à Stripe autorisée."
+          connected_date: "_Connecté:_ %{date}."
+          connected_test: "Vous êtes connecté en mode d'essai."
+          connect_title: "Prendre vos paiements avec Stripe"
+          connect_info: |
+            Prendre vos paiements en ligne en utilisant la <a href="https://stripe.com/gallery" target="_blank">passerelle de paiement Stripe</a>. Si vous n'avez pas de compte avec Stripe, ils vous poserons quelques questions pour vous connecter.
+          stripe_info: |
+            Vos clients n'auront **pas** besoin d'un compte Stripe pour payer. Le formulaire de paiement ne demmande que les détails de carte bancaire. Une option pour mémoriser l'information est disponible, pour éviter d'entrer les détails de carte bancaire à chaque visite. 
+            
+            _Notez: Stripe prends un frais modique, de même qu'un pourcentage des paiements en ligne._
+            
+            Voire les <a href="https://stripe.com/pricing" target="_blank">renseignements sur les prix Stripe</a> sur le site web de Stripe.
+          connect_with_stripe: "Se connecter à Stripe"
+          reauthenticate_stripe: "procédure d'authentification Stripe"
+          authenticated_sub_account: "_Please note:_ You are authenticated as a sub-account of the **%{account}** master account. Additional online payment fees can be collected by the master account."
+          close: "Fini"
+          delete: "Retirer l'option Stripe"
+          confirm_delete: "Êtes-vous sur de vouloir supprimmer la connexion à votre compte Stripe?"
+        destroy:
+          payment_option_removed: "Option paiement retirée"
+        callback:
+          connected: "Vous êtes connecté à Stripe"
+          connection_failed: "La connexion a échoué"
+      stripe_sub_connect_settings:
+        show:
+          edit: "Éditer"
+          connect_settings: "Stripe réglages de connexion"
+          client_id_setup: "Paramètres: **%{setup}**"
+          connect_help: "Ces paramètres sont spécifiques au **compte principal de la franchise** pour permettre le transfert de frais au siège central."
+        edit:
+          stripe_secret_key_label: "Stripe Clef Secrète"
+          stripe_secret_key_help: "Copier la `Clef Secrète Live` de votre [Stripe API Keys](https://dashboard.stripe.com/account/apikeys)."
+          connect_client_id_label: "Connecter l'ID du Client"
+          connect_client_id_help: "Copier la **Production** `client_id` de vos [Réglages de connection Stripe](https://dashboard.stripe.com/account/applications/settings)."
+          redirect_uri_label: "Connecter Rediriger URI"
+          redirect_uri_help: "Copier ceci **à** la **Production** `Rediriger URI` dans votre [Réglages de connection Stripe](https://dashboard.stripe.com/account/applications/settings)."
+          save: "Sauvegarder"
+          cancel: "Annuller"
+        update:
+          settings_updated: "Connect settings updated"
+      stripe_gateway_detail_fees:
+        show:
+          edit: "Modifier"
+          include_fees: "Inclure un frais de paiement en ligne?"
+          fees_information: "Ce frais sera calculé à partir du coût de réservation total et sera ajouté au montant total des paiements en ligne."
+        edit:
+          include_fees_label: "Ajouter un frais de paiement en ligne à la réservation?"
+          include_fees_help: "Si vous désirez récupérer le coût de la passerelle de paiement, vous pouvez ajouter un frais au montant total des paiements en ligne."
+          base_cost_label: "Coût du tarif de base"
+          base_cost_help: "Un montant fixe ajoutée à tous paiements en ligne."
+          fee_pcnt_label: "Frais en pourcentage"
+          fee_pcnt_help: "Un pourcentage to coût total de la réservation sera ajouté sur le tarif de base."
+          save: "Enregistrer"
+          cancel: "Annuler"
+        update:
+          fees_updated: "Paramètres des frais mises à jour"
+      worldpay:
+        details:
+          show:
+            edit: "Modifier"
+            open: "Ouvrir Worldpay"
+            setup: "Paramètres"
+            selected_gateway: "Statut de la passerelle de paiement:"
+            pass_on_fees: "Ajuter vos frais à la réservation:"
+            worldpay_test_mode: "Mode d'essai:"
+          edit:
+            enabled: "Activé:"
+            enabled_help: "Activer ou désactiver cette passerelle de paiement."
+            worldpay_info: |
+              #### Créer un compte Worldpay:
+              
+              1. **<a href="https://online.worldpay.com/signup/6e6b9266-4394-47e2-b305-19e5a2c4addd" target="_blank">Créer un compte Worldpay</a>**
+              2. Copier les <a href="https://online.worldpay.com/settings/keys" target="_blank">clefs TEST API</a> à cette page.
+              3. Faire un **essai de réservation** en utilisant une carte de Visa fictive: `4444 3333 2222 1111` _(avec des informations fictives)_
+              4. Worldpay vous contactera (dans les 30 minutes qui suivent) pour vous poser quelques questions et commencer le processuss **d'activation du compte**.
+              5. Une fois que le compte est activaté (dans les 24 heures qui suivent) vous pouvez entrer vos <a href="https://online.worldpay.com/settings/keys" target="_blank">clefs API LIVE</a> et accepter vos paiements en directe. 
+            close: "Fini"
+            delete: "Retirer l'option Worldpay"
+            confirm_delete: "Êtes-vous sur de vouloir retirer la connexion à votre compte Worldpay?"
+          destroy:
+            payment_option_removed: "Option paiement supprimée"
+        keys:
+          show:
+            title: "Clefs API Worldpay"
+            test_keys_title: "Clefs d'**ESSAI**:"
+            test_service_key: "Service:"
+            test_client_key: "Client:"
+            live_keys_title: "Clefs **LIVE**:"
+            live_service_key: "Service:"
+            live_client_key: "Client:"
+            not_set: "- Clef non activée -"
+            edit: "Modifier"
+            set_keys: "Activer les clefs"
+            pre_live_help: "**Note:** Tous paiements seront en _MODE D'ESSAI_ jusqu'à ce que vos clefs LIVE soit sauvegardées."
+            live_help: "Payments désormais en **MODE LIVE**."
+          edit:
+            title: "Clefs API Worldpay"
+            test_service_key_label: "ESSAI Clef de Service"
+            test_service_key_ph: "T_S_1234abcd-1234-abcd-ab12-1234abcd1234"
+            test_client_key_label: "ESSAI Clef de Client"
+            test_client_key_ph: "T_C_1234abcd-1234-abcd-ab12-1234abcd1234"
+            live_service_key_label: "LIVE Clef de Service"
+            live_service_key_ph: "L_S_1234abcd-1234-abcd-ab12-1234abcd1234"
+            live_client_key_label: "LIVE Clef de Client"
+            live_client_key_ph: "L_C_1234abcd-1234-abcd-ab12-1234abcd1234"
+            worldpay_keys_help: |
+              Copier coller les **Clefs API** du <a href="https://online.worldpay.com/settings/keys" target="_blank">API settings page</a> de votre compte Worldpay.
+            worldpay_live_keys_help: |
+              La **Clef LIVE** sera disponible dès que votre compte Worldpay est **activé**.
+            save: "Sauvegarder les clefs API"
+            cancel: "Annuller"
+          update:
+            gateway_detail_updated: "Clefs mises à jour"
+        fees:
+          show:
+            edit: "Modifier"
+            include_fees: "Inclure un frais de paiement en ligne?"
+            fees_information: "Ce frais sera calculé à partir du coût de réservation total et sera ajouté au montant total des paiements en ligne."
+          edit:
+            include_fees_label: "Ajouter un frais de paiement en ligne à la réservation?"
+            include_fees_help: "Si vous désirez récupérer le coût de la passerelle de paiement, vous pouvez ajouter un frais au montant total des paiements en ligne."
+            base_cost_label: "Coût du tarif de base"
+            base_cost_help: "Un montant fixe ajoutée à tous paiements en ligne."
+            fee_pcnt_label: "Frais en pourcentage"
+            fee_pcnt_help: "Un pourcentage to coût total de la réservation sera ajouté sur le tarif de base."
+            save: "Sauvegarder"
+            cancel: "Annuller"
+          update:
+            fees_updated: "Paramètres des frais mises à jour"
+
+    locations:
+      index:
+        title: "Localisation"
+        add_location: "Ajouter une nouvelle localisation"
+        none_in_list: "Aucune localisation n'a été ajoutée jusqu'à présent"
+      list:
+        edit: "Modifier"
+        address_text: "Adresse"
+        additional_info: "Plus d'information"
+        entry_word: "entrée"
+        used_on: "Utilisé sur"
+      edit:
+        title: "Modifier la localisation"
+      new:
+        title: "Ajouter une localisation"
+      form:
+        address_text_label: "Adresse"
+        address_text_help: "Le texte de l'adresse sera utilisé pour chercher une localisation sur le plan. Le plan peut ensuite être modifié et agrandi pour préciser la localisation."
+        additional_info_label: "Information supplémentaire"
+        additional_info_help: "Ce texte sera affiché sous l'adresse."
+        location_entries_label: "Saisie des données pour la localisation"
+        location_entries_help: "Les données sélectionnées seront actualisées pour utiliser cette localisation."
+        map_help: " La position du marqueur et le niveau d'aggrandissement seront sauvegardés."
+        save: "Sauvegarder les modifications"
+        cancel: "Annuller"
+        delete: "Supprimer cette localisation"
+        confirm_delete: "Cette localisation sera aussi retirée de toutes les données. Êtes-vous sûr de vouloir continuer?"
+      update:
+        location_updated: "Localisation actualisée"
+      create:
+        location_created: "Localisation ajoutée"
+      destroy:
+        location_deleted: "Localisation supprimée"
+    attachments:
+      index:
+        title: "Pièces jointes"
+        add_attachment: "Ajouter une nouvelle pièce jointe"
+        none_in_list: "No attachments have been added yet"
+        click_title_to_edit: "Cliquer sur le titre du fichier pour modifier le texte."
+      list:
+        delete: "Supprimer"
+        delete_confirm: "Êtes-vous sur de vouloir supprimer ce fichier? Il sera aussi retiré de toute les entrées auquelles il est attaché."
+        entry_word: "entrée"
+        used_on: "Sur %{n_entries}"
+      new:
+        title: "télécharger les pièces jointes" 
+      form:
+        select_files: "Selectionner les pièces jointes a télécharger"
+        uploading: "Téléchargement en cours..."
+        done: "Téléchargement completé"
+      update:
+        attachment_updated: "Titre mis à jour"
+      destroy:
+        attachment_deleted: "Pièces jointes supprimées"
+    form_field_types:
+      index:
+        title: "Champs de réservation"
+        add_form_field_type: "Ajouter un nouveau type de fichier"
+      list:
+        attendee_fields: "Informations sur le participant."
+        booking_fields: "Détails de la réservation."
+        help_panel_text: |
+          #### Champs de réservation
+          
+          Il y a deux types de champs de réservation:
+          
+          - Les champs sur le **participant**: sont utilisés pour sauvegarder l'information _spécifique a une personne_ et les questions seront posées à _chaque participant_ de la réservation.
+          - Les champs sur la **réservation**: seront seulement requis _une fois par réservation_, donc ne seront pas spécifiques à une personne.
+          
+          Les champs du type **email du participant** et **Nom complet** sont des champs spécifiques aux _participants seulement_ et seront utilisés pour identifier les participants.
+          
+          Ici, les champs sont établis pour tout votre compte et ne sont dans aucun ordre particulier. Les champs seront ensuite sélectionnés et ordonnés pour chaque entrée.
+          
+      show:
+        edit: "Modifier"
+        data_type: "Type:"
+        entry_word: "entrée"
+        used_on: "Utilisé sur %{n_entries}"
+      new:
+        title: "Ajouter un type de champ"
+        save: "Créer un champ"
+        cancel: "Annuller"
+      edit:
+        title: "Modifier le type de champ"
+        save: "Actualiser le type de champ"
+        cancel: "Annuler"
+        delete: "Supprimer ce champ"
+        confirm_delete: "ATTENTION! Ce champs sera supprimé, ainsi que toutes les réponses qui y sont liées! Êtes-vous sur de vouloir continuer?"
+      create:
+        field_created: "Champ ajouté"
+      update:
+        field_updated: "Champ actualisé"
+      destroy:
+        field_deleted: "Champ supprimé"
+    discount_sets:
+      index:
+        title: "Rabais"
+        add_discount_set: "Ajouter un nouvel ensemble de rabais"
+      list:
+        discount_sets: "Ensemble de rabais"
+        no_records: "Aucun rabais n'a été configurée"
+        help_panel_text: |
+          #### Configurer vos rabais
+          
+          Les rabais sont appliqués au coût total d'une réservation, et calculés sur les billets ou types de réservations séléctionnés.
+          
+          Pour configurer un rabais, créez un nouveau **Ensemble de rabais** et préciser à quels tiquets il s'applique, ainsi que la quantitée du rabais a appliquer. 
+          
+          **Codes de rabais** et **Règles de rabais** peuvent être liés a un ensemble de rabais, et configurés en quantitée fixe ou en pourcentage.
+          
+          Les ensembles et codes de rabais peuvent être supprimés sans effets sur les réservations. Chaque réservation montrera néanmoins les codes ou régles de rabais qui ont étés utilisés.
+      show:
+        edit: "Modifier"
+        scope: "Appliqué à:"
+        codes: "Codes:"
+        rules: "Règles:"
+        account_wide: "Ensemble de rabais sans restrictions"
+        no_codes_or_rules: "Aucun codes ou règles n'ont étés liés à cet ensemble de rabais!"
+        has_more: "..."
+      edit:
+        title: "Ensemble de rabais"
+        save: "Sauvegarder les modifications"
+        cancel: "Annuler"
+        delete: "Supprimer cet ensemble de rabais"
+        confirm_delete: "ATTENTION! Cet ensemble de codes de rabais sera définitivement supprimé! Êtes-vous sur de vouloir continuer?"
+      create:
+        set_created: "Ensemble ajouté"
+      update:
+        set_updated: "Ensemble mis à jour"
+      destroy:
+        set_deleted: "Ensemble supprimé"
+      form:
+        set_name_label: "Donner un nom à cet ensemble"
+        set_name_help: "Ceci est un identifiant de cet ensemble, pour votre référence."
+        add_restriction: "Ajouter les restrictions d'usage"
+        add_codes: "Ajouter les codes de rabais"
+        add_rules: "Ajouter les règles de rabais"
+    discount_set_connections:
+      index:
+        apply_to_label: "Rabais applicable à:"
+        apply_to_all: "Usage sans restrictions"
+        apply_to_help: "Restrictions sur les entrées, billets ou marqueurs sur lesquels ces codes s'appliquent. Le rabais sera appliqué au coût total des billets inclus."
+        delete_link_title: "Article supprimé"
+        confirm_delete: "Êtes-vous sur de vouloir supprimmer cet article?"
+      new:
+        save: "Ajouter"
+        cancel: "Annuler"
+        connection_type_label: "Ajout des restrictions d'usage:"
+        connection_type_options: 
+          entry: "Entrée"
+          ticket_type: "Billet"
+          tag: "Marqueur"
+        entry_item_label: "Sélectionner l'entrée"
+        ticket_type_item_label: "Sélectionner le billet"
+        tag_item_label: "Sélectionner le marqueur"
+        no_items_to_select: |
+          Aucune entrée n'est disponible pour cette sélection. Veuillez ajouter une entrée avant d'y appliquer un code de rabais.
+      create:
+        created: "Ajouté"
+      destroy:
+        destroyed: "Article retiré"
+    discount_codes:
+      index:
+        codes_list: "Codes"
+        no_codes: "Aucun code n'a été ajouté à cet ensemble"
+        delete_link_title: "Supprimer ce code"
+        confirm_delete: "Êtes-vous sur de vouloir supprimer ce code?"
+        percent_off: "%{pcnt} en moins"
+        amount_off: "%{amount} en moins"
+        expires: "jusqu'au %{date}"
+        usage_tip: "Nombre de fois utilisés au delas de la limite d'usage."
+      new:
+        save: "Ajouter codes"
+        cancel: "Annuler"
+        codes_list_label: "Ajouter un ou plusieurs codes"
+        codes_list_help: "Séparez les codes par des vigules ou des espaces. Les codes peuvent contenir des lettres, numéros, et tirets. Les codes ne tiennent pas compte de la casse."
+        codes_list_ph: "Codes de rabais séparés par une virgule ou un espace..."
+        discount_type_label: "Type de rabais:"
+        discount_type_options:
+          amount: "Montant fixé"
+          percent: "Pourcentage en moins"
+        discount_percent_label: "Pourcentage de rabais"
+        discount_percent_help: "Ce rabais sera appliqué au coût total des billets inclus."
+        discount_amount_label: "Montant du rabais"
+        discount_amount_help: "Le rabasi sera retiré du coût total de la réservation."
+        expires_at_label: "Jusqu'à quand ces codes seront-ils valables?"
+        expires_at_help: "Laisser cette case vide si les codes n'ont pas de date d'expiration."
+        usage_limit_label: "Combien de fois peut on utiliser un code?"
+        usage_limit_help: "Entrer 1 si c'est un code de rabais a utiliser une seule fois, ou laisser la case vide si il n'y a pas de limites au nombre de fois ce code de rabais peut être utilisé."
+      create:
+        created: "Codes ajoutés"
+      destroy:
+        destroyed: "Code retirés"
+      validation:
+        expires_at_format: "mauvais format"
+        list_format: "doit être composé de lettres, numéros, tirets, espaces, ou virgules."
+        codes_list_batch_size: "Au-delà de la taille maximum du lot, %{size}."
+        single_code_format: "Format: Une règle seule ne peut pas commencer ou se terminer avec un tiret."
+    discount_rules:
+      model:
+        summary:
+          bulk_discount: "En gros %{n}+"
+      index:
+        rules_list: "Règles"
+        no_rules: "Aucune règle n'a été ajoutée à cet ensemble"
+        delete_link_title: "Supprimer la règle"
+        confirm_delete: "Êtes-vous sur de vouloir supprimer cette règle?"
+        percent_off: "%{pcnt} en moins"
+        amount_off: "%{amount} en moins"
+        expires: "jusqu'au %{date}"
+        bulk_discount: "Achat en gros: **%{n}+**"
+      new:
+        save: "Ajouter une règle"
+        cancel: "Annuler"
+        rule_type_label: "Type de règle"
+        rule_boundry_label: "Minimum de billets"
+        rule_boundry_help: "COmbien de tickets doivent être réservés en même temps pour automatiquement recevoir un rabais?"
+        discount_type_label: "Type de rabais:"
+        discount_type_options:
+          amount: "Montant fixe"
+          percent: "Pourcentage en moins"
+        discount_percent_label: "Pourcentage de rabais"
+        discount_percent_help: "Le rabais sera appliqués au coût total de tous les billets de cet ensemble."
+        discount_amount_label: "Montant du rabais"
+        discount_amount_help: "Le montant du rabais sera retiré du coût total de la réservation."
+        expires_at_label: "Jusqu'à quand cette règle sera-elle valable?"
+        expires_at_help: "Laisser cette case vide si cette règle n'a pas de date d'expiration."
+      create:
+        created: "Règles ajoutées"
+      destroy:
+        destroyed: "Règles supprimées"
+      validation:
+        expires_at_format: "Mauvais format"
+        rules_list_batch_size: "Au-delà de la taille maximum du lot, %{size}."
+        single_rule_format: "Format: Une règle seule ne peut pas commencer ou se terminer avec un tiret."
+
+  # Account
+
+  account:
+    heading:
+      title: "Gestion du compte"
+
+    accounts:
+      show:
+        title: "Compte"
+        details_title: "Informations"
+        delete: "Supprimer votre compte..."
+        pre_delete_confirm: " Êtes-vous sur de vouloir supprimmer votre compte définitivement? Vous allez être redirecté à la page de confirmation de suppression du compte, nous devons nous assurrer que vous voulez supprimmer votre compte. Souhaitez-vous continuer?"
+        marked_for_deletion: |
+          #### Votre compte est marqué pour suppression
+          
+          Suppression du compte en cours. Veuillez contacter support@bookwhen.com si vous avez des questions à ce sujet.
+      destroy:
+        account_deleted: "Compte marqué pour suppression"
+      confirm_delete:
+        title: "Suppression du compte: '%{account_code}'"
+        delete_account_warning: |
+          #### Confirmer la suppression du compte
+          
+          **Toutes les données liées à votre compte seront définitivement supprimées.** Les informations sur vos transactions en ligne resterons sauvegardées pour 3 mois à des fins d'audit.
+      delete_form:
+        how_to_delete_text: |
+          Veuillez entrer:
+          
+          **%{deletion_phrase}**
+          
+          dans la boite ci-dessous pour procéder à la suppression de ce compte.
+        confirm_label: "Confirmer la suppression du compte"
+        confirm_help: "Entrer ce texte exactement comme il apparait en gras ci-dessus pour continuer la supression. Cette action est irréversible. Nous vous prions d'y réfléchir à deux fois!"
+        delete: "Supprimer ce compte" 
+        cancel: "Annuler"
+        word_validation: "Vous devez entrer: %{word}"
+        confirmation_word: "SUPPRIMER CE COMPTE"
+
+    business_details:
+      show:
+        edit: "Modifier"
+        business_name: "Nom de l'entreprise / l'organisation:"
+        contact_details: "Coordonnées:"
+        business_details: "L'entreprise enregistrée:"
+        company_reg_no: "Numéro d'entreprise:"
+        social_feeds: "Sociaux"
+        help: ""
+      edit:
+        title: "Détails de compte"
+        business_name_label: "Nom de l'entreprise ou de l'organisation"
+        business_name_help: "Ce nom sera affiché comme le _de la part de_ sur les emails envoyés par Bookwhen, et comme nom de l'entreprise si vous recevez des paiements."
+        business_email_label: "Coordonnées email"
+        business_email_help: "Ces données sont utilisées à des fins d'affichage uniquement."
+        business_telephone_label: "Coordonnées téléphoniques"
+        business_telephone_help: ""
+        business_website_label: "Website address"
+        business_website_help: "Veuillez entrer l'URL complet, y compris le http://"
+        business_address_label: "L'adresse de l'entreprise enregistrée"
+        business_address_help: "La localisation de l'événement devrait être sauvegardée séparément sur _Réglages > page_ plutôt qu'ici."
+        country_code_label: "Pays"
+        country_code_help: ""
+        company_reg_no_label: "Numéro d'enregistrement de l'entreprise"
+        company_reg_no_help: ""
+        social_feeds_label: "Liens de connexion aux réseaux sociaux "
+        social_feed_url_text: "Indiquez une adresse Web valable (URL)"
+        confirm_remove_feed: "Êtes-vous sûr de vouloir supprimer ce lien?"
+        add_new_feed: "Ajouter un autre lien"
+        save: "Sauvegarder les modifications"
+        cancel: "Annuler"
+        account_details_help: |
+          Cette information sera **affichée au pied de la page publique**.
+        company_details_help: |
+          Quand vous **acceptez les paiements en ligne**, vous êtes **legalement requis** d'afficher les coordonnées, l'adresse et le numéro d'enregistrement de l'entreprise sauvegardés.
+          
+          Veuillez vérifier les réglementations de vente en ligne dans votre pays.
+      update:
+        settings_updated: "Coordonnées mises à jour"
+
+    administrators:
+      index:
+        title: "Administrateurs"
+      list:
+        you: "Vous"
+        invited: "Invité"
+        revoke_invite: "Annuler l'invitation"
+        revoke_invite_confirm: "Êtes-vous sûr de vouloir annuller cette invitation?"
+        remove_admin: "Retirer de ce compte"
+        remove_admin_confirm: "Vous êtes sur le point de retirer cet utilisateur Admin de ce compte. L'utilisateur ne recevra PAS d'avis de retrait. Ils peuvent être ré-invités à tous momments. Voudriez-vous continuer?"
+        promote_admin: "Promouvoir au statut de titulaire du compte"
+        promote_admin_confirm: "Vous êtes sur le point de donner a cet utilisateur Admin les droits de modifier les paramètres du compte. L'utilisateur ne recevra PAS d'avis concernant ce changement. Voudriez-vous continuer?"
+        account_owner: "Titulaire du compte"
+      child_account:
+        notice_html: "<i>Please note:</i> Your account is managed by <span title="%{code}">%{title}</span> and can be accessed by the head office administrators."
+      invite:
+        email_label: "Inviter un autre administrateur"
+        email_ph: "admin@example.com"
+        email_help: "Un email sera envoyé au nouvel utilisateur avec un lien pour créer un idantifiant et mot de passe."
+        invite: "Envoyer l'invitation"
+        invite_help: "Un email sera envoyé à votre invité avec un lien les invitant à joindre votre compte et créer un mot de passe."
+        must_be_account_owner: |
+          #### L'ajout d'administrateurs
+          
+          Des utilisateurs Admin peuvent être ajoutés au compte, mais seulement par un utilisateur **Titulaire du compte**.
+
+    admin_users:
+      destroy:
+        admin_user_removed: "Admin retiré"
+        last_admin_user: "Nous ne pouvons supprimmer le dernier titulaire du compte. Veuillez promouvoir un autre utilisateur Admin d'abord."
+      promote:
+        admin_user_promoted: "Utilisateur admin Promu"
+
+    admin_invites:
+      form:
+        not_authorised: "Vous n'êtes pas autorisé à envoyer des invitations pour ce compte."
+        user_not_validated: "Vous devez définir un mot de passe avant d'inviter d'autre personnes. Cliquez sur le lien Mot de passe oublié dans la page de connexion. Merci."
+      create:
+        invite_sent: "L'invitation a été envoyée"
+      destroy:
+        invite_removed: "Invitation retirée"
+      accepter:
+        not_found: "Le code de l'invitation n'est pas valide. Y aurait-il une erreure dans le processus coupé/collé? Veuillez contacter le titulaire du compte si vous avez besoin d'une nouvelle invitation."
+        invite_revoked: "Cette invitation a été révoquée. Veuillez contacter le titulaire du compte pour plus d'information."
+        invite_processed: "Vous avez déjà accepté cette invitation. Veuillez vous connecter pour accéder au compte. Si vous avez oublié votre mot de passe, cliquez sur le lien Mot de passe oublié dans la page de connexion. Merci."
+
+    calendars:
+      index:
+        title: "Pages de l'emploi du temps"
+        add_calendar: "Ajoutez une nouvelle page de l'emploi du temps"
+        import_from_v1: "Importer vos données d'un compte Bookwhen v1 ..."
+        none_in_list: |
+          Vous n'avez accès à aucun emploi du temps sur ce compte.
+          
+          Veuillez contacter le titulaire du compte.
+      show:
+        feeds_title: "Adresses URL de l'agenda"
+        feeds_intro: |
+          Lister les évènements de votre calendrier (Google, Outlook, etc.) en utilisant les URLs ci-dessous. Vous trouverez plus d'information sur [how to connect](http://support.bookwhen.com/article/27-connecting-to-calendar-feeds).
+        public_feed_title: "ID de l’agenda publique"
+        public_feed_link: "Ouvrir" 
+        private_feed_title: "ID de l’agenda privé"
+        private_feed_link: "Ouvrir"
+        delete: "Emploi du temps supprimmée"
+        pre_delete_confirm: "Vous serez redirecté à la page de confirmation pour supprimer cet emploi du temps, pour nous assurer que vous voulez supprimer cet emploi du temps. Êtes-vous sur de vouloir continuer?"
+      summary:
+        edit_title: "Modifier le titre"
+        public_page: "Voire la page publique"
+        entry_count: "Nombre d'entrées:"
+        upcoming_event_count: "Prochain événements:"
+        booking_count: "Réservations:"
+      edit:
+        title_label: "Titre de l'emploi du temps"
+        title_help: "Ce titre n'est pas affiché sur la page publique. Il est utilisé pour différencier cet emploi du temps des autres."
+      new:
+        title: "Créer une nouvelle page emploi du temps"
+        new_calendar_help: |
+          #### Pages multiples
+          
+          Pages d'emploi du temps supplémentaires sont disponibles tant que le site est en phase béta, mais nécessitera un plan d'abonnement actualisé une fois la mise en œuvre du site terminée.
+      form:
+        title_label: "Donnez un nom à l'emploi du temps"
+        title_help: "Ce nom est utilisé pour différencier cet emploi du temps des autres, il ne sera pas affiché sur la page publique."
+        public_path_label: "URL de la page publique"
+        public_path_help: "URL (lien de l'adresse Web) de la page publique. Ceci peut être actualisé plus tard dans l'option 'modification du thème'."
+        public_path_ph: "lenomdevotresite"
+        create: "Créer une page"
+        cancel: "Annuler"
+      create:
+        calendar_created: "Nouvel emploi du temps ajouté"
+      update:
+        calendar_updated: "Emploi du temps mis à jour"
+      destroy:
+        calendar_deleted: "Emploi du temps supprimmé!"
+      confirm_delete:
+        title: "Supprimmer: %{schedule_name}"
+        delete_calendar_warning: |
+          #### Confirmer la suppression
+          
+          **L'emploi du temps et toutes les entrées** seront **définitivement supprimmées** de votre compte. La page publique ne sera plus accessible pour cet emploi du temps.
+                    
+          **Toutes les réservations seront sauvegardées** pour référence ultérieure.
+          
+          **IL n'y a pas d'option pour annuler une suppression.**
+      delete_form:
+        confirm_label: "Entrer 'SUPPRIMER' pour continuer."
+        confirm_help: "Entrer le mot en lettres capitales pour confirmer que vous désirez supprimer l'emploi du temps. Cette action est irréversible. Nous vous prions d'y réfléchir à deux fois!"
+        delete: "Supprimmer l'emploi du temps"
+        cancel: "Annuler"
+        word_validation: "Nous vous prions d'entrer le mot '%{word}' en capitales pour continuer."
+        confirmation_word: "SUPPRIMER"
+
+    calendars_import:
+      new:
+        title: "Importer les données de votre compte v1"
+        import_instructions: |
+          Vous pouvez importer les données d'un compte bookwhen original (v1) dans ce nouveau compte. Toutes vos données passées et à venir seront importées. 
+          
+          Plus d'informations sont disponibles sur les [pages d'assistance](http://support.bookwhen.com/article/8-importing-a-v1-account-into-the-new-bookwhen).
+      index:
+        title: "Statut d'impotation"
+        refresh_note: |
+          _Notez:_ Cette page sera automatiquement actualisée quand le statut changera et vous recevrez un email quand le processus sera terminé. L'import de millier de réservations peut prendre plus d'une heure. 
+          
+          Une fois terminé, vous pouvez rediriger votre ancienne page à la nouvelle page en utilisant le réglage 'Rediriger à bookwhen v2' en bas de cette page: https://v1.bookwhen.com/settings?on=theme
+          
+          Contactez support@bookwhen.com si vous avez besoin d'aide. Merci.
+      table:
+        v1_account_ref: "Importer '%{ref}'"
+        v1_account_no_found: "Compte v1 retiré"
+        queued_at: "Ajouté à la queue %{time}"
+        started_at: "Traitement de l'information commencé %{time}"
+        completed_at: "Terminé %{time} (en %{taken})"
+        account_title: "Conmpte v1"
+        status_title: "Statut"
+        time_title: "Temps"
+        messages_title: "Messages"
+      connect_form:
+        form_title: "Importer un compte v1:"
+        connect_btn: "Commencer l'importation"
+        email_label: "Adresse email pour le compte v1"
+        password_label: "Mot de passe pour le compte v1"
+        credentials_failed: "Nous ne pouvons pas vous connecter à votre compte v1 avec cet email et mot de passe. Veuillez vérifier et réessayer."
+        duplicate_import: "Ce compte v1 a déjà été importé ou est en file de traitement."
+        side_help: |
+          Pour commencer l'import, entrer le email et mot de passe utilisés pour se connecter à l'ancien compte Bookwhen et cliquer _Lancer l'importation_.
+          
+          Une fois connecté, vous pourrez voire la file de traitement avec le statut de votre importation.
+          
+          Ce processus ne devrait pas prendre plus d'une demie heure, à moins que vous ayez beaucoup de réservations (au-delà de quelques milliers).
+          
+          Vous recevrez un email quand l'importation sera terminée.
+      create:
+        import_added_to_queue: Import added to queue
+
+    calendar_users:
+      list:
+        people: "Admin users"
+        set_users: "Set user roles"
+        no_users: "No users assigned"
+      form:
+        save: "Sauvegarder"
+        cancel: "Annuler"
+        no_role: "Pas d'accès"
+        user_role: "Seulement réservations"
+        admin_role: "Réglages & Réservations"
+        role_type_help: |
+          **Réglages** permet un accès complet pour créer et modifier les entrées.
+          **Réservations** restreint l'usage à la gestion des réservations. 
+      update:
+        calendar_users_updated: "Utilisateurs mis à jour"
+
+    billing_details:
+      edit:
+        title: "Détails de facturation"
+        save: "Sauvegarder les modifications"
+        cancel: "Annuler"
+      update:
+        settings_updated: "Détails sauvegardés"
+      form:
+        billing_details: "Détails de facturation"
+        business_name_label: "Nom de facturation"
+        business_name_help: "Entrer le nom et l'adresse de votre entreprise ou organisation. Cette information apparaitra sur votre facture."
+        billing_address_label: "Adresse de facturation"
+        billing_address_help: ""
+        country_code_label: "Pays"
+        country_code_help: "Nos clients Européens non-business et tous nos clients RU seront facturés un montant TVA et le coût de l'abonnement."
+        business_vat_number_label: "Numéro TVA (avec le code Pays)"
+        business_vat_number_help: "Entrer un numéro TVA valable pour retirer les charges TVA. Nos clients non-business sont requis de payer la TVA."
+        enter_discount: "Appliquer un code de rabais"
+        coupon_code_label: "Code de rabais"
+        coupon_code_help: "**Veuillez noter**: La valeure affichée sur le boutton du formulaire de payement ne prends pas en compte ce rabais! Il sera pris en compte sur la facture finale."
+      card_details:
+        title: "carte utilisée pour le règlement:"
+        expires: "Date d'expiration:"
+        update_card: "Mettre à jour la carte"
+        stripe_update_card_desc: "Mettre à jour la carte de l'abonnement."
+        stripe_update_button: "Mettre à jour la carte"
+        updating_wait: "Mise à jour. Veuillez patienter..."
+      stripe_callback:
+        card_updated: "Carte mise à jour. Merci."
+
+    plans:
+      controller:
+        no_plan: "Plan du compte non configuré"
+      helper:
+        ends_at: "%{date} à %{time} (%{when})"
+        tomorrow: "aujourd'hui!"
+        tomorrow: "demain"
+        in_days: "dans %{count} jours"
+      presenter:
+        summary: "%{plan} plan %{interval} abonnements."
+      discount:
+        early_upgrade: "Rabais de %{amount} est appliqué aux comptes passant à un plan supérieur au plus tôt."
+      form:
+        subscribe_btn: "Abonnez vous"
+      show:
+        title: "Plan du compte"
+        wrong_currency: "Mauvaise devise? Changez la sur votre page [réglages des paiements] (%{payment_settings_url})."
+        just_paid: |
+          ### Paiement complet
+          
+          Nous avons envoyé une facture et un reçu à votre email. Merci!
+        plan_changed: |
+          ### Plan changé
+          
+          Votre plan a été changé au nouveau plan séléctionné.
+        free_plan: "Le plan gratuit"
+      options_button:
+        button_text: "Options"
+        cancel_plan: "Annuler l'abonnement"
+        change_plan: "Changer de plan"
+        update_card: "Mise a jour de l'information de facturation"
+        view_invoices: "Voire les factures"
+      change:
+        title: "Plan du compte"
+      change_free:
+        title: "Transférer à un plan **Gratuit**."
+        description: |
+          Votre abonnement sera transféré a un plan gratuit a la fin de la periode de facturation en cours, après quoi les fonctions payantes ne seront plus disponibles.
+        submit: "Transférer à un plan"
+        submit_confirm: "Veuillez confirmer que vous voulez transférer à un plan gratuit. Merci."
+        cancel: "Annuler"
+      change_paid:
+        not_found: "Plan non trouvé"
+        submit: "Entrer les informations sur votre paiement"
+        cancel: "Annuler"
+        processing_wait: "Le traitement de votre transaction est en cours. Veuillez patienter..."
+        processing_error: |
+          ### Un problème technique s'est produit, et votre transaction n'a pas pu être effectuée. Veuillez contacter support@bookwhen.com.
+          
+          Voici le message que nous avons reçu du service de traitement des paiements:
+        processing_error_footer: "Aucune somme n'a encore été versée. Veuyez réessayer avec une carte différente, ou contacter support@bookwhen.com pour plus d'aide."
+      stripe_callback:
+        thank_you: "Merci"
+      current_plan:
+        trial_expires_info: "Votre periode d'essai pour le plan <span class="plan">%{plan_name}</span> se termine le <span class="date">%{ends_at}</span>."
+        end_trial_reminder: "Vous receverez un rappel %{end_days} jours avant la fin de votre periode d'essai."
+        revert_to_free: "Le compte reviendra alors à la version du plan <span class="plan">Gratuit</span>, à moins que vous ne décidiez d'améliorer votre plan."
+        upgrade_discount: "_Offre spéciale!_ Améliorez votre plan **aujourd'hui** et obtenez _%{amount} de rabais_ pour le premier mois."
+        free_plan: "Vous utilisez la **version Gratuite** du système."
+        current_plan: "Vous êtes abonné au plan **%{plan_name}**."
+        sub_end_at_message: "Votre abonnement a été _annulée_ et votre compte retournera au **plan gratuit** le _%{date} à %{time}_."
+      create:
+        plan_changed: "Activation du plan"
+      subscription_type:
+        change_text: "Vous avez selectionné le plan **%{plan_name}**."
+        monthly: "Payements mensuels"
+        yearly: "Payement de 12 mois à l'avance"
+        saving: "(Économisez %{amount})"
+        upgrade_discount: "Vous profiterez d'un **rabais de %{amount}** pour l'amélioration hâtive de votre plan dans votre première facture."
+      plan_table:
+        per_month: "par mois"
+        booking_limit_html: "<span class="count">%{count}</span> réservations / mois"
+        schedule_limit_html: "<span class="count">%{count}</span> pages d'emploi du temps"
+        schedule_limit_one_html: "<span class="count">%{count}</span> pages d'emploi du temps"
+        admin_limit_html: "<span class="count">%{count}</span> utilisateurs admin"
+        admin_limit_one_html: "<span class="count">%{count}</span> utilisateurs admin"
+        waiting_list: "Liste d'attente"
+        event_reminders: "Emails de rappels de l'événement"
+        lite_restrictions: "Le plan Lite n'inclus pas de liste d'attente ou de rappels pour vos évenements."
+        button:
+          select: "Selectionner"
+          upgrade: "Passer à un plan supérieur"
+          your_plan: "Votre plan"
+          downgrade: "Passer à un plan inferieur"
+        description:
+          lite: "Plan basic pour utilisateurs occasionnels."
+          standard: "Toutes les fonctions du system sont opérationnelles."
+          plus: "Pour clients avec un emploi du temps plus exigeant."
+          gold: "Plan Premium pour les organisations plus grandes. Veuillez nous contacter si vous avez besoin de plus!"
+      free_plan:
+        free_plan_desc: |
+          Nous offrons aussi un **[plan gratuit](%{free_plan_path})**, restreint à 200 réservations par mois, 1 page d'emploi du temps, et 1 utilisateur admin.
+          
+          Sur le plan gratuit, vous ne **pouvez pas prendre de paiement**, votre page publique _ne peut pas être thématisé_, _les rappels de votre événement_ et la _liste d'attente_ ne sont pas disponibles.
+  invoicing:
+    line_items:
+      plan_desc: "Abonnement au: %{plan_name}. Du %{from} au %{to}."
+    discount_desc: "Code de rabais appliqué: '%{coupon}'"
+
+  pdfs:
+    invoice:
+      vat_no: "TVA: %{vat_no}"
+      invoice_no: "Facture: **%{invoice_no}**"
+      quantity: "Quantitée"
+      details: "Détails"
+      unit_price: "Prix de l'unité"
+      vat_pcnt: "TVA"
+      subtotal: "Total partiel"
+      net_subtotal: "Total partiel net"
+      discount: "Rabais"
+      net_total: "Total partiel net"
+      vat_total: "TVA"
+      total: "%{currency} Total"
+      payment_received: "Payement reçu %{date}. Merci."
+      payment_terms: "Payement dû dans les 14 jours qui suivent la réception de la facture."
+
+  # Attendances
+
+  attendances:
+    index:
+      title: "Liste des participants"
+    filter:
+      search: "Recherche"
+      search_ph: "Recherche de texte"
+      entries: "Entrées"
+      tags: "Marqueurs"
+      start_date: "Date de commencement"
+      start_time: "Heure"
+      end_date: "Date finale"
+      end_time: "Heure"
+      booking_status: "Statut de la réservation:"
+      checkout: "Caisse"
+      complete: "Complétée"
+      cancelled: "annulée"
+      filter_results: "Recherche"
+      options: "Options"
+      reset: "Réinitialiser les critères de recherche"
+      reset_tip: "Relancer toutes les options de recherche aux réglages par défaut, montrant seulement les réservations complétées sur événements actuels par défaut."
+      copy_emails: "Voire la liste de email"
+      copy_emails_tip: "Une liste des emails liés à la réservation séléctionnée apparaîtra dans une fenêtre pop-up."
+      export_attendances: "Exporter participants (CSV)"
+      export_attendances_tip: "Exporter un registre des participants pour un filtre de recherche."
+      export_bookings: "Exporter réservations (CSV)"
+      export_bookings_tip: "Exporter un registre des réservations pour un filtre de recherche."
+    list:
+      ref: "Réservation"
+      who: "Participant"
+      ticket: "Billet"
+      no_records: "Aucun résultat"
+    attendance:
+      na: "N/A"
+      only_event: "Montrer les participations seulement sur cet événement"
+      only_entry: "Filtrer sur ce type d'entrées"
+    costs:
+      cost_amount_html: "Coût <span>%{amount}</span>"
+      owed_amount_html: "Montant dû <span>%{amount}</span>"
+      paid_online_amount_html: "Payé: <span>%{amount}</span>"
+      paid_offline_amount_html: "payé hors ligne: <span>%{amount}</span>"
+      credit_amount_html: "<span>%{amount}</span> remboursés"
+
+  attendance_emails:
+    index:
+      title: "Email list"
+      intro: "Liste des personnes réservant et des participants pour vos critères de sélection."
+      no_emails: "Aucun email trouvé"
+      close: "Fermer"
+      help_text: |
+        **Important:** Lorsque vous contactez vos participants, veuillez utiliser le champ <a href="https://en.wikipedia.org/wiki/Blind_carbon_copy" target="_blank">BCC</a> (Blind Carbon Copy) pour préserver la confidentialité des adresses emails.
+      copy_emails: "Copier les emails"
+      copy_message: "Emails copiés à la mémoire tampon"
+      copy_message_fail: "Emails séléctionnés. Utilisez Ctrl-C pour copier."
+      close_button: "Fermer"
+
+  # Entries
+
+  calendars:
+    show:
+      public_page: "Voire la page publique"
+      add_entry: "Ajouter nouvelle entrée"
+    model:
+      default_title: "Emploi du temps"
+    presenter:
+      count:
+        none_html: "<span class='none'>None</span>"
+        more_than_max: "%{max}+"
+        value: "%{count}"
+
+  agenda_list:
+    show:
+      timezone_info: "Heure affichée sur le fuseau horaire: %{zone}"
+      calendar_feeds: "Voire les flux de données du calendrier"
+    head:
+      from_label: "De:"
+      filter: ""
+      show_filters: "Filtrer les éléments"
+      hide_filters: "Cacher les filtres"
+      has_filters: "Éléments filtrés"
+    from_date:
+      from_today: "Aujourd'hui"
+      from_date: "%{date}"
+    rows:
+      no_records: "Pas d'événements"
+      spaces_help: "Places prises / Places disponibles"
+    row:
+      course_duration_text: "Course: %{n_dates}"
+      dates_word_singular: "date"
+    foot:
+      show_more: "Plus d'information..."
+
+  event_preview:
+    show:
+      edit: "Modifier l'entrée"
+      status: "Statut:"
+      offline: "Hors ligne"
+      floating: "Pas dans l'emploi du temps"
+      tickets: "Billets / Types de réservations"
+      view_attendances: "Réservations sur cet événement"
+      view_attendances_tip: "Ouvrir la liste des réservations filtrée sur la date / heure et le titre de ce événement."
+      view_attendance_sheet: "Liste de participants"
+      remove_event: "Retirer seulement cet événement"
+      remove_event_tip: "Retirer seulement cet événement de l'emploi du temps."
+      remove_event_confirm: "Vous êtes sur le point de retirer cet événement de l'emploi du temps. Les autres événements sur cette même entrée resteront intactes. Souhaitez-vous continuer?"
+      duplicate_entry: "Dupliquer cette entrée"
+      duplicate_entry_tip: "Créer une nouvelle copie de cette entrée."
+      duplicate_entry_confirm: "Ceci créera une copie de l'entrée, y compris une copie de chaque date.\n\nSi vous voulez simplement ajouter une autre date, editez l'entrée et ajoutez une nouvelle date dans la section 'Dates & Heures'.\n\nVoulez vous continuer la démarche de duplication?"
+      event_not_found: "Événement non trouvé"
+    connected_events:
+      title: "Course dates"
+      course_summary_info: "**Entrées du cours** avec **%{total}** dates:"
+    details_summary:
+      details: "Détails"
+      attachments: "Pièces jointes"
+      post_booking_details: "Confirmation et modalités de la réservation"
+
+  events:
+    remove:
+      event_removed: "Évennement retiré"
+    attendance_sheet:
+      print: "Imprimer"
+      bookings_list: "Ouvrir la liste de réservations"
+      export_csv: "Exporter en CSV"
+      booking_ref: "Réservations"
+      ticket: "Billets"
+      paid: "Payé?"
+      forename: "Prénom"
+      surname: "Nom de famille"
+      email: "Email"
+      no_records: "Aucun participant"
+      attendee_count: "%{count} participants"
+
+  waiting_list_places:
+    index:
+      name: "Nom"
+      email: "Email"
+      number: "Numéro"
+      waiting_people: "Liste d'attente"
+      confirm_remove: "Êtes-vous sur de vouloir supprimer '%{name}' de votre liste d'attente? La personne supprimée ne sera PAS informée qu'elle a été supprimée."
+      export_list: "Exporter la liste en CSV"
+      processing_started: "Ce processus a commencé il y a **%{timespan}**"
+      email_sent: "Email de notification envoyé"
+    destroy:
+      removed_flash: "Place retirée"
+
+  entries:
+    controller:
+      entry_not_found: "Entrée non trouvée"
+    edit:
+      blank_title: "Créer une nouvelle entrée"
+      title: "Modification de: %{title}"
+      save_changes: "Sauvegarder"
+      finish_editing: "Sauvegarder & Quitter"
+      details_title: "Information"
+      schedules_title: "Dates & Heures"
+      settings_title: "Paramètres des Entrées"
+      booking_form_title: "Formulaire de réservation"
+      ticket_types_form_title: "Billets & Coûts"
+      admin_title: "Administration"
+    update:
+      entry_saved: "Entrée sauvegardée"
+      changes_saved: "Modifications sauvegardées"
+      entry_not_valid: "Certains éléments de votre entrée ne sont pas valides. Veuillez vérifier et réessayer." 
+    destroy:
+      entry_deleted: "Entrée supprimée"
+      delete_failed: "La suppression a échouée. Veuillez contacter support@bookwhen.com"
+    duplicate:
+      entry_duplicated: "Entrée dupliquée"
+    details:
+      published: "Publié?"
+      published_help: "Montrer cette entrée sur les pages publiques?"
+      title_label: "Titre"
+      title_ph: "Saisir un titre court pour cette entrée"
+      title_help: "Le nom de cettre entrée, montré sur la liste de l'emploi du temps et comme titre de la page."
+      tags_label: "Balises"
+      tags_ph: ""
+      tags_help: "Ajoutez des balises pour grouper vos entrées. Elles peuvent être utilisées pour filtrer votre emploi du temps, et vous pouvez leur attribuer des rabais."
+      main_details_label: "Paramètres de l'entrée"
+      main_details_ph: ""
+      main_details_help: |
+        Ceci est la description principale de l'entrée. Vous pouve formatter le texte en utilisant <a href="http://help.bookwhen.com/kb/setting-up-events/formatting-event-text" target="_blank">Markdown</a> ou HTML.
+      attachments_label: "Pièces jointes"
+      attachments_ph: ""
+      attachments_help: |
+        Sélectionner les pièces jointes précédemment téléchargées en cliquant sur le champ, ou %{upload_link}. Tous les documents peuvent être visualisés sur votre page <a href="%{attachments_path}" target="_blank">attachments</a>.
+      upload_link_text: "téléchargér un nouveau document"
+      post_booking_info_title: "Information post-réservation"
+      post_booking_details_label: "Information supplémentaire"
+      post_booking_details_ph: ""
+      post_booking_details_help: "Ceci n'apparaîtra que quand la réservation sera complétée, et sera inclu dans le email de confirmation."
+    schedules:
+      add_another_schedule: "Ajouter une autre date / heure"
+    ticket_types:
+      add_another_ticket_type: "Ajouter un autre type de réservation / billet"
+    admin:
+      admin_title: "Fonctions admin"
+      dummy_delete_entry_button: "Voire l'information de supression..."
+      real_delete_entry_button: "Supprimer cette entrée!"
+      cancel_delete: "Annuler"
+      confirm_real_delete: "Cette entrée sera supprimée et les informations ne seront pas récupérables. Veuillez confirmaer que vous voulez completer cette opération."
+      first_delete_details: "Supprimer cette entrée et **toutes ses occurences** de l'emploi du temps?"
+      second_delete_details: |
+        **Confirmer la supression** 
+        
+          - Cette entrée sera irréversiblement supprimée du système, cependant, les **réservations** faites sur cette entrée **ne seront pas supprimées**. 
+          - Les participants pourront voire un aperçu de l'information collectée sur cette entrée au momment de leur réservation.
+          - Toutes dates ayant reçu des réservations seront montrées dans l'emploi du temps en tant que **détachées**.
+          - Les supressions sont irréversible. 
+
+  entry_locations:
+    edit:
+      location_label: "Localisation / Adresse"
+      location_ph: ""
+      location_help: "Des informations suplémentaires sur la localisation peuvent être ajoutées sur <a href="%{locations_admin_path}" target="_blank">locations admin page</a>."
+      blank_location: ""
+      add_new_location: "+ Ajouter une nouvelle localisation disponible"
+      cancel_add: "Utiliser une localisation"
+
+  entry_settings:
+    form:
+      spaces_options_title: "Restrictions applicables au participant" 
+      show_and_book_options_title: "Quand prendre une réservation?"
+      completion_options_title: "Quand est-ce qu'une réservation est-elle considérée complétée?"
+      private_booking_options_title: "Restreindre les réservations"
+      maximum_spaces_label: "Nombre maximum des participants:"
+      maximum_spaces_help: "Établir une limite sur le nombre total de gens qui peuvent réserver un évennement de ce type. Ceci est lié au nombre de tickets disponibles que vous avez spécifié."
+      single_person_booking_ynd_label: "Imposer la règle d'un participant unique?" 
+      single_person_booking_ynd_help: "L'email du participant sera utilisé pour imposer la règle d'une seule inscription par participant par événement. Pour ceci, le champ email sur le formulaire de réservation doit être sélectionné et établi comme champ obligatoire."
+      maximum_tickets_per_booking_label: "Nombre maximum de billets pour une réservation:"
+      maximum_tickets_per_booking_help: "Combien de billets peut-on ajouter à une réservation pour un événement de ce type?"
+      event_shown_before_label: "Quand montrer l'événement?"
+      event_shown_before_help: "Combien de temps avant l'événement devrait-il apparaître sur l'emploi du temps publique?"
+      online_payment_required_ynd_label: "Paiements en ligne requis?"
+      online_payment_required_ynd_help: "Régler cette option à _Non_ si vous désirez permettre de payer plus tard. Dans ce cas, le texte lié à la méthode de paiement _Réglages > Options Payement > Payments hors linge_ apparaitra à la caisse avec une case a cocher obligatoirement: 'J'accepte de payer plus tard'."
+      private_booking_password_label: "Mot de passe des réservations privées"
+      private_booking_password_help: "Exiger qu'un mot de passe soit requis pendant la réservation de ce type d'entrée."
+
+  booking_forms:
+    show:
+      booker_email_info: "Le email de la personne qui complète la réservation est toujours requis."
+      booker_fields: "Informations sur la personne qui complète la réservation"
+      booker_email: "Adresse email"
+      attendee_fields: "Informations sur le participant"
+      booking_fields: "Détails de réservation"
+      options_title: "Options"
+      select_fields: "Sélectionner et réorganiser les champs de données"
+      set_mandatory: "Selectionner les champs obligatoires"
+      create_new_field_type: "Créer un nouveau champ obligatoire"
+      copy_form: "Copier le formulaire d'une autre entrée"
+      no_fields_selected: "Aucune information n'est requise sur le participant. Les réservations peuvent être complétées sans aucune information sur le participant."
+    edit:
+      selected_fields: "Sélectionné"
+      unselected_fields: "Déselectionné"
+      attendee_fields: "Champs de données des participants"
+      booking_fields: "Champs de données des réservations"
+      no_items: "Aucun champs dans cette liste"
+      save: "Sauvegarder le formulaire"
+      cancel: "Annuler"
+      select_fields_help: "Vous pouvez déplacer les champs et les réorganiser à l'aide de la fonction glisser-déplacer dans la marge gauche. Ajoutez et retirez les champs avec les icones plus / moins."
+    update:
+      form_saved: "Formulaire sauvegardé"
+    edit_mandatory:
+      mandatory_fields: "Fixer à obligatoire"
+      attendee_fields: "Champs de données des participants"
+      booking_fields: "Champs de données de la réservation"
+      update: "Mettre à jour"
+      cancel: "Annuler"
+      mandatory_fields_help: "Sélectionner les champs obligatoires de cette entrée."
+    update_mandatory:
+      items_saved: "Champs mis à jour"
+  booking_form_fields:
+    show:
+      edit: "Modifier"
+      data_type: "Type:"
+    edit:
+      used_elsewhere_warning: "**Notice:** Ce champs est lié à d'autres entrées. Les changements faits ici affecteront ces autres entrées."
+      create: "Sauvegarder ce champ"
+      save: "Mettre à jour ce champ"
+      cancel: "Annuler"
+      title_editing_attendee: "Modification du champ 'participant'"
+      title_editing_booking: "Modification du champ 'réservation'"
+      title_creating: "Création d'un nouveau champ pour le formulaire"
+    form:
+      user_email_help: |
+        **Note email pour le participant:**
+        
+        Si ce champ est inclus dans le formulaire de réservation, le email de chaque participant sur la éservation sera requis, ainsi que le email de la personne complétant la réservation.
+      user_name_help: |
+        **Note email pour le participant:**
+        
+        Ceci est utilisé pour enregistrer le nom du participant. Si le email du participant est aussi requis, le nom sera lié à l'email.
+    update:
+      field_updated: "CHamps mis à jour"
+    seed_data:
+      full_name: "NOm complet"
+      user_email: "Email du participant"
+      phone_number: "Numéro de téléphone"
+      address: "Adresse"
+      other_info: "Information supplémentaire"
+      other_info_help: "Y a il plus d'information nescessaire à votre réservation?"
+  form_field_options:
+    index:
+      option_codes_label: "Options pour ce champ"
+      option_label_text: "Texte de l'option"
+      confirm_remove_option: "Êtes-vous sur de vouloir supprimer cette option?"
+      add_option_row: "Ajouter une autre option"
+
+  form_field_types:
+    model:
+      default_title: "Nouveau champ"
+    form:
+      field_label_label: "Etiquette du champ"
+      field_label_help: "Ceci apparaitra dans la marge gauche du champ."
+      field_help_label: "Texte de l'aide supplémentaire"
+      field_help_help: "Texte de l'aide supplémentaire qui apparaît sous le champs sur le formulaire de réservation."
+      field_placeholder_label: "Example (paramètre fictif)"
+      field_placeholder_help: "Texte pâle qui apparaît dans le champs avant l'entrée du texte."
+      mandatory_yn_label: "Champ obligatoire?"
+      mandatory_yn_help: |
+        Une réponse est-elle requise pour ce champ?
+        
+        **Notez:** L'option obligatoire est uniquement liée à cette entrée, donc elle peut être modifiée sans affecter d'autres entrées.
+      field_data_type_label: "Type de champ de données"
+      field_data_type_help: "Le type d'informations que vous collectez."
+      target_type_label: "Cette information concerne-t-elle le participant ou la réservation?"
+      target_type_options:
+        attendee: "Participant (une personne)"
+        booking: "Réservation"
+      target_type_help: |
+        Les champs participant seront appliqués à chaque personne sur la réservation.
+        
+        Champs de réservation ne seront demmandés qu'une fois par réservation.
+      remember_label: "Sauvegarder la réponse?"
+      remember_help: "Ce champs devrait-il être rempli à l'avance pour les prochaines réservations de cette personne?"
+      validation:
+        options_required: "Au moins une optin est requise pour ce type de champ de données."
+
+  tickets_helper:
+    tax_postfix: "+ %{pcnt} taxe"
+    no_title: "Billet standard"
+    day: "jour"
+    cost: "Coût:"
+    offline: "Hors ligne"
+    status: "Statut: %{status}"
+    course_ticket: "Ceci est un **billet pour un cours** qui couvre les %{event_count} événements de cette entrée."
+    available_num: "Numéro disponible:"
+    available_from: "Disponible du:"
+    available_to: "Disponible jusqu'au:"
+    available_from_to_text: "**%{days}** avant **%{time}**"
+    available_from_to_text_no_time: "**%{days}** avant"
+    group_ticket: "Billets de groupe:"
+    group_ticket_text_range: "**Oui** - entre **%{min}** et **%{max}** personnes"
+    group_ticket_text_fixed: "**Oui** - exactement **%{number}** personnes"
+    group_ticket_summary: "Billet de groupe pour %{range} personnes"
+    taken_and_issued: "**%{taken} / %{issued}** pris."
+    taken: "**%{taken}** pris - aucune limite."
+    sold_out: "Vendu."
+    availability_summary_oc: "Valable entre %{opens} et %{closes}"
+    availability_summary_o: "Valable après %{opens}"
+    availability_summary_c: "Valable jusqu'au %{closes}"
+
+  ticket_type_setup:
+    ticket_types:
+      index:
+        title: "Types de réservations / billets"
+      show:
+        status: "Statut:"
+        offline: "Hors ligne"
+        edit: "Modifier"
+      new:
+        save: "Ajouter un billet"
+        cancel: "Annuler"
+      create:
+        ticket_type_added: "Billet ajouté"
+      edit:
+        save: "Sauvegarder le billet"
+        update: "Mettre à jour le billet"
+        cancel: "Annuler"
+        delete: "Supprimmer ce billet / type de tiquet!"
+        confirm_delete: "Êtes-vous sûr de vouloir supprimmer ce billet / type de tiquet?"
+      update:
+        ticket_type_added: "Billet ajouté"
+        ticket_type_updated: "Billet actualisé"
+      destroy:
+        ticket_type_removed: "Billet supprimmé"
+      form:
+        published_yn_label: "Montrer ce type de billet / tiquet?"
+        published_yn_help: "Cette information sera cachée si la case n'est pas séléctionné."
+        ticket_name_label: "Titre de la réservation / type de tiquet"
+        ticket_name_help: ""
+        ticket_name_ph: ""
+        ticket_desc_label: "Information supplémentaire"
+        ticket_desc_help: ""
+        number_issued_label: "Nombre de disponibilitées"
+        number_issued_help: "Imposez une limite sur le nombre disponible de réservations / billets de ce type. Pour imposer une limite sur la taille de l'événement, utilisez _nombre maximum de participants_ sur l'onglet réglage des entrées."
+        ticket_cost_label: "Coût de la réservation"
+        ticket_cost_help: "Établir un coût pour cet type de réservation / billet. Laisser vide si aucun paiement n'est requis."
+        no_cost_on_free_plan: "**Notez:**  Vous ne pouvez pas prendre de paiements sur le plan gratuit. Aucun coût n'apparaîtra sur votre page publique."
+        course_ticket_yn_label: "Billets pour un cours?"
+        course_ticket_yn_help: "Un _billet pour un cours_ permet aux personnes de réserver toutes les dates de cette entrée avec un seul billet. L'entrée doit comprendre des dates / heures multiples et ne peut continuer indéfiniment."
+        group_ticket_yn_label: "Billet de groupe ou de famille?"
+        group_ticket_yn_help: "Plusieurs personnes peuvent réserver sur un seul billet? Ceci vous permet d'établir un coût fixe pour un groupe."
+        attendances_label: "Combien de personnes ce billet comprends-il?"
+        group_min_help: "Minimum"
+        group_max_help: "Maximum"
+        available_from_label: "Depuis quand ce billet sera-il valable?"
+        available_from_days_before_help: "Set if the ticket will _open_ at a particular point before an event."
+        available_from_time_of_day_help: "A quel momment de la journée?"
+        available_to_label: "A quel momment fermeront les réservations de ce type?"
+        available_to_days_before_help: "Restreindre les réservations trop proches d'un évènement, ou utilisez cette option pour les billets du type _inscriptions précoces_."
+        available_to_time_of_day_help: "A quel momment de la journée?"
+      validation:
+        course_min_event_check: "Un cours doit avoir plus d'un événement."
+        course_max_event_check: "un cours ne peut avoir plus que %{max_events} événements."
+        course_terminating_check: "L'emploi du temps du cours ne peut être indéfini."
+
+  # Schedule setup
+
+  schedule_setup:
+
+    schedules:
+      index:
+        list_title: "Liste des emplois du temps récurrents" 
+      edit:
+        save: "Sauvegarder"
+        cancel: "Annuler"
+        ok_close: "Sauvegarder les modifications"
+        delete_schedule: "Retirer cette date/heure!"
+        confirm_delete_schedule: "Êtes-vous sûr de vouloir retirer cette date/heure?"
+        delete_repeating_schedule: "Retirer les dates/heures surlignées!"
+        confirm_delete_repeating_schedule: "Êtes-vous sûr de vouloir retirer ces dates/heures??"
+      destroy:
+        schedule_removed: "Date(s)/heure(s) retirées"
+      schedule:
+        ongoing: "traitement en cours"
+        from: "L'emploi du temps commence:"
+        to: "Jusqu'à:"
+        remaining: "Durée restante:"
+      form:
+        all_day: "Evénement d'une journée?"
+        all_day_help: "ex. Heure non précisée"
+        start_date_help: ""
+        start_and_end_time_label: "Heures de début et de fin"
+        start_time_help: ""
+        duration_label: "Durée"
+        duration_days_label: "Durée (en jours)"
+        duration_days_help: ""
+        duration_hours_help: "Heures"
+        duration_minutes_help: "Minutes"
+        recurring_event: "Est-ce un événement qui se répète?"
+        recurring_event_help: "Configurer un emploi du temps récurrent commencant par la première date/heure."
+        recurrence_type_label: "A quelle fréquence se répète-il?"
+        every_n_label: "Tous les"
+        every_n_minutes_postfix_label: "minutes"
+        every_n_hours_postfix_label: "heures"
+        every_n_days_postfix_label: "jours"
+        every_n_weeks_postfix_label: "semaines"
+        every_n_months_postfix_label: "mois"
+        every_n_years_postfix_label: "ans"
+        repeat_until_type_label: "Répétez jusqu'au"
+        until_date_ph: "Sélectionnez la date"
+        weekly_label: "Répétez la procédure pour ces jours de la semaine:"
+        weekly_mon: "Lun"
+        weekly_tue: "Mar"
+        weekly_wed: "Mer"
+        weekly_thu: "Jeu"
+        weekly_fri: "Ven"
+        weekly_sat: "Sam"
+        weekly_sun: "Dim"
+        monthly_label: "Répétez cette procédure:"
+        same_day: "Le même jour chaque mois"
+        nth_weekday: "Le même jour chaque semaine"
+      errors:
+        at_least_one: "Veuillez vous assurer que vous ayez au moins une date/heure dans cette récurrence.  Il se peut que le problème soit dans la rubrique 'Répétez jusqu'au'."
+        at_least_one_date_required: "Vous devez sélectionner au moins une date dans la rubrique dates et heures. Si vous voulez supprimer cette entrée de données, veuillez sélectionner l'option 'Supprimer entrée'."
+
+    exception_times:
+      index:
+        list_title: "Exclure les dates:"
+      destroy:
+        exception_time_removed: "Dates/heure ajoutées de nouveau à l'emploi du temps"
+      exception_time:
+        confirm_remove: "Cette exception sera supprimée, et la date/heure apparaitra de nouveau dans l'emploi du temps. C'est ce que vous souhaitez?"
+
+    events:
+      recurrence_options:
+        one_of_many_occurrence_options_title: "Cette date/heure fait partie d'un **emploi du temps récurrent**."
+        edit_schedule: "_Modifier_ la totalitée de l'emploi du temps récurrent."
+        split_occurrence: "_Séparer_ cette date/heure de l'emploi du temps récurrent."
+        occurrence_exception: "_Retirer_ cette date/heure de l'emploi du temps."
+        split_title: "Séparer cette date/heure de l'emploi du temps récurrent?"
+        split_text: "Cette date/heure sera transféré a sa propre occurence, et la date/heure sur l'emploi du temps récurrent sera remplacée par une exception."
+        ok_split_btn: "Continuer"
+        cancel_split_btn: "Annuler"
+        remove_title: "Supprimmer cette date/heure?"
+        remove_text: "Une date/heure d'exception sera sauvegardée sur l'emploi du temps récurrent. Ceci est réversible: il suffit de supprimer cette exception."
+        ok_remove_btn: "Retirer"
+        cancel_remove_btn: "Annuler"
+        close: "Retour"
+      floating_options:
+        floating_date_options_title: "Cette date/heure n'est pas dans l'emploi du temps publique, mais elle est liée à des réservations."
+        add_floating_date: "_Rajouter_ cette date/heure à l'emploi du temps."
+        add_floating_date_title: "Rajouter une date/heure détachée à l'emploi du temps."
+        add_floating_date_text: "Cette date/heure a des réservations, mais n'est pas incluse dans l'emploi du temps actuel.\n\nSi vous désirez transférer la réservation à une autre date/heure, veuillez la selectionner sur la page principale de l'emploi du temps."
+        ok_add_floating_date_btn: "Ajouter"
+        cancel_add_floating_date_btn: "Annuler"
+        close: "Retour"
+      destroy:
+        occurrence_removed: "Date/heure retirée"
+      split:
+        occurrence_split: "Date/heure séparée"
+      reattach:
+        floating_attached: "Date/heure rajoutée"
+
+  views:
+
+    # Kaminari
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&laquo;"
+      next: "&raquo;"
+      truncate: "&hellip;"
+
+  # Active record
+
+  validation:
+    account_billing_detail:
+      invalid_vat_number: "Non valable."
+      invalid_coupon_code: "n'est pas valable."
+
+  activemodel:
+    validations:
+      not_valid_amount: "n'est pas une quantitée valable."
+    attributes:
+      login_form:
+        email_or_username: "Votre adresse email ou nom d'utilisateur"
+        password: "Mot de passe"
+      signup_form:
+        email: "Votre adresse email"
+        subdom_code: "Ce code"
+        timezone_name: "Votre fuseau horaire"
+        terms_of_service: "Les Conditions de Service"
+      password_reset_form:
+        email_or_username: "Votre adresse email ou nom d'utilisateur"
+      set_password_form:
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+      entry_details_form:
+        title: "Titre"
+      recurrence_form:
+        every_n: "Chaque 'N'"
+        recurrence_type: ""
+        until_occurrences: "Numéro de l'événement"
+      form_field_form:
+        field_label: "Étiquette"
+        field_code: "Code de référence"
+        field_help: "Texte explicatif"
+        field_placeholder: "Texte d'exemple "
+        field_data_type: "Type de champ:"
+        target_type: "Objectif"
+        form_field_options: ""
+      ticket_type_form:
+        ticket_type_code: "Code"
+        ticket_name: "Titre"
+        ticket_desc: "Description"
+        ticket_cost: "Coût"
+        currency_code: "Monnaie"
+        number_issued: "Nombre de billets disponible"
+        course_ticket_yn: ""
+        group_min: ""
+        group_max: ""
+        available_from_days_before: ""
+        available_from_time_of_day: ""
+        available_to_days_before: ""
+        available_to_time_of_day: ""
+      delete_calendar_form:
+        confirm: ""
+      delete_account_form:
+        confirm: ""
+      discount_codes_form:
+        codes_list: "Codes"
+        discount_percent: "Pourcentage"
+        formatted_discount_amount: "Quantitée"
+        expires_at: "Date"
+        usage_limit: "Limite d'utilisation"
+      gateway_fees_form:
+        base_cost: "Coût de base"
+        fee_pcnt: "Pourcentage du frais"
+      discount_rules_form:
+        rule_boundry: "Comptant des billets"
+        discount_percent: "Pourcentage"
+        formatted_discount_amount: "Quantitée"
+        expires_at: "Date"
+      gateway_fees_form:
+        base_cost: "Valeure du frais"
+        fee_pcnt: "Pourcentage"
+      ticket_type_form:
+        available_from_days_before: "Days"
+        available_to_days_before: "Days"
+
+  activerecord:
+    models:
+      person: "Personne"
+    attributes:
+      person:
+        email: "Email"
+        current_password: "Mot de passe actuel"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+      form_field_type:
+        field_label: "Étiquette"
+        form_field_options: ""
+      default_entry_setting:
+        waiting_list_gap_minutes: "Minutes de délai"
+        minutes_to_complete_booking: "Minutes jusqu'à éxécution"
+        cancellations_until_duration_value: "Valeur de la durée"
+        refunds_until_duration_value: "Valeur de la durée"
+        cancellations_until_mins_into_day: "Valeur temporelle"
+        refunds_until_mins_into_day: "Valeur temporelle"
+        reminder_days_before: "Jours"
+      social_feeds:
+        social_feed_url: "URL"
+        social_feed_type: "Type de lien"
+      account_billing_detail:
+        business_vat_number: "numéro TVA"
+    errors:
+      messages:
+        carrierwave_processing_error: "l'image ne peut être redimensionnée."
+        carrierwave_integrity_error: "Ceci n'est pas une image."
+      models:
+        person:
+          attributes:
+            email:
+              taken: "est déjà enregistré. Essayez de vous connecter."
+        account:
+          attributes:
+            subdom_code:
+              taken: "a déjà été pris."
+              reserved: "a été réservé pour l'utilisation du système."
+        account_billing_detail:
+          attributes:
+            billing_address:
+              blank: "est requis pour les clients Européens (& GB)."
+
+  standard_mailer:
+    new_account:
+      subject: "Bienvenu à bookwhen"
+    password_reset:
+      subject: "Rréinitialisation du mot de passe bookwhen"
+    admin_invite:
+      subject: "Invitation admin bookwhen"
+    import_complete:
+      subject: "L'importation du compte bookwhen v1 est terminée"
+    subscription_invoice:
+      subject: "Bookwhen subscription - payment received"
+    subscription_failure:
+      subject: "Bookwhen subscription - payment failed"
+    trial_almost_end:
+      subject: "Your Bookwhen trial is ending soon"
+    trial_end_now:
+      subject: "Your Bookwhen trial has ended"
+    plan_end_now_free:
+      subject: "Your Bookwhen subscription has ended"
+    plan_fail_now_free:
+      subject: "Your Bookwhen account has reverted to the free plan!"
+    error_notification:
+      subject: "Bookwhen event of consequence notification!"
+
+  template_mailer:
+    template_email:
+      footer: "Réservations par https://bookwhen.com"
+    snippet:
+      additional_information: "Information supplémentaire:"
+      cancellation_reminder: "Si vous ne pouvez vous joindre à nous, veuillez annuler votre réservation pour permettre à quelqu'un d'autre de réserver."
+
+  email_templates:
+    booking_complete:
+      subject_line: "Confirmation de la réservation. Ref: [BOOKING_REF]"
+      body_text: |
+        Nous vous remercions de votre réservation.
+        
+        La référence de votre réservation est: [BOOKING_REF]
+        
+        Vous pouvez accéder à votre réservation en utilisant le lien ci-dessous. Veuillez sauvegarder cet email au cas où vous auriez besoin d'annuler votre réservation (voire les conditions d'annulation).
+        
+        [BOOKING_LOGIN_LINK]
+        
+        Détails de votre réservation:
+        
+        [BOOKING_DETAILS]
+        
+        [ADDITIONAL_INFORMATION]
+        
+    booking_complete_admin:
+      subject_line: "[Bookwhen] Nouvelle réservation. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      body_text: |
+        Nouvelle réservation: [BOOKING_REF]
+        
+        [BOOKING_PAGE_LINK]
+        
+        [BOOKING_DETAILS]
+        
+    booking_cancelled:
+      subject_line: "Réservation annulée. Ref: [BOOKING_REF]"
+      body_text: |
+        La réservation [BOOKING_REF] a été annulée.
+        
+        Voire les détails de cette réservation en utilisant le lien ci-dessous:
+        
+        [BOOKING_LOGIN_LINK]
+        
+    booking_cancelled_admin:
+      subject_line: "[Bookwhen] réservation annulée. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      body_text: |
+        La réservation [BOOKING_REF] a été annulée.
+        
+        [BOOKING_PAGE_LINK]
+        
+        [BOOKING_DETAILS]
+
+    ticket_cancelled:
+      subject_line: "Billet annulé. Ref: [BOOKING_REF]"
+      body_text: |
+        Le billet de la réservation [BOOKING_REF] a été annulé:
+        
+        [TICKET_DETAILS] (Annulé)
+        
+        Voire les détails de cette réservation en utilisant le lien ci-dessous:
+        
+        [BOOKING_LOGIN_LINK]
+        
+    ticket_cancelled_admin:
+      subject_line: "[Bookwhen] Billet annulé. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      body_text: |
+        Le billet de la réservation [BOOKING_REF] a été annulé:
+        
+        [TICKET_DETAILS] (Annulé)
+        
+        [BOOKING_PAGE_LINK]
+        
+        [BOOKING_DETAILS]
+
+    ticket_changed:
+      subject_line: "Billet modifié. Ref: [BOOKING_REF]"
+      body_text: |
+        Le billet de la réservation [BOOKING_REF] a été modifié:
+        
+        From: [OLD_TICKET_DETAILS] (Annulé)
+        To:   [NEW_TICKET_DETAILS]
+        
+        Voire les détails de cette réservation en utilisant le lien ci-dessous:
+        
+        [BOOKING_LOGIN_LINK]
+        
+    ticket_changed_admin:
+      subject_line: "[Bookwhen] Billet modifié. Ref: [BOOKING_REF] - [ONE_LINE_SUMMARY]"
+      body_text: |
+        Le billet de la réservation [BOOKING_REF] a été modifié:
+        
+        From: [OLD_TICKET_DETAILS] (Annulé)
+        To:   [NEW_TICKET_DETAILS]
+        
+        [BOOKING_PAGE_LINK]
+        
+        [BOOKING_DETAILS]
+        
+    booking_reminder:
+      subject_line: "Rappel d'un prochain événement"
+      body_text: |
+        N'oubliez pas vos prochaines réservations:
+        
+        [EVENT_LIST]
+        
+        Si vous ne pouvez plus participer à l'évennement, veuillez annuller votre reservation en utilisant le lien envoyé dans votre premier email de réservation.
+        
+        Merci.
+        
+    waiting_list_added:
+      subject_line: "Vous êtes à présent sur la liste d'attente"
+      body_text: |
+        Vous avez été ajouté(e) à la liste d'attente de:
+        
+        [EVENT_DETAILS]
+        
+        Vous êtes dans la position [POSITION_ORDINAL] de la liste. Vous serez informé(e) par email si une place se libère et vous aurez [DELAY_PERIOD] pour faire votre réservation avant que la prochaine personne sur la liste soit informée.
+        
+        Vous pouvez vous retirer de la liste en suivant ce lien:
+        
+        [REMOVAL_LINK]
+        
+        Merci et bonne chance!
+        
+    waiting_list_place_available:
+      subject_line: "Une place s'est libérée!"
+      body_text: |
+        Une place s'est libérée pour:
+        
+        [EVENT_DETAILS]
+        
+        Suivez ce lien pour faire votre réservation:
+        
+        [PUBLIC_LOGIN_LINK]
+        
+        La prochainne personne sur la liste sera informée dans [DELAY_PERIOD], veuillez réserver dès maintenant pour assurer votre place.
+        
+        
+        Vous pouvez vous retirer de la liste en suivant ce lien:
+        
+        [REMOVAL_LINK]
+        
