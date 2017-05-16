@@ -1,0 +1,463 @@
+# Translation information:
+# 
+#  - Only translate the parts in quotes "like this".
+#  - All values must be kept in the same order with the same indentation and gaps.
+#  - Parts of text looking like this %{code} must not be changed as they are used
+#    for merging. They may be repositioned to make the sentence structure correct.
+#  - Things like &copy; are HTML codes that translate to symbols on the page.
+#  - \n is a code for a new line.
+#  - Text surrounded by ** becomes bold (but not everywhere).
+#  - URLs (links) should be kept the same.
+# 
+#    Thank you!
+
+fr:
+
+  controllers:
+    concerns:
+      site_concern:
+        site_not_found: "Page non trouvée"
+      user_concern:
+        token_expired: "Votre jeton a expiré. Veuillez vous re-connecter."
+        admin_only: "Ceci est une fonction pour administrateur."
+      booking_concern:
+        booking_required: "Réservation non trouvée"
+
+  sites:
+    title_bar:
+      save_changes: "Sauvegarder le titre de l'en-tête"
+      title_label: "Titre de la page principale"
+      description_label: "Information générale"
+
+  general:
+    api_error: "Quelquechose n'a pas fonctionné! Nous avons étés informés et nous nous penchons sur la question. Veuillez retentez l'opération plus tard."
+    null_session: "Séence non trouvée! Les cookies doivent être autorisés pour faire une réservation. Essayez de recharger votre navigateur."
+    show_more_text: "[Voir plus]"
+
+  money:
+    plus_tax: "%{amount} + taxe"
+
+  duration:
+    days:
+      one: "1 jour"
+      other: "%{count} jours"
+    weeks:
+      one: "1 semaine"
+      other: "%{count} semaines"
+
+  login:
+    failed: "ou les addresses emails n'étaient pas correctes."
+
+  layouts:
+    title:
+      default: "Prochains événements"
+      postfix: "Réservation par Bookwhen"
+    header:
+      login: "Connexion"
+      logout: "Déconnexion"
+      edit_page: "Paramètres page web"
+      admin_site: "Page admin"
+      view_bookings: "Voir vos réservations"
+    breadcrumbs:
+      schedule: "Emploi du temps"
+      event: "Evénement"
+      basket: "Articles selectionnés"
+      form: "Détails"
+      password: "Mot de passe"
+      payment: "Paiement"
+      done: "Terminé"
+      complete: "Complet"
+      exit: "Déconnectez vous"
+    footer:
+      contact_title: "Contact"
+      follow_title: "Suivre"
+      payments_title: "Paiements"
+      cards_accepted: "Cartes acceptées:"
+      view_refund_policy: "Voir notre [politique de remboursement](%{link})."
+      company_no: "Numéro de la compagnie."
+      copyright: "Droits d’auteur &copy; %{year} %{org_link}"
+      about: "About us"
+      privacy: "Politique de confidentialité"
+      terms: "Conditions de service"
+
+  oauth:
+    oauth:
+      callback:
+        logged_in: "Vous êtes connecté"
+      logout:
+        logged_out: "Vous êtes déconnecté"
+
+  sessions:
+    destroy:
+      session_destroyed: "Vous êtes déconnecté"
+
+  pages:
+    breadcrumb:
+      refund_policy: "Politique de remboursement"
+    show:
+      page_not_valid: "Page non trouvée"
+    refund_policy:
+      refund_policy_title: "Politique de remboursement"
+
+  agenda_list:
+    show:
+      from_date: "A partir de %{date}"
+      from_today: "Choisissez une date"
+      timezone_info: "Les horaires sont dans votre fuseau horaire: %{zone}"
+    rows:
+      no_records: "Aucun événement"
+    row:
+      fully_booked: "Complet"
+      user_booked: "Vous êtes enregistré pour cet événement"
+      course_duration_text: "Cours: %{n_dates}"
+      dates_word_singular: "date"
+    foot:
+      show_more: "Voir plus..."
+
+  baskets:
+    show:
+      basket_error: "L’accès à vos sélections pose problème. Veuillez essayer plus tard, ou contacter support@bookwhen.com"
+      basket_empty: "Votre panier est vide. Retournez au [schedule list](%{home_path})."
+      start_checkout: "Réservez maintenant"
+      start_checkout_wait: "Veuillez patienter..."
+      start_booking_info: |
+        - Vos places seront réservées dès que vous commencerez la procédure de réservation.
+        - Veuillez fournir les informations concernant le participant et le paiement avant de compléter la réservation.
+      not_found: "Certains articles ont étés retirés de votre panier et ne sont plus disponibles. Veuillez retourner au menu horaires pour les rajouter. Merci."
+      no_items: "Les articles de votre panier ne sont plus disponibles. Veuillez retourner au menu horaires pour les rajouter. Merci."
+    table:
+      title: "Articles sélectionnés"
+      total_tax: "Taxe ajoutée"
+      total_cost: "Cout total des tickets"
+      booking_fee_online: "Un frais supplémentaire de paiement en ligne de **%{fee}** sera ajouté au total."
+      booking_fee_offline: "Un frais supplémentaire de **%{fee}** sera ajouté au total si vous choisissez de payer plus tard."
+      booking_fee_both: |
+        Un frais supplémentaire sera ajouté, en fonction de votre méthode de paiement.
+        Paiement en ligne: **%{online_fee}**
+        Autre méthode de paiement: **%{offline_fee}**
+      delete_item: "Supprimer cet article"
+      confirm_delete: "Etes-vous sure de vouloir supprimer cet article de votre panier?"
+      discount: "Rabais"
+      discounts: "Rabais"
+      delete_code: "Supprimer le code"
+      valid_rule: "La règle de remise '%{code}' est automatiquement appliquée pour un rabas de %{value}."
+      valid_code: "Utilisez le code '%{code}' pour un rabais de %{value}."
+      invalid_code: "Le code '%{code}' n'est pas valable: %{reason}"
+      invalid_reason:
+        not_found: "Introuvable."
+        expired: "Code promo expiré."
+        used: "Ce code promo a déjà été utilisé."
+        no_match: "Ce code promo n'est pas applicable aux articles sélectionnés."
+        overlap: "Ce code promo ne peut être utilisé en même temps que les autres rabais sélectionnés."
+        rule_fail: "La règle de rabais n'est pas valable."
+    row:
+      attendee_counts: "(%{counts} personnes)"
+    show_button:
+      start_booking: "Continuez la réservation"
+
+  discount_codes:
+    form:
+      show_link: "Ajoutez un code promo"
+      code_label: "Code promo"
+      submit: "Soumettre le code promo"
+    create:
+      code_added: "Code promo soumis"
+    destroy:
+      code_removed: "Code promo retiré"
+
+  select_button:
+    new_booking: "Sélectionnez"
+    unavailable: "Non valable"
+    number_added: "%{count}"
+    increment: "+"
+    no_more: "+"
+    decrement: "-"
+    sold_out: "Vendu"
+    group_info:
+      "%{ticket_count}, %{person_count}"
+    ticket:
+      one: "1 billet"
+      other: "%{count} billets"
+    person:
+      one: "1 personne"
+      other: "%{count} personnes"
+    flash:
+      item_added: "Selection ajoutée"
+      item_removed: "Selection retirée"
+
+  events:
+    preview:
+      view: "Voir les détails"
+      tickets_list: "Billets / types de réservations"
+      spaces_available: "%{spaces} places disponibles"
+      only_spaces_available: "Seulement %{spaces} places disponibles"
+      last_space_available: "Une seule place disponible"
+      no_spaces_available: "Complet"
+      reserved_for_waiting_list: "Réservé sur la liste d'attente"
+      one_slot_open: "Une seule place disponible"
+      one_slot_closed: "Cette place a déjà été réservée"
+      one_slot_reserved: "Place réservée sur la liste d'attente"
+      join_waiting_list: "Se joindre à la liste d'attente"
+    show:
+      not_found: "L'événement n'est pas trouvé"
+      details: "Details"
+      tickets: "Billets / types de réservations"
+      location: "Localisation"
+      cost: "Cout"
+      fee: "Prix"
+    details_summary:
+      details: "Détails"
+      attachments: "Documments"
+    connected_events:
+      title: "Dates du cours"
+
+  waiters:
+    create:
+      success_message: "Vous êtes la %{position_ordinal} personne sur la liste. Nous vous avons envoyé un email avec plus d'information. Merci."
+      added_flash: "Vous êtes sur la liste"
+    form:
+      title: "Liste d'attente"
+      waiting_list_help: |
+        Cet événement est au complet, mais veuillez vous joindre à la liste d'attente. Merci.
+        
+        Ajoutez vos détails ci-dessous pour que nous puissions vous informer quand une place se libère. Nous vous prions de répondre rapidement au email si une place se libère.
+      email_label: "Addresse email"
+      email_help: "Vous serez informé par email si une place se libère."
+      name_label: "Votre nom"
+      name_help: ""
+      phone_label: "Numéro de téléphone"
+      phone_help: "Cette information est optionnelle, mais utile pour l'organisateur de votre événement."
+      submit: "Soumettre cette information"
+
+  bookings:
+    create:
+      basket_empty_error: "Votre panier est vide. Veuillez vous re-connecter."
+      validation_error: "La réservation ne peut commancer"
+    complete_banner:
+      title: "Réservation complétée"
+      booking_ref: "Référence de la réservation:"
+      footer_text: |
+        Vous pouvez accéder à votre réservation en utilisant le lien dans le email de confirmation.
+        
+        Merci pour votre réservation.
+    cancelled_banner:
+      title: "réservation annulée"
+      booking_ref: "Référence de la réservation:"
+      footer_text: |
+        Cette réservation a été annulée.
+    overview:
+      booked_by: "Réservé par:"
+      title: "Détails de votre réservation"
+      person: "personne"
+    post_booking_info:
+      title: "Information supplémentaire"
+    cancel:
+      error: "Cette annulation a échouée."
+
+  booking_passwords:
+    form:
+      title: "Mot de passe de la réservation"
+      password_label: "Mot de passe de l'événement"
+      password_help: "Veuillez entrer le mot de passe de cet événement."
+      submit_password: "Continuez"
+      submit_password_wait: "Veuillez patienter..."
+    update:
+      passwords_ok: "Mot de passe valide"
+
+  booking_details:
+    form:
+      booking_fields: "Détails de votre réservation"
+      attendee_number: "%{ordinalized_number} participants"
+      booker_label: "Est-ce bien vous?"
+      booker_help: "Veuillez cocher cette case si vous réservez pour vous même."
+      no_attendee_fields: "Les détails du participant ne sont pas requis."
+      submit_details: "Continuez"
+      submit_details_wait: "Veuillez patienter..."
+    person_booking:
+      booked_by: "Réservé par"
+      logout: "Déconnectez"
+      admin_booker: "**Cette information est optionnelle, puisque vous êtes l'administrateur de ce compte.**"
+    booker_form:
+      booker_email_label: "Vore addresse email"
+      user_options_html: "Vous pouvez %{login_link} si vous avez un mot de passe, ou %{set_password_link} si vous allez réserver à nouveau."
+      set_password_option: "Veuillez établir un mot de passe"
+      login_option: "Connectez vous"
+      set_password_label: "Enregistrez un mot de passe"
+      set_password_help: "Ceci est optionnel, mais sera utile si vous faites d'autres réservations à l'avenir."
+      cancel_set_password: "Annuler"
+      enter_password_label: "Enregistrez votre mot de passe"
+      signin_button: "Connectez vous"
+      reset_password_link: "Passeport oublié?"
+      cancel_enter_password: "Annuler"
+    update:
+      validation_error: "Veuillez réviser votre soumission"
+
+  booking_payments:
+    edit:
+      no_payment_required: "Il n'y a pas de paiement requis."
+    summary_table:
+      title: "Couts & Paiements"
+      total_cost_no_fees: "Cout total de la réservation"
+      total_cost_excluding_fees: "Cout des billets"
+      stripe_fee_title: "Cout total du paiement en ligne"
+      stripe_fee_desc: "Ceci comprends un montant additionnel de paienement en linge de %{amount}"
+      paypal_fee_title: "Cout total du payment en ligne"
+      paypal_fee_desc: "Ceci comprends un frais de traitement en ligne additionnel de %{amount}"
+      offline_fee_title: "Cout total de paiement hors ligne"
+      offline_fee_desc: "Ceci comprends un frais de traitement additionnel de %{amount}"
+    form:
+      payment_complete: "Paiement accepté. Merci."
+    offline_payment:
+      title: "Paiement hors ligne"
+      admin_booker: "**Vous faites cette réservation en tant qu'administrateur** donc vous pouvez éviter le paiement en ligne. Veuillez accepter l'accord de paiement hors ligne au nom de votre client pour continuer."
+      agree_text: "Je consent à payer %{amount}"
+      agree_button: "Payer plus tard"
+      agree_button_wait: "Payer plus tard"
+      agreed: "Vous avez consenti à payer plus tard. Merci."
+    online_payment:
+      title: "Payement en ligne"
+      total: "Montant total: %{amount}"
+      verifying_payment: "Vérification en cours. Merci de patienter..."
+      booking_expired: "Votre réservation est expirée et votre place n'est plus disponible!"
+    stripe_payment:
+      payment_help: |
+        **Payer par carte** en utilisant la touche ci-dessous.
+      pay_by_card_button: "Payer par carte"
+      secure: "Paiements sécurisés, par Stripe"
+      stripe_facebook_notice: "**Please note**: There is an issue affecting some payments via Facebook. If you see a **blank page** after clicking 'Pay by card', please browse back to this page, then **open the page in your usual browser** using the 3 dots option in the corner of the screen. Sorry for the inconvenience."
+    worldpay_payment:
+      payment_help: |
+        Paiements sécurisés, par Worldpay.
+      pay_by_card_button: "Payez par carte"
+      validation_failed: "Veuillez vérifier les informations que vous avez entrées et essayer à nouveau."
+      form_error: "Il y a eu eune erreure pendant la soumission de vos coordonnées à Worldpay. Veuillez essayer à nouveau plus tard."
+      secure: "Paiements sécurisés, par Worldpay"
+    paypal_payment:
+      payment_help: |
+        Vous n'avez pas besoin d'un compte PayPal pour payer:
+        
+        **Payer par carte** en cliquant la touche PayPal, puis '**Pay with a debit or credit card**'.
+      button_alt: "Payez avec PayPal"
+    process_stripe_token:
+      payment_error_flash: "Payment échoué!"
+      system_error_flash: "Erreure de payment!"
+      system_error_message: "Il y a un problème avec le traitement de votre payment! Veuillez contacter support@bookwhen.com pour assistance. Merci de votre patience."
+    process_worldpay_token:
+      payment_error_flash: "Payment échoué!"
+      system_error_flash: "Erreure de payment!"
+      system_error_message: "Il y a un problème avec le traitement de votre payment! Veuillez contacter support@bookwhen.com pour assistance. Merci de votre patience."
+    check_payment:
+      payment_successful: "Payment complété. Merci."
+    check_expired:
+      booking_expired: "Réservation expirée"
+    update:
+      agreement_accepted: "Merci"
+
+  themes:
+    button:
+      link_text: "Réservez en ligne"
+      title: "Réservez en ligne"
+      alt: "Réservez en ligne"
+    edit:
+      title: "Paramètres page publique"
+      theme_help: "Gérez le style et contenu de votre page publique."
+      edit_url: "Changez le URL de votre site..."
+      save_url_change: "Mettre votre URL à jour"
+      cancel_edit_url: "Anuller"
+      page_url_postfix_label: "URL de votre site publique"
+      page_url_postfix_help: ""
+      public_page_label: "Le **URL de votre page publique** est:"
+      html_links_label: "Code HTML de votre site:"
+      anchor_link_label: "Lien standard"
+      button_link_label: "Lien sous forme de bouton"
+      iframe_code_label: "Embedded iframe"
+      button_preview: "Aperçu du bouton:"
+      show_spaces_yn_label: "Montrer les disponibilités?"
+      show_spaces_yn_help: "Montrez le nombre de places et de billets disponibles? (Ou seulement montrer quand l'événement est presque complet.)"
+      schedule_row_count_label: "Compter les rangées de la liste horaire:"
+      schedule_row_count_help: "Combien de rangées voudriez vous montrer dans la liste horaire?"
+      exit_url_label: "Liez à votre site internet?"
+      exit_url_help: "Enter a valid URL to show a prominent 'Exit booking system' link."
+      bg_colour_hex_label: "Couleure de fond du site"
+      bg_colour_hex_help: "Sélectionnez la couleur de fond de votre page."
+      set_logo: "Etablir le logo"
+      delete_logo: "Supprimer"
+      delete_logo_confirm: "Estes vous sure de vouloir retirer le logo?"
+      upload_logo_label: "Image du logo téléchargé:"
+      upload_logo_help: "Le logo sera aligné sur la gauche, et d'une taille maximale de 1000px par 250px."
+      set_header_photo: "Etablir le fond d'en-tête"
+      delete_header_photo: "Supprimer"
+      delete_header_photo_confirm: "Estes vous sure de vouloir retirer la photo d'en-tête?"
+      upload_banner_label: "La photo d'entête téléchargée:"
+      upload_banner_help: "L'image sera étirée pour remplir le haut de la page."
+      save_options: "Sauvegarder les réglages"
+      cancel_button: "Fermer"
+      html_links_leading_help: |
+        Vos clients peuvent réserver à travers cette page publique. Utilisez les liens ci-dessous. 
+      update_url_info: |
+        **Veuillez noter**: La mise à jour de votre URL déconnectera tous liens pointant sur votre page publique.
+    update_url:
+      url_updated: "l'addresse (URL) de la page a été mise à jour"
+      url_not_allowed: "l'addresse (URL) de la page est déjà utilisée ou n'est pas autorisée."
+    update_options:
+      options_updated: "Les paramètres sont mis à jour. Veuillez rechargez la page."
+
+  tickets_helper:
+    day: "jour"
+    cost: "Cout:"
+    offline: "Hors ligne"
+    status: "Statut: %{status}"
+    course_summary_info: "Ce billet est pour **la totalitée des %{total} dates**."
+    available_num: "Numéro disponible:"
+    available_from: "Disponible du:"
+    available_from_text: "**%{days}** jours avant, à **%{time}**"
+    available_to: "Disponible jusqu'au:"
+    available_to_text: "**%{days}** jours avant, à **%{time}**"
+    group_ticket_summary: "Billet de groupe pour %{range} personnes"
+    availability_summary_noc: "%{number} disponibles entre %{opens} et %{closes}"
+    availability_summary_n: "%{number} disponibles"
+    availability_summary_no: "%{number} disponibles après %{opens}"
+    availability_summary_nc: "%{number} disponibles jusqu'au %{closes}"
+    availability_summary_oc: "Disponibles entre %{opens} et %{closes}"
+    availability_summary_o: "Disponibles après %{opens}"
+    availability_summary_c: "Disponibles jusqu'au %{closes}"
+
+  image_uploads:
+    create:
+      upload_error: "Problème de téléchargement de votre fichier image. Veuillez contacter support@bookwhen.com"
+
+  errors:
+    messages:
+      carrierwave_processing_error: "le traitement des données a échoué"
+      carrierwave_integrity_error: "le format de ce fichier n'est pas autorisé"
+      carrierwave_download_error: "le téléchargement a échoué"
+      extension_white_list_error: "Les fichiers du type '%{extension}' ne sont pas autorisés, désolés. Essayez %{allowed_types}."
+      mime_types_processing_error: "Le traitement du fichier a échoué avec MIME::Types, le type du contenu n'est peut être pas valable? Erreure initiale: %{e}"
+      mini_magick_processing_error: "La manipulation avec MiniMagick a échouée, ceci n'est peut être pas une immage? Erreure initiale: %{e}"
+
+  activemodel:
+    attributes:
+      discount_code_form:
+        raw_code: "Code"
+      page_url_form:
+        page_url_postfix: "Code"
+      page_options_form:
+        schedule_row_count: "Nombre de rangées"
+        exit_url: "URL"
+        
+  datepicker:
+    previous_month: "Mois précédent"
+    next_month: "Prochain mois"
+
+  time:
+    formats:
+      agenda_year_month: "%B, %Y"
+      agenda_month: "%B"
+      agenda_day_of_month: "%e"
+      agenda_day_of_week: "%a"
+      full_date: "%A, %e %B, %Y"
+      compact_full_date: "%a, %e %b %Y"
+      date_with_year: "%a %e %b %Y"
+      date_without_year: "%a %e %b"
+      time_with_minutes: "%H:%M"
+      time_without_minutes: "%H:%M"
