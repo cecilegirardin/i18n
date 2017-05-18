@@ -13,7 +13,7 @@ fr:
     link: "https://bookwhen.com"
 
   app:
-    name: "bookwhen"
+    name: "Bookwhen"
 
   time:
     formats:
@@ -55,17 +55,17 @@ fr:
     default: "Cette action n'est pas autorisée"
     account_policy:
       access?: "Vous n'avez pas le droit d'accès à ce compte."
-      administer?: "Seuls les titullaires du compte peuvent compléter cette action"
+      administer?: "Seuls les titullaires du compte peuvent compléter cette action."
     calendar_policy:
-      access?: "Vous n'avez pas le droit d'accès à cet emploi du temps"
+      access?: "Vous n'avez pas le droit d'accès à cet emploi du temps."
       administer?: "Vous n'avez pas le droit d'accès pour mettre en place cet emploi du temps."
       delete?: "Vous n'avez pas le doit d'accès pour supprimer cet emploi du temps!"
     entry_policy:
       administer?: "Vous n'avez pas le droit d'accès pour mettre en place cet emploi du temps."
     booking_policy:
-      show?: "Utilisez le lien de la réservation ou connectez vous sur bookwhen.com pour voire la réservation."
-      cancel?: "Vous n'avez pas le doit d'accès pour supprimer cette réservation"
-      refund?: "Vous n'avez pas le doit d'accès pour rembourser cette réservation"
+      show?: "Utilisez le lien de la réservation ou connectez vous sur Bookwhen.com pour voire la réservation."
+      cancel?: "Vous n'avez pas le doit d'accès pour supprimer cette réservation."
+      refund?: "Vous n'avez pas le doit d'accès pour rembourser cette réservation."
       administer?: "Cette action n'est pas autorisée. Veuillez contacter le titulaire du compte."
 
   layouts:
@@ -77,10 +77,10 @@ fr:
         login: "Connexion"
         signup: "S'inscrire"
       footer:
-        product: "Product #####################"
+        product: "Produit"
         features: "Fonctionnalités"
         pricing: "Tarifs"
-        support: "Assistance ############# conseiller personnel?"
+        support: "Assistance"
         help: "Aide"
         developers: "Développeurs"
         about: "À propos"
@@ -144,7 +144,7 @@ fr:
         locations: "Localisation"
         attachments: "Pièces jointes"
         form_field_types: "Les champs de la réservation"
-        imports: "L'importation du compte v1"
+        imports: "Importation du compte v1"
         login: "Connexion"
         logout: "Déconnexion"
         help: "Aide"
@@ -154,7 +154,7 @@ fr:
         privacy: "Politique de confidentialité"
         terms: "Conditions de service"
       noscript:
-        main_banner_message: "Javascript doit être activé pour le bon fonctionnement de bookwhen."
+        main_banner_message: "Javascript doit être activé pour le bon fonctionnement de Bookwhen."
         base_error: "Veuillez activer javascript."
 
   link_titles:
@@ -174,21 +174,21 @@ fr:
 
   booking_process:
     passwords_processor:
-      wrong_password: "Mauvais mot de passe."
+      wrong_password: "Mot de passe incorrect."
     booking_completer:
-      from_status_not_valid: "Le statut doit être Caisse."
+      from_status_not_valid: "Le statut doit être sur 'caisse'."
       password_not_entered: "Le mot de passe de cette réservation n'a pas été completée."
       booking_form_not_complete: "Le formulaire de réservation n'a pas été complété."
       person_booking_not_set: "La personne ayant effectué cette réservation n'est pas enregistrée."
       payment_conditions_not_met: "Les conditions de paiement de la réservation n'ont pas été atteintes."
     booking_canceller:
-      no_user: "Un utilisateur doit être spécifié pour annuller une réservation."
-      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuller cette réservation."
-      bad_status: "Le statut de la réservation doit être complet pour qu'elle puisse être annullée."
+      no_user: "Un utilisateur doit être spécifié pour annuler une réservation."
+      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuler cette réservation."
+      bad_status: "Le statut de la réservation doit être complet pour qu'elle puisse être annulée."
     booking_deleter:
-      no_user: "Un utilisateur doit être spécifié pour annuller une réservation."
-      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuller cette réservation."
-      bad_status: "Veuillez annuller la réservation avant de la supprimer."
+      no_user: "Un utilisateur doit être spécifié pour annuler une réservation."
+      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuler cette réservation."
+      bad_status: "Veuillez annuler la réservation avant de la supprimer."
       has_payment: "Vous ne pouvez supprimer les réservations qui été payées en linge."
     booking_refunder:
       no_user: "Un utilisateur doit être spécifié pour rembourser une réservation."
@@ -205,12 +205,12 @@ fr:
       selected_date_full: "La date sélectionnée n'a pas de places disponibles pour le(s) participant(s)."
       ticket_outside_date_range: "Le billet n'est pas disponible pour la date sélectionnée car elle est en dehors des dates proposées."
       ticket_sold_out: "Il ne reste plus assez de billets de ce type sur les dates sélectionnées."
-      ticket_already_transferred: "The ticket has already been transferred."
+      ticket_already_transferred: "Ce billet a déjà été transféré."
       full_postfix: " - plus d'espace"
     booking_ticket_canceller:
-      no_user: "Un utilisateur doit être spécifié pour annuller un billet."
-      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuller ce billet"
-      user_cancellation_not_allowed: "Veuillez contacter l'organisateur de l'événemment pour annuller cette réservation."
+      no_user: "Un utilisateur doit être spécifié pour annuler un billet."
+      failed_policy: "L'utilisateur spécifié n'a pas la permission d'annuler ce billet"
+      user_cancellation_not_allowed: "Veuillez contacter l'organisateur de l'événemment pour annuler cette réservation."
       past_cancellation_cutoff: "Les annulations ne sont plus permises. Veuillez contacter l'organisateur de l'événemment."
     booking_ticket_refunder:
       no_user: "Un utilisateur doit être spécifié pour rembourser un billet."
@@ -246,7 +246,7 @@ fr:
     btn_saving: "Sauvegarde..."
     please_wait: "Veuillez patienter..."
     show_more_text: "[Voir plus]"
-    cancel_btn: "Annuller"
+    cancel_btn: "Annuler"
     unnamed_person: "Le nom n'a pas été donné."
 
     public:
@@ -272,10 +272,10 @@ fr:
       template_type:
         booking_complete: "Réservation complétée (Participant)"
         booking_complete_admin: "Réservation complétée (Admin)"
-        booking_cancelled: "Réservation annullée (Participant)"
-        booking_cancelled_admin: "Réservation annullée (Admin)"
-        ticket_cancelled: "Billet annullé (Participant)"
-        ticket_cancelled_admin: "Billet annullé (Admin)"
+        booking_cancelled: "Réservation annulée (Participant)"
+        booking_cancelled_admin: "Réservation annulée (Admin)"
+        ticket_cancelled: "Billet annulé (Participant)"
+        ticket_cancelled_admin: "Billet annulé (Admin)"
         ticket_changed: "Billet modifié (Participant)"
         ticket_changed_admin: "Billet modifié (Admin)"
         booking_reminder: "Rappel de la réservation"
@@ -465,7 +465,7 @@ fr:
     create:
       welcome_back: "Bon retours"
     destroy:
-      logged_out: "Vous êtes connecté(e)"
+      logged_out: "Vous êtes connecté"
 
   oauth:
     oauth:
@@ -513,7 +513,7 @@ fr:
   booking_logins:
     invalid_token: |
       ## Login token not valid
-
+      
       Le lien de réservation n'est pas valide. Veuillez contacter l'organisateur avec la référence de votre réservation. Merci.
     calendar_deleted: |
       ## Login token no longer valid
@@ -523,9 +523,9 @@ fr:
   person_logins:
     invalid_token: |
       ## Login token not valid
-
+      
       Ce lien n'est pas valide. Il peut avoir expiré. Veuillez contacter l'organisateur. Merci.
-
+      
   signups:
     new:
       signup_box_title: "Inscrivez-vous"
@@ -544,7 +544,7 @@ fr:
       title: "Activation requise"
       message: |
         Un email a été envoyé à **%{email_address}**.
-
+        
         Veuillez suivre le lien dans le email pour définir un mot de passe et accéder à votre compte.
       not_found: |
         Il y a eu un problème lors de la création de votre compte.
@@ -575,7 +575,7 @@ fr:
       password: "Définir un mot de passe"
       password_confirmation: "Veuillez retapez le mot de passe"
     update:
-      welcome_new_admin: "Bienvenu(e) à bookwhen"
+      welcome_new_admin: "Bienvenu(e) à Bookwhen"
 
   # Admin
 
@@ -642,14 +642,14 @@ fr:
       complete_confirm: "Ceci forcera la réservation au statut 'complétée'. Si un paiement est requis, il sera sauvegardé sous 'payer plus tard'. Désirez vous continuer?"
       cancel: "*Annuler* cette réservation"
       cancel_tip: "La totalitée de la réservation peut être annulée. La personne ayant éfectué la réservation et les participants seront informés de l'annulation. Une annulation est irréversible."
-      cancel_confirm: "Êtes-vous sûr de vouloir annuller cette réservation? Cette action est irréversible!"
+      cancel_confirm: "Êtes-vous sûr de vouloir annuler cette réservation? Cette action est irréversible!"
       delete: "*Supprimer* cette réservation!"
       delete_tip: "Les réservations annulées peuvent être supprimées si il n'y a pas de paiements en ligne en temps réel associés avec la réservation. Les données de la réservation seront définitivement supprimées. Cette action est irréversible!"
-      delete_confirm: "Êtes-vous sûr de vouloir annuller cette réservation? Cette action est irréversible!"
+      delete_confirm: "Êtes-vous sûr de vouloir annuler cette réservation? Cette action est irréversible!"
     complete:
       completed: "La réservation %{ref} est efectuée"
     cancel:
-      cancelled: "La réservation %{ref} a été annullée"
+      cancelled: "La réservation %{ref} a été annulée"
     destroy:
       deleted: "La réservation %{ref} a été supprimée"
     booking_status:
@@ -737,8 +737,8 @@ fr:
 
   ticket_sets:
     edit:
-      cancel_ticket: "Annuller le billet"
-      cancel_ticket_confirm: "Le billet sera supprimé. La personne qui a fait la réservation et le participant seront tous deux informés du changement de la réservation. L'annulation du billet est irréversible.  Etes-vous sûr de vouloir continuer?"
+      cancel_ticket: "Annuler le billet"
+      cancel_ticket_confirm: "Le billet sera supprimé. La personne qui a fait la réservation et le participant seront tous deux informés du changement de la réservation. L'annulation du billet est irréversible.  Êtes-vous sûr de vouloir continuer?"
       cancel_past_cutoff: "Les annulations ne sont plus autorisées pour ce billet."
       cancel_not_allowed: "Les annulations ne sont pas autorisées."
       transfer_past_cutoff: "Les transferts ne sont plus autorisées pour ce billet."
@@ -748,23 +748,23 @@ fr:
       ticket_type_label: "Sélectionnez l'événement et le type de billet"
       ticket_date_label: "Sélectionnez la nouvelle date/l'horaire du billet"
       save_change_ticket: "Sauvegarder"
-      save_change_ticket_confirm: "Ce billet sera annullé et un nouveau billet sera créé pour la nouvelle séléction. Les personnes concernées seront informés par email. Voudriez-vous continuer?"
+      save_change_ticket_confirm: "Ce billet sera annulé et un nouveau billet sera créé pour la nouvelle séléction. Les personnes concernées seront informés par email. Voudriez-vous continuer?"
       cancel_change_ticket: "Fermer"
       change_ticket_help: "Pour changer le billet / type d'événement, sélectionnez le billet / type d'événement dans le premier menu déroulant, puis sélectionnez la date dans le second menu déroulant."
 
   tickets:
     cancel:
-      cancelled: "Billet annullé"
+      cancelled: "Billet annulé"
     update:
       ticket_changed: "Billet changé"
     status:
-      one_of_one_cancelled: "Annullé"
+      one_of_one_cancelled: "Annulé"
       one_of_one_transferred: "Transféré"
-      both_cancelled: "Tous deux annullés"
+      both_cancelled: "Tous deux annulés"
       both_transferred: "Tous deux transférés"
-      all_cancelled: "Tous annullés"
+      all_cancelled: "Tous annulés"
       all_transferred: "Tous transférés"
-      n_cancelled: "%{count} annullés"
+      n_cancelled: "%{count} annulés"
       n_transferred: "%{count} transférés"
       transfer: "Transférer"
     people:
@@ -775,7 +775,7 @@ fr:
   dashboard:
     show:
       title: "Aperçu"
-      welcome_title: "Bienvenu à bookwhen"
+      welcome_title: "Bienvenu à Bookwhen"
       welcome_text: |
         Veuillez commencer par remplir la page de [l'emploi du temps](/schedules). Puis, cliquez sur le boutton ci-dessus pour accéder à votre Page Publique. Les réservations sont listées sur la page de [Réservations](/attendances). Vous y trouverez un aperçu des événements à venir et des réservations les plus récentes.
       upcoming_events: "Evénements prochains"
@@ -785,14 +785,14 @@ fr:
       update_date: "2 Mai 2017"
       update_info: |
         #### Les nouveautées
-
+        
         - Le nom du participant est dorénavant séparé en plusieures parties sur la fiche de réservation.
         - [L'option annulation](/réglages/options) comprends dorénavant les transferts.
-        - Worldpay peut être utilisé pour [encaisser les payements](/réglages/options_payements).
+        - Worldpay peut être utilisé pour [encaisser les paiements](/réglages/options_paiements).
         - Réservations en bloc automatisé [règles de rabais](/réglages/rabais).
         - Les [flux de données du calendrier](/compte/emploi du temps) sont disponibles en privé et publique.
-
-
+        
+        
         <span class="footnote">Consultez la rubrique [aide](http://support.bookwhen.com) pour comprendre comment marche bookwhen, ou cliquez le point d'interrogation dans la barre supérieure. Vous pouvez aussi nous contacter à [support@bookwhen.com](mailto:support@bookwhen.com) ou utilisez l'icône popup aide, en bas à droite.</span>
 
 
@@ -868,7 +868,7 @@ fr:
         button_text: "Charger la page"
         more_help: |
           Nous n'avons pas trouvé de page de réservation avec ce nom. Veuillez vérifier l'orthographe, ou pourrait-il y avoir un symbol ou un caractère en trop à la fin du nom?
-
+          
           Si vous ne pouvez régler le problème, veuillez contacter l'organisateur de l'événement pour obtenir le lien correcte.
 
     agenda_list:
@@ -908,7 +908,7 @@ fr:
           Paiement en ligne: **%{online_fee}**
           Autre méthode de paiement: **%{offline_fee}**
         delete_item: "Supprimer cet article"
-        confirm_delete: "Etes-vous sure de vouloir supprimer cet article de votre panier?"
+        confirm_delete: "Êtes-vous sûr de vouloir supprimer cet article de votre panier?"
         discount: "Rabais"
         discounts: "Rabais"
         delete_code: "Supprimer le code"
@@ -971,7 +971,7 @@ fr:
         title: "Liste d'attente"
         waiting_list_help: |
           Cet événement est au complet, mais veuillez vous joindre à la liste d'attente. Merci.
-
+          
           Ajoutez vos détails ci-dessous pour que nous puissions vous informer quand une place se libère. Nous vous prions de répondre rapidement au email si une place se libère.
         email_label: "Addresse email"
         email_help: "Vous serez informé par email si une place se libère."
@@ -994,7 +994,7 @@ fr:
         booking_ref: "Référence de la réservation:"
         footer_text: |
           Vous pouvez accéder à votre réservation en utilisant le lien dans le email de confirmation.
-
+          
           Merci pour votre réservation.
       cancelled_banner:
         title: "réservation annulée"
@@ -1078,10 +1078,10 @@ fr:
           **Payer par carte** en utilisant la touche ci-dessous.
         pay_by_card_button: "Payer par carte"
         secure: "Paiements sécurisés, par Stripe"
-        stripe_facebook_notice: "**Please note**: There is an issue affecting some payments via Facebook. If you see a **blank page** after clicking 'Pay by card', please browse back to this page, then **open the page in your usual browser** using the 3 dots option in the corner of the screen. Sorry for the inconvenience."
+        stripe_facebook_notice: "**Veuillez noter**: Il y a parfois un problème avec certains paiements éffectués à traves Facebook. Si vous voyez une **page videe** suite à la sélection de 'Payez par carte', veuillez retourner sur cette page, puis **ouvrir la page dans votre navigateur habituel** en utilisant l'option '3 points' dans le coin de votre écran. Désolé de l'inconvénient."
       worldpay_payment:
         payment_help: |
-          Paiements sécurisés, par Worldpay.
+          Paiements sécurisés par Worldpay.
         pay_by_card_button: "Payez par carte"
         validation_failed: "Veuillez vérifier les informations que vous avez entrées et essayer à nouveau."
         form_error: "Il y a eu eune erreure pendant la soumission de vos coordonnées à Worldpay. Veuillez essayer à nouveau plus tard."
@@ -1089,29 +1089,29 @@ fr:
       paypal_adaptive_payment:
         payment_help: |
           Vous n'avez pas besoin d'un compte PayPal pour payer:
-
+          
           **Payer par carte** en cliquant la touche PayPal, puis '**Pay with a debit or credit card**'.
         button_alt: "Payez avec PayPal"
       paypal_express_payment:
         payment_help: |
           Vous n'avez pas besoin d'un compte PayPal pour payer:
-
+          
           **Pay by card** by clicking the PayPal button below then Check Out as a Guest.
         button_alt: "Payez avec PayPal"
       go2pay_payment:
         pay_by_card_button: "Pay now"
       process_stripe_token:
-        payment_error_flash: "Payment échoué!"
-        system_error_flash: "Erreure de payment!"
-        system_error_message: "Il y a un problème avec le traitement de votre payment! Veuillez contacter support@bookwhen.com pour assistance. Merci de votre patience."
+        payment_error_flash: "Paiment échoué!"
+        system_error_flash: "Erreure de paiment!"
+        system_error_message: "Il y a un problème avec le traitement de votre paiment! Veuillez contacter support@bookwhen.com pour assistance. Merci de votre patience."
       process_worldpay_token:
-        payment_error_flash: "Payment échoué!"
-        system_error_flash: "Erreure de payment!"
-        system_error_message: "Il y a un problème avec le traitement de votre payment! Veuillez contacter support@bookwhen.com pour assistance. Merci de votre patience."
+        payment_error_flash: "Paiment échoué!"
+        system_error_flash: "Erreure de paiment!"
+        system_error_message: "Il y a un problème avec le traitement de votre paiment! Veuillez contacter support@bookwhen.com pour assistance. Merci de votre patience."
       process_offline:
         agreement_accepted: "Merci"
       check_payment:
-        payment_successful: "Payment complété. Merci."
+        payment_successful: "Paiment complété. Merci."
       check_expired:
         booking_expired: "Réservation expirée"
 
@@ -1120,12 +1120,12 @@ fr:
         initiate:
           create_token_error: "There was a problem generating your PayPal checkout token. This is normally caused by PayPal server issues. Please try again in a few minutes. Sorry for the inconvenience."
         callback:
-          save_payer_error: "There was a problem processing your payment. No money has been transferred. Sorry for the inconvenience."
+          save_payer_error: "There was a problem processing your paiment. No money has been transferred. Sorry for the inconvenience."
       go2pay:
         initiate:
-          create_token_error: "There was a problem initiating the payment. Please try again in a few minutes. Sorry for the inconvenience."
+          create_token_error: "There was a problem initiating the paiment. Please try again in a few minutes. Sorry for the inconvenience."
         callback:
-          save_payer_error: "There was a problem processing your payment. No money has been transferred. Sorry for the inconvenience."
+          save_payer_error: "There was a problem processing your paiment. No money has been transferred. Sorry for the inconvenience."
 
     themes:
       button:
@@ -1158,12 +1158,12 @@ fr:
         bg_colour_hex_help: "Sélectionnez la couleur de fond de votre page."
         set_logo: "Etablir le logo"
         delete_logo: "Supprimer"
-        delete_logo_confirm: "Estes vous sure de vouloir retirer le logo?"
+        delete_logo_confirm: "Êtes-vous sûr de vouloir retirer le logo?"
         upload_logo_label: "Image du logo téléchargé:"
         upload_logo_help: "Le logo sera aligné sur la gauche, et d'une taille maximale de 1000px par 250px."
         set_header_photo: "Etablir le fond d'en-tête"
         delete_header_photo: "Supprimer"
-        delete_header_photo_confirm: "Estes vous sure de vouloir retirer la photo d'en-tête?"
+        delete_header_photo_confirm: "Êtes-vous sûr de vouloir retirer la photo d'en-tête?"
         upload_banner_label: "La photo d'entête téléchargée:"
         upload_banner_help: "L'image sera étirée pour remplir le haut de la page."
         save_options: "Sauvegarder les réglages"
@@ -1210,11 +1210,11 @@ fr:
         title: ""
         no_bookings: |
           ## Aucune réservation n'a été trouvée
-
+          
           Nous ne pouvons pas trouver de réservations associées à votre adresse email.
-
+          
           Si vous essayez d'accéder à une de vos réservations, veuillez contacter support@bookwhen.com avec le numéro de référence de votre réservation.
-
+          
           Merci.
     bookings:
       show:
@@ -1223,7 +1223,7 @@ fr:
       options:
         options_title: "Options"
         cancel: "Annuler une réservation"
-        cancel_confirm: "Êtes-vous sûr de vouloir annuller cette réservation? Cette action est irréversible!"
+        cancel_confirm: "Êtes-vous sûr de vouloir annuler cette réservation? Cette action est irréversible!"
       booking_status:
         booking: "Ref:"
         status: "Statut:"
@@ -1236,9 +1236,9 @@ fr:
         other_bookings: "Autres réservations"
         token_access_message: |
           **Vous pouvez accéder à cette page par le lien qui vous a été envoyé dans le email de confirmation de la réservation.**
-
+          
           Si vous avez **d'autre réservations**, vous pouvez les voire en vous [identifiant](%{login_path}) avec vore email et mot de passe.
-
+          
           Utilisez la page [mot de passe oublié](%{forgot_password_path}) si vous n'avez pas encore sauvegardé un mot de passe.
       cancel:
         cancelled: "La réservation %{ref} a été annulée"
@@ -1284,7 +1284,7 @@ fr:
         edit_btn: "Modifier"
       edit:
         save_btn: "Sauvegarder"
-        cancel_btn: "Annuller"
+        cancel_btn: "Annuler"
     waiting_lists:
       show:
         title: "Liste d'attente"
@@ -1308,18 +1308,18 @@ fr:
     cancellations:
       show:
         title: "Annulation"
-        cancellation_enabled: "Permettre aux participants d'**annuller** leurs réservations?"
+        cancellation_enabled: "Permettre aux participants d'**annuler** leurs réservations?"
         transfer_enabled: "Permettre les **transferts de billets**?"
         ticket_event_transfer_enabled_text: "Permettre le transfert des évenements et des types de tickets."
         help: |
-          Déterminer quand vos participants peuvent annuller leur réservation. Les administrateurs peuvent annuller à tous momments.
+          Déterminer quand vos participants peuvent annuler leur réservation. Les administrateurs peuvent annuler à tous momments.
 
           Les transferts permettent de modifier la date ou le type d'événement du billet. Si le billet est payant, les transferts sont resteints aux billets de la même valeur ou d'une valeur moindre.
       edit:
         allow_customer_cancellation_yn_label: "Permettre l'annulation de la réservation / du billet?"
-        allow_customer_cancellation_help: "Notez: Les paramètres du processus d'annulation font référence aux participants. Les utilisateurs ayant un statut Admin peuvent toujours annuller les réservations ou transférer les billets."
+        allow_customer_cancellation_help: "Notez: Les paramètres du processus d'annulation font référence aux participants. Les utilisateurs ayant un statut Admin peuvent toujours annuler les réservations ou transférer les billets."
         cancellations_until_duration_value_label: "Annulations permises jusqu'à"
-        cancellations_until_help: "Combien de temps avant l'événement voudriez vous arrêter l'option 'annuller la réservation'? Vous pouvez fixer un horaire précis si la periode est au-delà de 24 h."
+        cancellations_until_help: "Combien de temps avant l'événement voudriez vous arrêter l'option 'annuler la réservation'? Vous pouvez fixer un horaire précis si la periode est au-delà de 24 h."
         allow_ticket_date_transfer_yn_label: "Permettre le transfert de la date du billet?"
         allow_ticket_date_transfer_help: "Voudriez-vous que vos participants puissent changer la date/heure de leurs billets?"
         allow_ticket_event_transfer_yn_label: "Permettre le transfert a un autre évennement ou type de billet?"
@@ -1377,7 +1377,7 @@ fr:
         edit:
           offline_payments: "Paiements hors ligne"
           save: "Sauvegarder les détails de paiements"
-          cancel: "Annuller"
+          cancel: "Annuler"
           payment_instructions_label: "Instructions pour paiements hors ligne"
           payment_instructions_help: "Information: comment votre client peut-il vous payer?\n\nCeci peut inclure les détails banquaires pour transferts en ligne, comment payer par chèque, informations sur les paiements en espèces, etc."
           offline_info: |
@@ -1400,45 +1400,45 @@ fr:
           enabled: "Option activée:"
           enabled_help: "Activer ou désactiver la passerelle de paiement."
           grant_permissions: "Autoriser les remboursements"
-          connect_paypal: "Connect with PayPal"
-          reconnect_paypal: "Reauthenticate PayPal"
+          connect_paypal: "Connecter avec PayPal"
+          reconnect_paypal: "Ré-authentifier PayPal"
           close: "Fini"
           delete: "Retirer l'option PayPal"
           confirm_delete: "Êtes-vous sûr de vouloir retirer les connexions à votre compte PayPal?"
-          connect_title: "Take payments with PayPal"
+          connect_title: "Prenez vos paiements avec PayPal"
           connect_info: |
-            Take payments online using <a href="https://www.paypal.com/webapps/mpp/express-checkout" target="_blank">PayPal Express Checkout</a>. On connection, you will be asked to grant Bookwhen permission to take payments on your behalf.
-          connected_title: "PayPal connected"
-          connected_info: "Your PayPal account is authorised to accept payments from Bookwhen. You can update your connection status using the button below."
-          upgrade_title: "Upgrade your PayPal Checkout"
+            Prenez vos paiements en ligne sur <a href="https://www.paypal.com/webapps/mpp/express-checkout" target="_blank">PayPal Express Checkout</a>. Quand vous aurrez connecté, Paypal vous demmandera de donner l'accord à Bookwhen de prendre les paiements en votre nom.
+          connected_title: "PayPal connecté"
+          connected_info: "Votre compte PayPal est autorisé a accepter les paiements ventant de Bookwhen.  Vous pouvez mettre a jour votre connexion en clickant la touche ci-dessous."
+          upgrade_title: "Mise a jour de votre caisse Paypal."
           upgrade_info: |
-            **Switch over to the newer version of the PayPal checkout page using the button below.**
-
-            PayPal will ask you to confirm that Bookwhen can take payments for you and that's it! It's instant and costs nothing extra.
-          upgrade_paypal: "Update PayPal connection"
-          business_name: "Business name:"
-          account_status: "Account status:"
-          integration_type: "Integration type:"
+            **Mettre à jour la version de votre caisse PayPal en clickant la touche ci-dessous.**
+            PayPal vous demandera juste de confirmer que vous autorisez Bookwhen a prendre les paiements en votre nom. C'est tout. C'est effectif immédiatement et sans frais supplémentaires.
+          upgrade_paypal: "Mettre à jour la connection PayPal."
+          business_name: "Nom de l'entreprise:"
+          account_status: "Statut du compte:"
+          integration_type: "Type d'intégration:"
           paypal_pre_connect_info: |
-            **Note:** PayPal will <a href="https://www.paypal.com/webapps/mpp/paypal-fees" target="_blank">take a fee</a> for processing your payments. Bookwhen does **not** add any additional fees.
-
-            If you would like to pass on the fees to your customers then there's an option to set that up once you've connected.
+            **Note:** PayPal réclamera <a href="https://www.paypal.com/webapps/mpp/paypal-fees" target="_blank">take a fee</a> pour traiter vos paiements. Bookwhen n'ajoute **aucun frais** sur vos transactions.
+            
+            Si vous désirez transférer les frais de transaction de PayPal à vos clients, choisissez l'option dans Bookwhen une fois que vous êtes connectés.
           paypal_connect_error: |
-            **PayPal** has returned an error message:
+            **PayPal** a envoiyé un message d'erreur:
 
             > **%{error_message}**
 
-            _This normally indicates that your PayPal account is not yet fully setup. Perhaps you've not confirmed your email address with them? Or sometimes PayPal puts a block on accounts before they can accept payments. Please contact PayPal for further help if the message is not self-explanatory._
+            _Ceci indique normalement que votre compte PayPal n'a pas encore été mise en place. Se pourrait-il que vous n'ayez pas confirmé votre addresse email avec eux? Il arrive que PayPal bloque un compte avant qu'ils ne puissent prendre de paiements en ligne. Veuillez contacter PayPal si votre message d'erreure n'est pas évident._
           paypal_personal_warning: |
-            Your PayPal account is a **PERSONAL** account type and **will not be able to take payments**!
+            Votre compte PayPal est un type de compte **PERSONNEL** et **ne pourra pas prendre de paiements**!
 
-            Please update your PayPal account to change it to either **PREMIER** or **BUSINESS** (at no extra cost) before taking payments. More information on <a href="https://www.paypal.com/cgi-bin/webscr?cmd=p/pop/choosing_account_type_signup-outside" target="_blank">PayPal account types</a>.
+            Veuillez actualiser votre compte PayPal pour un compte **PREMIER** ou **BUSINESS** (aucun coûts supplémentaires) bavant de prendre des paiements en ligne. Vous trouverez plus d'information sur <a href="https://www.paypal.com/cgi-bin/webscr?cmd=p/pop/choosing_account_type_signup-outside" target="_blank">PayPal account types</a>.
 
-            Once you have updated your PayPal account, return to this page and **Reauthenticate PayPal**.
+            Une fois que vous ayez mis a jour votre compte PayPal, reconnectez-vous sur cette page et **Ré-authentifiez PayPal**.
           paypal_unverified_warning: |
-            Your PayPal account is **UNVERIFIED** which typically **prevents you from taking payments**.
+            Votre compte PayPal est **NON VÉRIFIÉ**, ce qui **vous empèche de prendre des paiements**.
 
-            Please log in to to your PayPal account, follow the account verification steps and then return to this page and **Reauthenticate PayPal**.
+            Veuillez vous enregistrer dans votre compte PayPal, suivre les étapes de vérifications du compte, puis revenir sur cette page, et **Ré-authentifier PayPal**.
+
         destroy:
           payment_option_removed: "L'option paiement a été retirée"
         permissions_callback:
@@ -1460,7 +1460,7 @@ fr:
           fee_pcnt_label: "Frais en pourcentage"
           fee_pcnt_help: "Un pourcentage to coût total de la réservation sera ajouté sur le tarif de base."
           save: "Save"
-          cancel: "Annuller"
+          cancel: "Annuler"
         update:
           fees_updated: "Paramètres des frais mises à jour."
       stripe_gateway_details:
@@ -1489,7 +1489,7 @@ fr:
             Voire les <a href="https://stripe.com/pricing" target="_blank">renseignements sur les prix Stripe</a> sur le site web de Stripe.
           connect_with_stripe: "Se connecter à Stripe"
           reauthenticate_stripe: "procédure d'authentification Stripe"
-          authenticated_sub_account: "_Please note:_ You are authenticated as a sub-account of the **%{account}** master account. Additional online payment fees can be collected by the master account."
+          authenticated_sub_account: "_Please note:_ You are authenticated as a sub-account of the **%{account}** master account. Additional online paiment fees can be collected by the master account."
           close: "Fini"
           delete: "Retirer l'option Stripe"
           confirm_delete: "Êtes-vous sur de vouloir supprimmer la connexion à votre compte Stripe?"
@@ -1512,7 +1512,7 @@ fr:
           redirect_uri_label: "Connecter Rediriger URI"
           redirect_uri_help: "Copier ceci **à** la **Production** `Rediriger URI` dans votre [Réglages de connection Stripe](https://dashboard.stripe.com/account/applications/settings)."
           save: "Sauvegarder"
-          cancel: "Annuller"
+          cancel: "Annuler"
         update:
           settings_updated: "Connect settings updated"
       stripe_gateway_detail_fees:
@@ -1569,7 +1569,7 @@ fr:
             edit: "Modifier"
             set_keys: "Activer les clefs"
             pre_live_help: "**Note:** Tous paiements seront en _MODE D'ESSAI_ jusqu'à ce que vos clefs LIVE soit sauvegardées."
-            live_help: "Payments désormais en **MODE LIVE**."
+            live_help: "Paiments désormais en **MODE LIVE**."
           edit:
             title: "Clefs API Worldpay"
             test_service_key_label: "ESSAI Clef de Service"
@@ -1585,7 +1585,7 @@ fr:
             worldpay_live_keys_help: |
               La **Clef LIVE** sera disponible dès que votre compte Worldpay est **activé**.
             save: "Sauvegarder les clefs API"
-            cancel: "Annuller"
+            cancel: "Annuler"
           update:
             gateway_detail_updated: "Clefs mises à jour"
         fees:
@@ -1601,77 +1601,76 @@ fr:
             fee_pcnt_label: "Frais en pourcentage"
             fee_pcnt_help: "Un pourcentage to coût total de la réservation sera ajouté sur le tarif de base."
             save: "Sauvegarder"
-            cancel: "Annuller"
+            cancel: "Annuler"
           update:
             fees_updated: "Paramètres des frais mises à jour"
       go2pay:
         details:
           show:
-            edit: "Edit"
-            open: "Open Go2Pay"
-            setup: "Setup"
-            selected_gateway: "Gateway status:"
-            pass_on_fees: "Add fees to booking:"
+            edit: "Modifier"
+            open: "Ouvrir Go2Pay"
+            setup: "Configurer"
+            selected_gateway: "Statut de la parcelle de paiements:"
+            pass_on_fees: "Ajouter les frais de la réservation:"
           edit:
-            enabled: "Enabled:"
-            enabled_help: "Turn this gateway on or off."
+            enabled: "Activé:"
+            enabled_help: "Allumer ou éteindre cette parcelle de paiements."
             go2pay_info: |
-              #### Gateway setup help:
-
-              - Please create a **new Go2Pay user** on your <a href="https://go2pay.uk/App/frmUserList.aspx" target="_blank">Go2Pay portal</a> specifically for use on the bookwhen system.
-              - Help can be found on creating users on the <a href="https://www.adelantesupport.co.uk/default.asp?W81" target="_blank">Adelante support</a> site.
-              - Then copy the account name and new user's username and password into the settings fields.
-            close: "Done"
-            delete: "Remove Go2Pay option"
-            confirm_delete: "Are you sure you want to remove the settings for your Go2Pay account?"
+              #### Aide pour la configuration de votre parcelle de paiements:
+              
+              - Veuillez créer un **nouvel utilisateur Go2Pay** sur votre <a href="https://go2pay.uk/App/frmUserList.aspx" target="_blank">Go2Pay portal</a> pour utiliser uniquement avec le systèmede Bookwhen.
+              - Vous pouvez trouver de l'aide pour créer un nouvel utilisateur sur <a href="https://www.adelantesupport.co.uk/default.asp?W81" target="_blank">Adelante support</a>.
+              - Puis copiez le nom du compte, le nom et mot de passe du nouvel utilisateur dans les champs de configuration.
+            close: "Fini"
+            delete: "Retirer l'option Go2Pay"
+            confirm_delete: "Êtes-vous sûr de vouloir retirer les configurations de votre compte Go2Pay?"
           destroy:
-            payment_option_removed: "Payment option removed"
+            payment_option_removed: "Option paiments retirée"
         keys:
           show:
-            title: "Go2Pay gateway"
-            live_keys_title: "Account access values:"
-            account_name: "Name:"
-            account_user: "User:"
-            account_password: "Password:"
-            not_set: "- not set -"
-            edit: "Edit"
-            set_keys: "Setup access"
+            title: "passerelle de paiement Go2Pay"
+            live_keys_title: "Données pour l'accès du compte:"
+            account_name: "Nom:"
+            account_user: "Utilisateur:"
+            account_password: "Mot de passe:"
+            not_set: "- non activé -"
+            edit: "Modifier"
+            set_keys: "Accès au configurations"
           edit:
-            title: "Go2Pay gateway"
-            account_name_label: "Account name"
-            account_name_ph: "account"
-            account_user_label: "User"
-            account_user_ph: "username"
-            account_password_label: "Password"
+            title: "Passerelle de paiement Go2Pay"
+            account_name_label: "Nom du compte"
+            account_name_ph: "Compte"
+            account_user_label: "Utilisateur"
+            account_user_ph: "Identifiant"
+            account_password_label: "Mot de passe"
             account_password_ph: "**********"
             go2pay_help: |
-              Add the account and user details for the Go2Pay user created for all bookwhen payment activity.
-            save: "Save settings"
-            cancel: "Cancel"
+              Ajouter les détails du compte et de l'utilisateur, pour l'utilisateur Go2Pay créé specifiquement pour les activités Bookwhen.
+            save: "Sauvegarder les configurations"
+            cancel: "Annuler"
           update:
-            gateway_detail_updated: "Settings updated"
+            gateway_detail_updated: "Configurations sauvegardées"
         fees:
           show:
-            edit: "Edit"
-            include_fees: "Include online payment fee?"
-            fees_information: "Any fees will be calculated from the total booking cost and will be added to the amount paid when paying online."
+            edit: "Modifier"
+            include_fees: "Inclure les frais de paiements en ligne?"
+            fees_information: "Ce frais sera calculé à partir du coût de réservation total et sera ajouté au montant total des paiements en ligne."
           edit:
-            include_fees_label: "Add an online payment fee to bookings?"
-            include_fees_help: "If you'd like to recoup the cost of the payment gateway fees, then you can add an additional fee onto the total booking cost when your customers pay online."
-            base_cost_label: "Base fee cost"
-            base_cost_help: "The fixed amount added to all online payments."
-            fee_pcnt_label: "Percentage fee"
-            fee_pcnt_help: "A percentage of the total cost of the booking to be added on top of the base fee."
-            save: "Save"
-            cancel: "Cancel"
+            include_fees_label: "Inclure un frais de paiements en ligne à la réservation?"
+            include_fees_help: "Si vous souhaitez récupérer les frais de la passerelle de paiement, vous pouvez ajouter un frais supplémentaire de paiement en ligne."
+            base_cost_label: "Tarif de base"
+            base_cost_help: "Un frais fixe ajouté à tous paiements en ligne."
+            fee_pcnt_label: "Pourcentage fixe de frais."
+            fee_pcnt_help: "Un pourcentage du cout total de la réservation qui sera ajoutée sur le tarif de base."
+            save: "Sauvegarder"
+            cancel: "Annuler"
           update:
-            fees_updated: "Fee settings updated"
-
+            fees_updated: "Les paramètres des frais ont étés mis à jour."
     locations:
       index:
         title: "Localisation"
-        add_location: "Ajouter une nouvelle localisation"
-        none_in_list: "Aucune localisation n'a été ajoutée jusqu'à présent"
+        add_location: "Ajouter une nouvelle localisation."
+        none_in_list: "Aucune localisation n'a été ajoutée jusqu'à présent."
       list:
         edit: "Modifier"
         address_text: "Adresse"
@@ -1688,13 +1687,13 @@ fr:
         address_text_help: "Le texte de l'adresse sera utilisé pour chercher une localisation sur le plan. Le plan peut ensuite être modifié et agrandi pour préciser la localisation."
         additional_info_label: "Information supplémentaire"
         additional_info_help: "Ce texte sera affiché sous l'adresse."
-        location_entries_label: "Saisie des données pour la localisation"
+        location_entries_label: "Saisie des données pour la localisation."
         location_entries_help: "Les données sélectionnées seront actualisées pour utiliser cette localisation."
         show_map_label: "Show map on booking pages?"
         show_map_help: "Hide the map if you're using a non-address based location, like room number for example."
         map_help: "La position du marqueur et le niveau d'aggrandissement seront sauvegardés."
         save: "Sauvegarder les modifications"
-        cancel: "Annuller"
+        cancel: "Annuler"
         delete: "Supprimer cette localisation"
         confirm_delete: "Cette localisation sera aussi retirée de toutes les données. Êtes-vous sûr de vouloir continuer?"
       update:
@@ -1751,7 +1750,7 @@ fr:
       new:
         title: "Ajouter un type de champ"
         save: "Créer un champ"
-        cancel: "Annuller"
+        cancel: "Annuler"
       edit:
         title: "Modifier le type de champ"
         save: "Actualiser le type de champ"
@@ -1864,7 +1863,7 @@ fr:
       destroy:
         destroyed: "Code retirés"
       validation:
-        expires_at_format: "mauvais format"
+        expires_at_format: "Format incorrect"
         list_format: "doit être composé de lettres, numéros, tirets, espaces, ou virgules."
         codes_list_batch_size: "Au-delà de la taille maximum du lot, %{size}."
         single_code_format: "Format: Une règle seule ne peut pas commencer ou se terminer avec un tiret."
@@ -1888,7 +1887,7 @@ fr:
         cancel: "Annuler"
         rule_type_label: "Type de règle"
         rule_boundry_label: "Minimum de billets"
-        rule_boundry_help: "COmbien de tickets doivent être réservés en même temps pour automatiquement recevoir un rabais?"
+        rule_boundry_help: "Combien de tickets doivent être réservés en même temps pour automatiquement recevoir un rabais?"
         discount_type_label: "Type de rabais:"
         discount_type_options:
           amount: "Montant fixe"
@@ -1908,7 +1907,7 @@ fr:
       destroy:
         destroyed: "Règles supprimées"
       validation:
-        expires_at_format: "Mauvais format"
+        expires_at_format: "Format incorrect"
         rules_list_batch_size: "Au-delà de la taille maximum du lot, %{size}."
         single_rule_format: "Format: Une règle seule ne peut pas commencer ou se terminer avec un tiret."
 
@@ -2040,20 +2039,20 @@ fr:
         you: "Vous"
         invited: "Invité"
         revoke_invite: "Annuler l'invitation"
-        revoke_invite_confirm: "Êtes-vous sûr de vouloir annuller cette invitation?"
+        revoke_invite_confirm: "Êtes-vous sûr de vouloir annuler cette invitation?"
         remove_admin: "Retirer de ce compte"
         remove_admin_confirm: "Vous êtes sur le point de retirer cet utilisateur Admin de ce compte. L'utilisateur ne recevra PAS d'avis de retrait. Ils peuvent être ré-invités à tous momments. Voudriez-vous continuer?"
         promote_admin: "Promouvoir au statut de titulaire du compte"
         promote_admin_confirm: "Vous êtes sur le point de donner a cet utilisateur Admin les droits de modifier les paramètres du compte. L'utilisateur ne recevra PAS d'avis concernant ce changement. Voudriez-vous continuer?"
         account_owner: "Titulaire du compte"
       child_account:
-        notice_html: '<i>Please note:</i> Your account is managed by <span title="%{code}">%{title}</span> and can be accessed by the head office administrators.'
+        notice_html: "<i>Please note:</i> Votre compte est géré par <span title="%{code}">%{title}</span> et peut être accédé par les administrateurs du siège social de l'entreprise."
       invite:
         email_label: "Inviter un autre administrateur"
         email_ph: "admin@example.com"
         email_help: "Un email sera envoyé au nouvel utilisateur avec un lien pour créer un idantifiant et mot de passe."
         invite: "Envoyer l'invitation"
-        invite_help: "Un email sera envoyé à votre invité avec un lien les invitant à joindre votre compte et créer un mot de passe."
+        invite_help: "Un email sera envoyé à votre invité avec un lien le invitant à joindre votre compte et créer un mot de passe."
         must_be_account_owner: |
           #### L'ajout d'administrateurs
 
@@ -2149,7 +2148,7 @@ fr:
       new:
         title: "Importer les données de votre compte v1"
         import_instructions: |
-          Vous pouvez importer les données d'un compte bookwhen original (v1) dans ce nouveau compte. Toutes vos données passées et à venir seront importées.
+          Vous pouvez importer les données d'un compte Bookwhen original (v1) dans ce nouveau compte. Toutes vos données passées et à venir seront importées.
 
           Plus d'informations sont disponibles sur les [pages d'assistance](http://support.bookwhen.com/article/8-importing-a-v1-account-into-the-new-bookwhen).
       index:
@@ -2157,7 +2156,7 @@ fr:
         refresh_note: |
           _Notez:_ Cette page sera automatiquement actualisée quand le statut changera et vous recevrez un email quand le processus sera terminé. L'import de millier de réservations peut prendre plus d'une heure.
 
-          Une fois terminé, vous pouvez rediriger votre ancienne page à la nouvelle page en utilisant le réglage 'Rediriger à bookwhen v2' en bas de cette page: https://v1.bookwhen.com/settings?on=theme
+          Une fois terminé, vous pouvez rediriger votre ancienne page à la nouvelle page en utilisant le réglage 'Rediriger à Bookwhen v2' en bas de cette page: https://v1.bookwhen.com/settings?on=theme
 
           Contactez support@bookwhen.com si vous avez besoin d'aide. Merci.
       table:
@@ -2226,7 +2225,7 @@ fr:
         coupon_code_label: "Code de rabais"
         coupon_code_help: "**Veuillez noter**: La valeure affichée sur le boutton du formulaire de payement ne prends pas en compte ce rabais! Il sera pris en compte sur la facture finale."
       card_details:
-        title: "carte utilisée pour le règlement:"
+        title: "Carte utilisée pour le règlement:"
         expires: "Date d'expiration:"
         update_card: "Mettre à jour la carte"
         stripe_update_card_desc: "Mettre à jour la carte de l'abonnement."
@@ -2251,7 +2250,7 @@ fr:
         subscribe_btn: "Abonnez vous"
       show:
         title: "Plan du compte"
-        wrong_currency: "Mauvaise devise? Changez la sur votre page [réglages des paiements] (%{payment_settings_url})."
+        wrong_currency: "Devise incorrecte? Changez la sur votre page [réglages des paiements] (%{payment_settings_url})."
         just_paid: |
           ### Paiement complet
 
@@ -2285,7 +2284,7 @@ fr:
           ### Un problème technique s'est produit, et votre transaction n'a pas pu être effectuée. Veuillez contacter support@bookwhen.com.
 
           Voici le message que nous avons reçu du service de traitement des paiements:
-        processing_error_footer: "Aucune somme n'a encore été versée. Veuyez réessayer avec une carte différente, ou contacter support@bookwhen.com pour plus d'aide."
+        processing_error_footer: "Aucune somme n'a encore été versée. Veuyez réessayer avec une carte différente, ou contacter support@bookwhen.com pour demmander de l'aide."
       stripe_callback:
         thank_you: "Merci"
       current_plan:
@@ -2368,7 +2367,7 @@ fr:
       booking_status: "Statut de la réservation:"
       checkout: "Caisse"
       complete: "Complétée"
-      cancelled: "annulée"
+      cancelled: "Annulée"
       filter_results: "Recherche"
       options: "Options"
       reset: "Réinitialiser les critères de recherche"
@@ -2392,7 +2391,7 @@ fr:
       cost_amount_html: "Coût <span>%{amount}</span>"
       owed_amount_html: "Montant dû <span>%{amount}</span>"
       paid_online_amount_html: "Payé: <span>%{amount}</span>"
-      paid_offline_amount_html: "payé hors ligne: <span>%{amount}</span>"
+      paid_offline_amount_html: "Payé hors ligne: <span>%{amount}</span>"
       credit_amount_html: "<span>%{amount}</span> remboursés"
 
   attendance_emails:
@@ -2604,10 +2603,10 @@ fr:
       online_payment_required_ynd_help: "Régler cette option à _Non_ si vous désirez permettre de payer plus tard. Dans ce cas, le texte lié à la méthode de paiement _Réglages > Options Payement > Payments hors linge_ apparaitra à la caisse avec une case a cocher obligatoirement: 'J'accepte de payer plus tard'."
       private_booking_password_label: "Mot de passe des réservations privées"
       private_booking_password_help: "Exiger qu'un mot de passe soit requis pendant la réservation de ce type d'entrée."
-      go2pay_options_title: "Adelante Go2Pay payment parameters"
-      go2pay_payment_ref_label: "Payment Reference"
-      go2pay_payment_ref_help: "This will be passed through to the 'Ref #' field on the gateway transaction. The booking reference will be set on the 'Customer #' field."
-      go2pay_fund_code_label: "Fund Code"
+      go2pay_options_title: "Paramètre des paiements Adelante Go2Pay."
+      go2pay_payment_ref_label: "Référence du paiement."
+      go2pay_payment_ref_help: "Ceci sera envoyé au champ 'Ref #' sur la transaction de la passerelle de paiements. La référence de la réservation sera fixée sur le champ 'Client #'."
+      go2pay_fund_code_label: "Code de la bourse"
       go2pay_fund_code_help: ""
 
   booking_forms:
@@ -2658,11 +2657,11 @@ fr:
     form:
       user_email_help: |
         **Note email pour le participant:**
-
+        
         Si ce champ est inclus dans le formulaire de réservation, le email de chaque participant sur la éservation sera requis, ainsi que le email de la personne complétant la réservation.
       user_name_help: |
         **Note email pour le participant:**
-
+        
         Ceci est utilisé pour enregistrer le nom du participant. Si le email du participant est aussi requis, le nom sera lié à l'email.
     update:
       field_updated: "CHamps mis à jour"
@@ -2952,7 +2951,7 @@ fr:
           tag_line_2: "Un système de réservation simple et efficace, quelle que soit votre activité."
           tag_line_3: "Gérez vos réservations et paiements sécurisés en ligne."
           sub_tag_line: "Le logiciel de réservation en ligne pour vos classes, cours, ateliers et événements."
-          lead_line: "Micro-entrepreneurs, indépendants, ou grosses entreprises: nos clients de par le monde nous font confiance. #######CHANGED####### "
+          lead_line: "Micro-entrepreneurs, indépendants, ou grosses entreprises: nos clients de par le monde nous font confiance."
           button_text: "S'inscrire"
 
           # Benefits
@@ -3042,51 +3041,51 @@ fr:
         lead:
           text: "Bookwhen fait le travail pour vous."
         feature_item:
-          title_1: "Plusieurs tickets par réservation."
+          title_1: "Plusieurs tickets par réservation"
           details_1: "Il est possible de sélectionner plusieurs tickets, permettant de réserver et payer plusieurs classes ou permettant à plusieurs personnes de réserver ensemble un évènement."
           title_2: "Listes d'attente"
-          details_2: "Un système équitable qui vous permet de sélectionner le temps de réponse des clients dans l'éventualité où une place se libère. Bookwhen gère les listes d'attente automatiquement, vous garantissant ainsi des évènements complets -- A fair system which lets you choose how much time customers get to respond to a space becoming available. Bookwhen automatically handles the waiting list - maximising ticket sales and ensuring your events are always full!"
-          title_3: "Formulaire de réservation personnalisé  -- Custom booking forms"
-          details_3: "Choix de secteurs d'activité sur menu déroulant et validation - assurant toute information nécessaire concernant vos clients-- Choose from a range of field types including drop down lists and validation - to ensure you get all the necessary and correct information from your attendees."
-          title_4: "Pages de l'emploi du temps personnalisées"
+          details_2: "Un système équitable qui vous permet de sélectionner le temps de réponse des clients dans l'éventualité où une place se libère. Bookwhen gère les listes d'attente automatiquement, vous garantissant ainsi des évènements au complet!"
+          title_3: "Formulaire de réservation personnalisé"
+          details_3: "Choisissez a partir d'une liste de questions sur menu déroulant qui vous aide a collecter toute l'information nécessaire concernant vos participants, dans le format qui vous convient."
+          title_4: "Pages d'emploi du temps personnalisées"
           details_4: "Présentez vos futurs évènements et vos places disponibles sous forme d'une liste claire et simple pour faciliter le choix d'évènements ou d'horaires pour vos clients. La liste peut être filtrée facilement en adaptant l'hyperlien de votre page d'emploi du temps."
           title_5: "Types de tickets"
-          details_5: "Créez des tickets multiples pour  évènements divers, cours, famille/groupe, abonnement. Vous pouvez également restreindre la validité d'un ticket, tôt le matin par exemple. -- Create multiple ticket types for any event - including course tickets, family/group tickets and membership tickets. You can also restrict when tickets are available - perfect for 'early bird' tickets."
-          title_6: "Possibilité de paiement en ligne ou autre -- Online and offline payments"
-          details_6: "Vous pouvez choisir un mode de paiement en ligne pour finaliser une réservation ou bien offrir une plus grande flexibilité avec paiement différé. Paiements effectués via PayPal, Stripe ou WorldPay. Vous avez également la possibilité de facturer les frais de paiement à votre client. -- Choose whether to make online payment mandatory to complete a booking, or offer full flexibility by giving the option to pay later. Payments via PayPal, Stripe or WorldPay. There's also an option to pass on payment gateway fees to your customers."
-          title_7: "Multiple admins and roles"
-          details_7: "Invitez vos collègues à joindre votre compte Bookwhen. Vous pouvez également limiter leur degré d'accès et restreindre les mels de notifications. -- Invite colleagues to join your Bookwhen account. If you wish, you can also restrict their access levels and decide whether they receive email notifications."
-          title_8: "Attacher documents et formulaires -- Attach documents and files"
-          details_8: "Attachez des documents à vos évènements et enregistrez en toute sécurité sur le serveur de Bookwhen-- Attach documents to your events and securely host on the Bookwhen server."
-          title_9: "emails de confirmation et rappel -- Confirmation and reminder emails"
-          details_9: "Vos participants recevront un calendrier .ics pour l'événement et un rappel avant la date de l'événement.  -- Your attendees will receive .ics calendar file for the event, and a reminder before the event. You can set when this reminder is sent."
-          title_10: "Compatible avec téléphone portable et tablette  -- Designed for mobile and tablet"
-          details_10: "Bookwhen s'adapte parfaitement aux portables et tablettes -- Bookwhen scales perfectly for mobiles and tablets."
-          title_11: "Codes de réduction et blocage des réductions  -- Discount codes and block booking discounts"
-          details_11: "Créez des codes de réduction uniques et appliquez les sur des événements ou types de tickets spécifiques. Les réductions seront calculées automatiquement au moment du check out /paiement -- Create unique discount codes and restrict the event or ticket they can be used on. Block booking discounts are calculated automatically upon checkout."
-          title_12: "Calendar feed #############################################"
-          details_12: "Créez un lien de votre page emploi du temps à votre calendrier. Il y a une option publique et une option privée, qui contient aussi tous les noms de vos participants."
+          details_5: "Créez des tickets multiples pour évènements divers: cours, famille/groupe, ou abonnements. Vous pouvez également restreindre la disponibilitée d'un ticket, eg. pour favoriser l'inscription hâtive."
+          title_6: "Possibilité de paiements en ligne ou hors ligne"
+          details_6: "Vous pouvez choisir un mode de paiement en ligne pour finaliser une réservation ou bien offrir une plus grande flexibilité en acceptant les paiement différé. Les paiements sont effectués via PayPal, Stripe ou WorldPay. Vous avez également la possibilité de facturer les frais de la parcelle de paiements à votre client."
+          title_7: "Admins et roles multiples"
+          details_7: "Invitez vos collègues à joindre votre compte Bookwhen. Vous pouvez également limiter leur degré d'accès et restreindre les emails de notifications."
+          title_8: "Attacher vos documents."
+          details_8: "Attachez des documents à vos évènements, ils seront hébergés en toute sécurité sur le serveur de Bookwhen."
+          title_9: "Emails de confirmation et de rappel"
+          details_9: "Vos participants recevront un calendrier .ics et un rappel avant la date de l'événement. Vous pouvez décider de la date d'envois du rappel."
+          title_10: "Compatible avec téléphone portable et tablette"
+          details_10: "Bookwhen s'adapte parfaitement aux portables et tablettes."
+          title_11: "Codes de réduction et réductions pour les réservations en bloc"
+          details_11: "Créez des codes de réduction uniques et appliquez les sur des événements ou types de tickets spécifiques. Les réductions seront calculées automatiquement au moment du check out/paiement."
+          title_12: "Calendar feed"
+          details_12: "Créez un lien de votre page emploi du temps à votre calendrier. Il y a une option publique et une option privée, qui contient tous les noms de vos participants."
           title_13: "Pages d'emploi du temps multiples"
-          details_13: "############################################# If you operate completely independent sets of events, then you can publish these on separate emploi du temps pages, but manage them all under a single account."
+          details_13: "Si vous gérez plusieurs événements indépendants, vous pouvez les publier sur des pages d'emploi du temps séparées, tout en les gérant sur un unique compte Bookwhen."
           title_14: "API"
-          details_14: 'Utilisez votre API pour intégrer Bookwhen dans votre site web. Voire <a href="http://developer.bookwhen.com" target="_blank">developer documentation</a> pour plus d information.'
+          details_14: "Utilisez votre API pour intégrer Bookwhen dans votre site web. Voire <a href="http://developer.bookwhen.com" target="_blank">developer documentation</a> pour plus d'information."
           title_15: "Paiements de commission pour les franchises"
-          details_15: "Si vous avez une franchise et que vous voudriez prendre les paiements de commission pour vos franchises, Bookwhen vous sera utile."
+          details_15: "Si vous avez une franchise et que vous voudriez prendre les paiements de commission, Bookwhen vous sera utile."
           title_16: "Langues"
           details_16: "Bookwhen est disponible en Français, Anglais, et Allemand (pages publiques). La version Espagnole sera disponible en 2018."
           title_17: "Support"
-          details_17: "The system offers in-app support chat or help via standard support email. We're friendly folk, keen to help wherever possible."
+          details_17: "Si vous avez des questions, c'est avec plaisir que notre équipe accueillante et chaleureuse vous répondra via notre support en ligne, ou via un simple email."
         big_features:
           section_title: "Le processus"
           title_1: "1. Etablir l'emploi du temps"
           details_1: "Bookwhen vous permet la mise en place rapide de plusieurs événements et d'événements réccurents, quelle que soit leur longueur, avec une option de cours sur plusieurs jours et de billets en groupes. Ceci vous offre la flexibilité de prendre les réservation comme vous choisissez."
           title_2: "2. Prendre vos réservations"
-          details_2: "Les réservations sont faites à travers votre page, à laquelle vous appliquez votre thème graphique. ############################### allowing multiple attendees per event or multiple events per booking ###############################. Collectez les informations dont vous avez besoin grâce aux formulaires de réservation personnalisables, et prenez vos paiements à travers Stripe, PayPal or WorldPay."
+          details_2: "Les réservations sont faites à travers votre page, à laquelle vous appliquez votre thème graphique. Ceci vous permet d'avoir plusieurs participants par événement ou plusieurs événements par réservation. Collectez les informations dont vous avez besoin grâce aux formulaires de réservation personnalisés, et prenez vos paiements à travers Stripe, PayPal or WorldPay."
           title_3: "3. Informations sur les participants"
           details_3: "Vos réservations sont rassemblées en une liste des participants facile à consulter, faisant figurer les références de vos événements sur votre programme. Imprimez le détail des événements sur la brochure des participants ou bien téléchargez vos informations pour administrer hors ligne."
         action:
           title: "Créez votre compte et lancez-vous!"
-          text: 'Nous répondrons à vos questions sur notre app de conversation ou %{send_email_link}.'
+          text: 'Nous répondrons à vos questions sur notre app de support en ligne ou via %{send_email_link}.'
           send_email_link: "Adressez-nous un email"
           button: "Enregistrez-vous gratuitement"
 
@@ -3153,7 +3152,7 @@ fr:
             info: "Bookwhen vous offre son aide via une application de conversation (app chat) ou bien si votre question est moins urgente par email. Notre personnel est disponible à tout moment pour répondre à vos questions et résoudre vos problèmes aussi vite que possible. Vous pouvez également nous contacter par téléphone si les autres moyens de communication sont indisponibles."
           fact_10:
             title: "Comment payer?"
-            info: "Nous acceptons toutes les cartes de crédit principales, nos abonnements sont gérés #### processed #### par Stripe. N'hesitez pas a nous contacter si vous avez besoin de payer autrement."
+            info: "Nous acceptons toutes les cartes de crédit principales, nos abonnements sont gérés traitées par Stripe. N'hesitez pas a nous contacter si vous avez besoin de payer autrement."
 
       about:
         show:
@@ -3291,29 +3290,29 @@ fr:
 
   standard_mailer:
     new_account:
-      subject: "Bienvenu à bookwhen"
+      subject: "Bienvenu(e) à Bookwhen"
     password_reset:
-      subject: "Rréinitialisation du mot de passe bookwhen"
+      subject: "Ré-initialisation du mot de passe Bookwhen."
     verify_email:
-      subject: "Please verify your email address"
+      subject: "Veuillez vérifier votre adresse email."
     admin_invite:
-      subject: "Invitation admin bookwhen"
+      subject: "Invitation admin Bookwhen."
     import_complete:
-      subject: "L'importation du compte bookwhen v1 est terminée"
+      subject: "L'importation du compte Bookwhen v1 est terminée."
     subscription_invoice:
-      subject: "Bookwhen subscription - payment received"
+      subject: "Inscription à Bookwhen - paiement reçu."
     subscription_failure:
-      subject: "Bookwhen subscription - payment failed"
+      subject: "Inscription à Bookwhen interrompue - paiement non reçu."
     trial_almost_end:
-      subject: "Your Bookwhen trial is ending soon"
+      subject: "Votre temps d'essai avec Bookwhen va bientôt se terminer."
     trial_end_now:
-      subject: "Your Bookwhen trial has ended"
+      subject: "Votre temps d'essai avec Bookwhen est terminé."
     plan_end_now_free:
-      subject: "Your Bookwhen subscription has ended"
+      subject: "Votre abonnement à Bookwhen est terminée."
     plan_fail_now_free:
-      subject: "Your Bookwhen account has reverted to the free plan!"
+      subject: "Votre compte Bookwhen est désormais sur le plan gratuit!"
     event_notification:
-      subject: "Bookwhen event of consequence notification!"
+      subject: "Bookwhen: un événement important est en cours!"
 
   template_mailer:
     template_email:
@@ -3417,20 +3416,20 @@ fr:
       subject_line: "Rappel d'un prochain événement"
       body_text: |
         N'oubliez pas vos prochaines réservations:
-
+        
         [EVENT_LIST]
-
-        Si vous ne pouvez plus participer à l'évennement, veuillez annuller votre reservation en utilisant le lien envoyé dans votre premier email de réservation.
-
+        
+        Si vous ne pouvez plus participer à l'évennement, veuillez annuler votre reservation en utilisant le lien envoyé dans votre premier email de réservation.
+        
         Merci.
 
     waiting_list_added:
       subject_line: "Vous êtes à présent sur la liste d'attente"
       body_text: |
         Vous avez été ajouté(e) à la liste d'attente de:
-
+        
         [EVENT_DETAILS]
-
+        
         Vous êtes dans la position [POSITION_ORDINAL] de la liste. Vous serez informé(e) par email si une place se libère et vous aurez [DELAY_PERIOD] pour faire votre réservation avant que la prochaine personne sur la liste soit informée.
 
         Vous pouvez vous retirer de la liste en suivant ce lien:
